@@ -18,7 +18,7 @@
   --font:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);overflow-x:clip}
 body{margin:0;overflow-x:clip;background:var(--black);color:var(--white);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--purple);outline-offset:3px}
@@ -242,29 +242,20 @@ footer a:hover{color:var(--white)}
 .hero .sub{margin:14px auto 34px}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 
-/* ---- 3D Infinite Problem Carousel ---- */
-#v-carousel{position:relative;display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100svh;padding:24px 0 56px;--cw:clamp(190px,46vw,330px);--ch:calc(var(--cw) * 1.37)}
-.c3d-stage{position:relative;width:100%;height:calc(var(--ch) * 1.78);perspective:1400px;-webkit-user-select:none;user-select:none;outline:none;-webkit-tap-highlight-color:transparent}
-.c3d-card{position:absolute;left:50%;top:50%;width:var(--cw);height:var(--ch);margin:calc(var(--ch) * -.64) 0 0 calc(var(--cw) * -.5);transform-origin:50% 64%;will-change:transform;touch-action:pan-y;font-family:var(--font)}
-.c3d-card.is-front{touch-action:none;cursor:grab}
-.c3d-card.is-front.grabbing{cursor:grabbing}
-.c3d-face{position:absolute;inset:0;border-radius:calc(var(--cw) * .105);overflow:hidden;container-type:inline-size;background:#0b0820;border:1.5px solid var(--edge,#7a5cff);box-shadow:0 0 calc(var(--cw) * .1) -2px var(--glow,rgba(122,92,255,.6)),0 16px 40px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.08)}
-.c3d-face::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,0) 38%)}
-.c3d-art-w,.c3d-art{position:absolute;inset:0;width:100%;height:100%;display:block}
-.c3d-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,24,0) 0%,rgba(8,6,24,0) 46%,rgba(8,6,24,.78) 76%,rgba(8,6,24,.93) 100%)}
-.c3d-ui{position:absolute;inset:0;z-index:3}
-.c3d-badge,.c3d-diff{position:absolute;top:5.5%;font-size:4.1cqw;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:#fff;border-radius:999px;padding:2.7cqw 5cqw;background:rgba(38,26,92,.66);border:1px solid rgba(255,255,255,.14)}
-.c3d-badge{left:7%}
-.c3d-diff{right:7%;background:rgba(0,0,0,.4)}
-.c3d-info{position:absolute;left:8%;right:8%;bottom:7%;display:flex;align-items:flex-end;justify-content:space-between;gap:4cqw}
-.c3d-txt{flex:1;min-width:0}
-.c3d-title{margin:0 0 2.6cqw;font-size:8.4cqw;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:#fff}
-.c3d-desc{margin:0;font-size:4.6cqw;line-height:1.4;color:rgba(235,230,255,.78)}
-.c3d-go{flex:none;width:15cqw;height:15cqw;border-radius:50%;display:grid;place-items:center;color:#fff;background:#5846FB;box-shadow:0 0 5cqw rgba(88,70,251,.7),inset 0 0 0 1px rgba(255,255,255,.25);transition:transform .2s,background .2s}
-.c3d-go:hover{background:#6a5aff;transform:scale(1.07)}
-.c3d-go svg{width:46%;height:46%}
-.c3d-card:not(.is-front) .c3d-go{pointer-events:none}
-.c3d-dim{position:absolute;inset:0;z-index:4;background:#000;opacity:0;pointer-events:none}
+/* ---- Flat fanned problem deck ---- */
+#v-carousel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100svh;margin-inline:calc((100% - 100vw)/2);overflow:clip;background:#000;padding:28px 0 38px;--cw:clamp(176px,74vw,350px);--ch:calc(var(--cw) * 1.34)}
+#featured-title{position:relative;z-index:1;margin:0;text-align:center;font:700 clamp(34px,10.7vw,62px)/.91 Arial,sans-serif;letter-spacing:-.05em;text-transform:uppercase}
+.c3d-stage{position:relative;width:100%;height:calc(var(--ch) * 1.39);user-select:none;touch-action:pan-y;cursor:grab;isolation:isolate}
+.c3d-card{position:absolute;left:50%;top:50%;width:var(--cw);height:var(--ch);margin:calc(var(--ch) * -.49) 0 0 calc(var(--cw) * -.5);transform-origin:50% 50%;will-change:transform}
+.c3d-stage.grabbing{cursor:grabbing}
+.c3d-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.c3d-face{position:absolute;inset:0;border-radius:7.5%;overflow:hidden;container-type:inline-size;background:var(--paper);color:var(--card-ink);box-shadow:0 2px 5px #0004}
+.c3d-ui{position:absolute;inset:0;padding:7.5% 5%;font-family:Arial,sans-serif}
+.c3d-badge{display:inline-block;font-size:5cqw;border-radius:9px;padding:1.6cqw 5cqw;background:#f8f9fa;color:#171717}
+.c3d-title{margin:12cqw 0 0;font-size:clamp(18px,11.4cqw,44px);font-weight:400;line-height:1;letter-spacing:-.055em;overflow-wrap:anywhere}
+.c3d-title.long{font-size:9.1cqw}
+.c3d-cue{display:flex;align-items:center;gap:5px;color:#fff;font:400 19px Arial,sans-serif}
+.c3d-cue button{width:44px;height:44px;border:0;background:none;color:inherit;font:inherit;font-size:28px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -303,8 +294,10 @@ footer a:hover{color:var(--white)}
       <a class="btn btn-ico" id="exb" href="#catsec"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Explore</a>
     </section>
 
-    <section id="v-carousel" data-views="problems" aria-label="Featured problems">
+    <section id="v-carousel" data-views="problems" aria-labelledby="featured-title">
+      <h2 id="featured-title">Top 10<br>problems</h2>
       <div class="c3d-stage" id="c3d" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Problem carousel"></div>
+      <div class="c3d-cue"><button type="button" id="card-prev" aria-label="Previous problem">‹</button><span>Swipe</span><button type="button" id="card-next" aria-label="Next problem">›</button></div>
     </section>
 
     <section id="v-problems" data-views="problems">
@@ -862,277 +855,146 @@ go(location.hash.slice(1));
 </script>
 
 <script>
-/* ================= 3D Infinite Problem Carousel =================
-   - 12 problems in a fixed array; 24 reusable card layers (step 15deg) form the fan
-   - Free 2D drag (X + Y), one swipe = exactly one problem, any direction
-   - Active problem = modular arithmetic on an ever-increasing head counter */
+/* Flat fanned deck: full-size cards share one center. Rotation is limited
+   to a 108-degree fan; there is no circular positioning or perspective. */
 (function(){
-  var N=24, STEP=15, P=12;
+  var problems=db.reports.filter(function(report){return priorityById.get(report.id)!==false;})
+    .slice().sort(function(a,b){return b.up-a.up;}).slice(0,10);
+  var stage=document.getElementById('c3d'), P=problems.length;
+  if(!stage||!P)return;
+  var paperColors=['#f4f4f4','#434343','#1045ed'];
+  var els=[], active=0, buried=-1, width=1, animation=0, busy=false;
+  var poses=[], drag=null, suppressClick=false;
+  var reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  function mod(a,n){return ((a%n)+n)%n;}
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+  problems.forEach(function(problem,index){
+    var el=document.createElement('div');
+    el.className='c3d-card';
+    el.setAttribute('role','group');
+    el.setAttribute('aria-roledescription','slide');
+    el.setAttribute('aria-label',(index+1)+' of '+P);
+    el.innerHTML='<div class="c3d-face"><div class="c3d-ui"><span class="c3d-badge"></span><h3 class="c3d-title"></h3></div></div>';
+    el.style.setProperty('--paper',paperColors[index%3]);
+    el.style.setProperty('--card-ink',index%3===0?'#171717':'#fff');
+    el.querySelector('.c3d-badge').textContent=reportCategory(problem);
+    var title=el.querySelector('.c3d-title');
+    title.textContent=problem.t;
+    title.classList.toggle('long',problem.t.length>105);
+    stage.appendChild(el);els.push(el);
+  });
+  var status=document.createElement('span');
+  status.className='c3d-status';
+  status.setAttribute('aria-live','polite');
+  status.setAttribute('aria-atomic','true');
+  stage.appendChild(status);
 
-  /* Edit names, descriptions, difficulty and destinations here */
-  var problems=[
-    {name:'Two Sum',desc:'Find two numbers in an array that add up to a target.',difficulty:'Easy',url:'https://leetcode.com/problems/two-sum/'},
-    {name:'Reverse String',desc:'Reverse an array of characters in place.',difficulty:'Easy',url:'https://leetcode.com/problems/reverse-string/'},
-    {name:'Valid Parentheses',desc:'Check that every bracket is closed in the right order.',difficulty:'Easy',url:'https://leetcode.com/problems/valid-parentheses/'},
-    {name:'Merge Intervals',desc:'Combine all overlapping intervals into one list.',difficulty:'Medium',url:'https://leetcode.com/problems/merge-intervals/'},
-    {name:'Rotate Array',desc:'Shift every element of an array right by k steps.',difficulty:'Medium',url:'https://leetcode.com/problems/rotate-array/'},
-    {name:'Palindrome Number',desc:'Decide whether an integer reads the same both ways.',difficulty:'Easy',url:'https://leetcode.com/problems/palindrome-number/'},
-    {name:'Roman to Integer',desc:'Convert a Roman numeral into its integer value.',difficulty:'Easy',url:'https://leetcode.com/problems/roman-to-integer/'},
-    {name:'Binary Search',desc:'Locate a target in a sorted array in logarithmic time.',difficulty:'Easy',url:'https://leetcode.com/problems/binary-search/'},
-    {name:'Maximum Subarray',desc:'Find the contiguous subarray with the largest sum.',difficulty:'Medium',url:'https://leetcode.com/problems/maximum-subarray/'},
-    {name:'Coin Change',desc:'Find the fewest coins needed to make an amount.',difficulty:'Medium',url:'https://leetcode.com/problems/coin-change/'},
-    {name:'Climbing Stairs',desc:'Count the distinct ways to climb n steps, one or two at a time.',difficulty:'Easy',url:'https://leetcode.com/problems/climbing-stairs/'},
-    {name:'Longest Substring',desc:'Longest stretch of a string with no repeated characters.',difficulty:'Medium',url:'https://leetcode.com/problems/longest-substring-without-repeating-characters/'}
-  ];
-
-  /* s = sky stops, m = moon, e = edge colour */
-  var pal=[
-    {s:['#1a1146','#4b2aa8','#d46ab8'],m:'#ffd2e8',e:'#7a5cff'},
-    {s:['#071a4a','#1647c9','#37b6ff'],m:'#d6f1ff',e:'#2f8cff'},
-    {s:['#052b36','#0b7a86','#3fe0d0'],m:'#e2fff9',e:'#19e0d0'},
-    {s:['#2a0a3d','#8a1f9a','#ff6fb7'],m:'#ffe0f2',e:'#ff58c8'},
-    {s:['#0b1040','#3a2fd0','#8e7bff'],m:'#e6e0ff',e:'#6a5cff'},
-    {s:['#04262b','#0a5f9e','#27c4ff'],m:'#d9f6ff',e:'#18b4ff'},
-    {s:['#1a0b3f','#6b2fc4','#ff9bd8'],m:'#ffe3f4',e:'#b66bff'},
-    {s:['#04222a','#0a6f6a','#5af0c0'],m:'#e5fff4',e:'#2fe3b0'},
-    {s:['#1b0f3a','#5a2fa0','#ff9d6a'],m:'#ffe4c0',e:'#ff8a5c'},
-    {s:['#06133d','#1d4fe0','#6fd0ff'],m:'#e8f7ff',e:'#3f9bff'},
-    {s:['#160a3a','#5a2bd6','#c28aff'],m:'#f0e4ff',e:'#9b6bff'},
-    {s:['#2b0830','#a01e8c','#ff77a8'],m:'#ffe2ec',e:'#ff4fa3'}
-  ];
-
-  var stage=document.getElementById('c3d');
-  if(!stage)return;
-
-  function mod(a,n){return((a%n)+n)%n;}
-  function clamp(v,a,b){return v<a?a:(v>b?b:v);}
-  function hexA(h,a){var n=parseInt(h.slice(1),16);return 'rgba('+(n>>16&255)+','+(n>>8&255)+','+(n&255)+','+a+')';}
-  function ridge(seed,base,amp,n){
-    var d='M0 410 L0 '+base.toFixed(1);
-    for(var i=0;i<=n;i++){
-      var x=i*300/n,y=base-amp*(.5+.5*Math.sin(i*1.37+seed)*Math.cos(i*.71+seed*1.9));
-      d+=' L'+x.toFixed(1)+' '+y.toFixed(1);
+  function resting(front){
+    return els.map(function(el,index){
+      var slot=mod(index-front,P);
+      var angle=-slot*Math.min(12,108/Math.max(1,P-1));
+      return {x:angle/108*width*.01,y:slot?-width*.07:0,a:angle};
+    });
+  }
+  function mix(a,b,t){return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,a:a.a+(b.a-a.a)*t};}
+  function paint(next,outgoing,behind){
+    els.forEach(function(el,index){
+      var p=poses[index],slot=mod(index-active,P);
+      var z=index===active?200:(index===buried?1:100-slot);
+      if(index===next)z=199;
+      if(index===outgoing)z=behind?0:201;
+      el.style.transform='translate('+p.x.toFixed(2)+'px,'+p.y.toFixed(2)+'px) rotate('+p.a.toFixed(2)+'deg)';
+      el.style.zIndex=String(z);
+      el.style.pointerEvents=index===active?'auto':'none';
+      el.classList.toggle('is-front',index===active);
+      el.setAttribute('aria-hidden',index===active?'false':'true');
+    });
+  }
+  function announce(){status.textContent='Problem '+(active+1)+' of '+P+': '+problems[active].t;}
+  function settle(){busy=false;animation=0;poses=resting(active);paint();announce();}
+  function animate(duration,frame,done){
+    var start=performance.now();
+    function tick(now){
+      var t=Math.min((now-start)/duration,1),ease=1-Math.pow(1-t,3);
+      frame(ease);
+      if(t<1)animation=requestAnimationFrame(tick);else{animation=0;done();}
     }
-    return d+' L300 410Z';
+    animation=requestAnimationFrame(tick);
   }
-  function art(e,p){
-    var c=pal[p],id='g'+e,mx=80+((p*53)%150),my=165+((p*29)%60),stars='';
-    for(var i=0;i<14;i++){
-      stars+='<circle cx="'+((i*97+p*31)%300)+'" cy="'+((i*61+p*17)%190)+'" r="'+(.6+(i%3)*.4)+'" fill="#fff" opacity="'+(.35+(i%4)*.15)+'"/>';
-    }
-    return '<svg class="c3d-art" viewBox="0 0 300 410" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+
-      '<defs><linearGradient id="s'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c.s[0]+'"/><stop offset=".5" stop-color="'+c.s[1]+'"/><stop offset=".78" stop-color="'+c.s[2]+'"/></linearGradient>'+
-      '<radialGradient id="m'+id+'" cx=".38" cy=".32" r=".85"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="'+c.m+'"/></radialGradient>'+
-      '<radialGradient id="h'+id+'"><stop offset="0" stop-color="'+c.m+'" stop-opacity=".6"/><stop offset="1" stop-color="'+c.m+'" stop-opacity="0"/></radialGradient></defs>'+
-      '<rect width="300" height="410" fill="url(#s'+id+')"/>'+stars+
-      '<circle cx="'+mx+'" cy="'+my+'" r="96" fill="url(#h'+id+')"/>'+
-      '<circle cx="'+mx+'" cy="'+my+'" r="38" fill="url(#m'+id+')"/>'+
-      '<path d="'+ridge(p+1,262,46,10)+'" fill="'+c.s[0]+'" opacity=".92"/>'+
-      '<path d="'+ridge(p*2.3+4,308,34,8)+'" fill="#07041a"/></svg>';
+  function returnToRest(){
+    busy=true;
+    var from=poses.slice(),to=resting(active);
+    if(reduceMotion.matches){settle();return;}
+    animate(220,function(t){poses=from.map(function(p,i){return mix(p,to[i],t);});paint();},settle);
   }
-
-  /* ---- build the 24 card layers ---- */
-  var els=[];
-  function build(){
-    for(var e=0;e<N;e++){
-      var el=document.createElement('div');
-      el.className='c3d-card';
-      el.innerHTML='<div class="c3d-face"><span class="c3d-art-w"></span><div class="c3d-shade"></div>'+
-        '<div class="c3d-ui"><span class="c3d-badge"></span><span class="c3d-diff"></span>'+
-        '<div class="c3d-info"><div class="c3d-txt"><h3 class="c3d-title"></h3><p class="c3d-desc"></p></div>'+
-        '<a class="c3d-go" target="_blank" rel="noopener" draggable="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>'+
-        '<div class="c3d-dim"></div></div>';
-      el._art=el.querySelector('.c3d-art-w');
-      el._ui=el.querySelector('.c3d-ui');
-      el._dim=el.querySelector('.c3d-dim');
-      el._badge=el.querySelector('.c3d-badge');
-      el._diff=el.querySelector('.c3d-diff');
-      el._title=el.querySelector('.c3d-title');
-      el._desc=el.querySelector('.c3d-desc');
-      el._go=el.querySelector('.c3d-go');
-      el._e=e;el._p=-1;
-      stage.appendChild(el);els.push(el);
-    }
+  function commit(direction){
+    busy=true;
+    var outgoing=active,next=mod(active+direction,P),from=poses.slice(),to=resting(next);
+    if(reduceMotion.matches){buried=outgoing;active=next;settle();return;}
+    // Leave the visible stack before changing draw order, then return behind
+    // it. Only transforms animate; the heading and controls never move.
+    var far=Math.max(width*1.55,stage.clientWidth/2+width*.6);
+    var exit={x:-direction*far,y:-width*.32,a:-direction*9};
+    animate(180,function(t){
+      poses=from.map(function(p,i){return mix(p,i===outgoing?exit:to[i],t);});
+      paint(next,outgoing,false);
+    },function(){
+      active=next;buried=outgoing;
+      animate(220,function(t){
+        poses=to.slice();poses[outgoing]=mix(exit,to[outgoing],t);
+        paint(next,outgoing,true);
+      },settle);
+    });
   }
-  function setContent(el,p){
-    if(el._p===p)return;
-    el._p=p;
-    var d=problems[p],c=pal[p];
-    el.style.setProperty('--edge',c.e);
-    el.style.setProperty('--glow',hexA(c.e,.6));
-    el._art.innerHTML=art(el._e,p);
-    el._badge.textContent='Problem '+(p<9?'0':'')+(p+1);
-    el._diff.textContent=d.difficulty;
-    el._title.textContent=d.name;
-    el._desc.textContent=d.desc;
-    el._go.href=d.url;
-    el._go.setAttribute('aria-label','Open '+d.name);
+  function step(direction){if(!drag&&!busy&&P>1)commit(direction);}
+  function resize(){
+    width=els[0].offsetWidth;
+    if(!busy&&!drag){poses=resting(active);paint();}
   }
-
-  /* ---- state ---- */
-  var head=0;                 // ever-increasing counter; active problem = mod(head,P)
-  var w=0,wv=0;               // wheel spring offset (1 -> 0 after a commit)
-  var phase=0;                // 0 idle/drag, 1 outgoing card flung out, 2 outgoing card returning behind
-  var locked=false;
-  var mv={el:null,x:0,y:0,vx:0,vy:0};
-  var fl={t:0,x0:0,y0:0,tx:0,ty:0};
-  var drag={on:false,id:null,sx:0,sy:0,dx:0,dy:0,moved:false,s:[]};
-  var running=false,last=0,suppress=false;
-
-  function frontEl(){return els[mod(head,N)];}
-  function threshold(){return Math.max(64,frontEl().offsetWidth*.3);}
-
-  function syncContent(){
-    for(var e=0;e<N;e++){
-      var slot=mod(e-head,N);
-      setContent(els[e],mod(head+slot,P));   // modular: never restarts, never runs out
-    }
-  }
-  function setFront(){
-    var f=frontEl();
-    for(var e=0;e<N;e++){
-      var on=els[e]===f;
-      els[e].classList.toggle('is-front',on);
-      els[e].setAttribute('aria-hidden',on?'false':'true');
-      els[e]._go.tabIndex=on?0:-1;
-    }
-  }
-
-  /* ---- rendering ---- */
-  function paint(){
-    var thr=threshold(),pr=0;
-    if(phase===0&&mv.el)pr=clamp(Math.hypot(mv.x,mv.y)/thr,0,1);
-    var wd=phase===0?-pr*.12:w;
-    for(var e=0;e<N;e++){
-      var el=els[e],slot=mod(e-head,N),s=slot+wd,sm=mod(s,N),d=Math.min(sm,N-sm);
-      var z=Math.round(1000-d*10)+(sm<=N/2?1:0);
-      var ang=s*STEP,tf,dim,isMv=(el===mv.el);
-      if(isMv){
-        var x=mv.x,y=mv.y;
-        tf='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) rotate('+(ang+clamp(x*.04,-20,20)).toFixed(2)+'deg) rotateX('+clamp(-y*.05,-18,18).toFixed(2)+'deg) rotateY('+clamp(x*.05,-18,18).toFixed(2)+'deg)';
-        z=phase===2?990:2000;
-        dim=phase===2?Math.min(.86,d*.105):0;
-      }else{
-        tf='rotate('+ang.toFixed(2)+'deg)';
-        dim=Math.min(.86,d*.105);
-      }
-      el.style.transform=tf;
-      el.style.zIndex=z;
-      el._dim.style.opacity=dim.toFixed(3);
-      el._ui.style.opacity=clamp(1.25-d*.55,0,1).toFixed(3);
-    }
-  }
-
-  /* ---- animation loop ---- */
-  function spring(o,dt,k,c){
-    o.vx+=(-k*o.x-c*o.vx)*dt;o.vy+=(-k*o.y-c*o.vy)*dt;
-    o.x+=o.vx*dt;o.y+=o.vy*dt;
-  }
-  function settled(o){return Math.abs(o.x)<.4&&Math.abs(o.y)<.4&&Math.abs(o.vx)<6&&Math.abs(o.vy)<6;}
-  function start(){if(!running){running=true;last=performance.now();requestAnimationFrame(tick);}}
-  function finish(){
-    phase=0;w=0;wv=0;mv.x=mv.y=mv.vx=mv.vy=0;mv.el=null;locked=false;
-  }
-  function tick(now){
-    var dt=Math.min((now-last)/1000,1/30);last=now;if(!(dt>0))dt=1/60;
-    var busy=false;
-    if(drag.on){
-      var k=1-Math.exp(-dt*30);
-      mv.x+=(drag.dx-mv.x)*k;mv.y+=(drag.dy-mv.y)*k;busy=true;
-    }else if(phase===0){
-      if(mv.el){
-        spring(mv,dt,230,25);
-        if(settled(mv)){mv.x=mv.y=mv.vx=mv.vy=0;mv.el=null;}else busy=true;
-      }
-    }else{
-      wv+=(-170*w-22*wv)*dt;w+=wv*dt;
-      if(phase===1){
-        fl.t+=dt/.18;
-        var t=Math.min(fl.t,1),ez=1-Math.pow(1-t,3);
-        mv.x=fl.x0+(fl.tx-fl.x0)*ez;mv.y=fl.y0+(fl.ty-fl.y0)*ez;
-        if(t>=1){phase=2;mv.vx=0;mv.vy=0;}
-        busy=true;
-      }else{
-        spring(mv,dt,140,19.5);
-        if(settled(mv)&&Math.abs(w)<.002&&Math.abs(wv)<.02){finish();}else busy=true;
-      }
-    }
-    paint();
-    if(busy)requestAnimationFrame(tick);else running=false;
-  }
-
-  /* ---- commit exactly one step in direction (ux,uy) ---- */
-  function commit(ux,uy){
-    var el=mv.el||frontEl();mv.el=el;
-    var thr=threshold(),pr=clamp(Math.hypot(mv.x,mv.y)/thr,0,1);
-    var far=Math.max(Math.hypot(mv.x,mv.y)+el.offsetWidth*.55,el.offsetWidth*1.15);
-    fl.x0=mv.x;fl.y0=mv.y;fl.t=0;fl.tx=ux*far;fl.ty=uy*far;
-    w=1-pr*.12;wv=0;
-    head++;                       // next problem becomes the front card
-    phase=1;locked=true;
-    syncContent();setFront();
-    start();
-  }
-
-  /* ---- pointer handling: true 2D tracking ---- */
   stage.addEventListener('pointerdown',function(ev){
-    if(locked||drag.on)return;
-    if(ev.pointerType==='mouse'&&ev.button!==0)return;
-    var f=frontEl();
-    if(!f.contains(ev.target))return;
-    mv.el=f;drag.on=true;drag.id=ev.pointerId;drag.moved=false;
-    drag.sx=ev.clientX-mv.x;drag.sy=ev.clientY-mv.y;drag.dx=mv.x;drag.dy=mv.y;
-    drag.s=[{x:ev.clientX,y:ev.clientY,t:ev.timeStamp}];
-    f.classList.add('grabbing');
-    start();
+    if(drag||busy||P<2||!ev.isPrimary||(ev.pointerType==='mouse'&&ev.button!==0))return;
+    if(!els[active].contains(ev.target))return;
+    suppressClick=false;
+    drag={id:ev.pointerId,x:ev.clientX,y:ev.clientY,moved:false,axis:null,dx:0};
+    try{stage.setPointerCapture(ev.pointerId);}catch(err){}
   });
   stage.addEventListener('pointermove',function(ev){
-    if(!drag.on||ev.pointerId!==drag.id)return;
-    drag.dx=ev.clientX-drag.sx;drag.dy=ev.clientY-drag.sy;
-    if(!drag.moved&&Math.hypot(drag.dx,drag.dy)>6){
-      drag.moved=true;
-      try{stage.setPointerCapture(ev.pointerId);}catch(err){}
-    }
-    drag.s.push({x:ev.clientX,y:ev.clientY,t:ev.timeStamp});
-    while(drag.s.length>2&&ev.timeStamp-drag.s[0].t>120)drag.s.shift();
+    if(!drag||ev.pointerId!==drag.id)return;
+    var dx=ev.clientX-drag.x,dy=ev.clientY-drag.y;
+    if(!drag.axis&&Math.max(Math.abs(dx),Math.abs(dy))>6)drag.axis=Math.abs(dx)>Math.abs(dy)?'x':'y';
+    if(drag.axis!=='x')return;
+    drag.moved=true;drag.dx=dx;stage.classList.add('grabbing');
+    var direction=dx<0?1:-1,next=mod(active+direction,P);
+    var from=resting(active),to=resting(next),progress=Math.min(Math.abs(dx)/width,.65);
+    poses=from.map(function(p,i){return mix(p,to[i],progress);});
+    // Track the finger directly, with a small upward lift in either direction.
+    poses[active]={x:dx,y:-Math.abs(dx)*.28+clamp(dy*.2,-width*.08,width*.04),a:clamp(dx/width*7,-10,10)};
+    paint(next,active,false);
   });
-  function end(ev){
-    if(!drag.on||ev.pointerId!==drag.id)return;
-    drag.on=false;
-    frontEl().classList.remove('grabbing');
-    try{stage.releasePointerCapture(ev.pointerId);}catch(err){}
-    suppress=drag.moved;
-    setTimeout(function(){suppress=false;},60);
-    var dx=drag.dx,dy=drag.dy,dist=Math.hypot(dx,dy),vx=0,vy=0,sp=drag.s;
-    if(sp.length>1){
-      var a=sp[0],b=sp[sp.length-1],dt=Math.max(b.t-a.t,1);
-      vx=(b.x-a.x)/dt;vy=(b.y-a.y)/dt;
-    }
-    var speed=Math.hypot(vx,vy);
-    if(ev.type!=='pointercancel'&&(dist>=threshold()||(speed>.5&&dist>=26))){
-      var bx=dx+vx*140,by=dy+vy*140,bl=Math.hypot(bx,by);
-      if(bl<1){bx=dx;by=dy;bl=Math.hypot(bx,by)||1;}
-      commit(bx/bl,by/bl);
-    }else{
-      mv.vx=0;mv.vy=0;start();   // too small: spring back to the front position
-    }
+  function release(ev){
+    if(!drag||ev.pointerId!==drag.id)return;
+    var ended=drag;drag=null;
+    stage.classList.remove('grabbing');
+    if(stage.hasPointerCapture(ev.pointerId))stage.releasePointerCapture(ev.pointerId);
+    suppressClick=ended.moved;
+    if(ev.type==='pointerup'&&ended.moved&&Math.abs(ended.dx)>=width*.22)commit(ended.dx<0?1:-1);
+    else returnToRest();
   }
-  stage.addEventListener('pointerup',end);
-  stage.addEventListener('pointercancel',end);
-  stage.addEventListener('click',function(ev){if(suppress){ev.preventDefault();ev.stopPropagation();}},true);
+  stage.addEventListener('pointerup',release);
+  stage.addEventListener('pointercancel',release);
+  stage.addEventListener('lostpointercapture',release);
+  stage.addEventListener('click',function(ev){if(suppressClick){ev.preventDefault();ev.stopPropagation();suppressClick=false;}},true);
   stage.addEventListener('dragstart',function(ev){ev.preventDefault();});
-
-  /* keyboard (invisible, accessibility only) */
   stage.addEventListener('keydown',function(ev){
-    var m={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[ev.key];
-    if(!m||locked||drag.on)return;
-    ev.preventDefault();
-    mv.el=frontEl();mv.x=mv.y=mv.vx=mv.vy=0;
-    commit(m[0],m[1]);
+    if(ev.key!=='ArrowLeft'&&ev.key!=='ArrowRight')return;
+    ev.preventDefault();step(ev.key==='ArrowLeft'?-1:1);
   });
-
-  build();syncContent();setFront();paint();
+  document.getElementById('card-prev').onclick=function(){step(-1);};
+  document.getElementById('card-next').onclick=function(){step(1);};
+  new ResizeObserver(resize).observe(stage);
+  resize();announce();
 })();
+
 </script>
 
 </body>
