@@ -126,6 +126,8 @@ a{color:inherit;text-decoration:none}
 .tile .ic{width:24px;height:24px;border:0;border-radius:0;background:none;color:var(--soft);transition:color .2s}
 .tile .ico{width:20px;height:20px;stroke-width:1.5}
 .tile:hover .ic,.tile[aria-current="page"] .ic{color:var(--white)}
+#more-problems{margin:18px 0 24px}
+#more-problems summary{width:fit-content}
 .prob-list{margin:0 0 14px;padding-inline-start:2.2rem}
 .prob-list li{padding:16px 0 16px 10px;border-bottom:1px solid var(--card2);overflow-wrap:anywhere}
 .prob-list li::marker{color:#b9aaff;font-weight:700;font-variant-numeric:tabular-nums}
@@ -154,13 +156,6 @@ a{color:inherit;text-decoration:none}
 .chip:active{transform:scale(.97)}
 
 /* ---- Search bar ---- */
-.search{display:flex;align-items:center;gap:10px;max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--card2);border-radius:999px;padding:6px 6px 6px 20px;transition:border-color .2s}
-.search:focus-within{border-color:var(--purple)}
-.search .s-ico{width:20px;height:20px;color:var(--grey)}
-.search input{flex:1;min-width:0;background:transparent;border:0;color:var(--white);font-family:inherit;font-size:14px;padding:10px 0}
-.search input::placeholder{color:var(--grey)}
-.search input:focus{outline:none}
-.search .btn{padding:11px 24px}
 
 /* ---- Layout ---- */
 .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
@@ -233,7 +228,7 @@ footer a:hover{color:var(--white)}
 .cat-sec .chip.active{background:var(--purple);border-color:var(--purple);color:var(--white)}
 .list-head{scroll-margin-top:16px}
 .nav-actions{grid-column:2}
-.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 151px);min-height:calc(100svh - 151px);padding:24px 0}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 98px);min-height:calc(100svh - 98px);padding:24px 0}
 .hero h1{max-width:100%;font-family:"Bitcount Prop Single","Space Grotesk",monospace;font-size:clamp(43px,10vw,122px);font-weight:650;line-height:1.02;letter-spacing:-.035em;text-transform:uppercase}
 .hero h1 span{display:block;margin-top:.13em;color:#a999ff}
 @supports ((background-clip:text) or (-webkit-background-clip:text)){
@@ -276,11 +271,6 @@ footer a:hover{color:var(--white)}
   <header class="nav">
     <div class="nav-actions"><button class="gear" id="gear" type="button" aria-label="Settings" aria-haspopup="dialog" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg></button></div>
   </header>
-  <form class="search" id="sf" role="search" novalidate>
-    <svg class="ico s-ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-    <input id="s" type="search" placeholder="Search for a problem" aria-label="Search for a problem" autocomplete="off">
-    <button class="btn" type="submit">Search</button>
-  </form>
   <main id="top">
     <section class="hero" data-views="problems">
       <h1>Switch the <span>Glitch</span></h1>
@@ -294,9 +284,10 @@ footer a:hover{color:var(--white)}
         <h2 class="sec-h">Browse by category</h2>
         <div class="ex-chips" id="exchips"></div>
       </div>
-      <div class="list-head"><h2 class="sec-h" id="lh">All problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button></div>
+      <div class="list-head"><h2 class="sec-h" id="lh" tabindex="-1">All problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button></div>
       <ol class="prob-list" id="pl"></ol>
-      <p id="nomatch" hidden>No problem matches your search. <a href="#submit">Submit it as a new problem</a>.</p>
+      <details id="more-problems" hidden><summary class="btn-outline">More problems</summary><ol class="prob-list" id="more-list"></ol></details>
+      <p id="nomatch" hidden>There are no problems in this category yet. <a href="#submit">Submit it as a new problem</a>.</p>
     </section>
 
     <section class="view" id="v-submit" data-views="submit" hidden>
@@ -330,7 +321,7 @@ footer a:hover{color:var(--white)}
       <h2 class="sec-h">Help</h2>
       <div class="faq">
         <details open><summary>How do I submit a problem?</summary><p>Open Submit a problem, add a title, pick a category and describe what is going wrong.</p></details>
-        <details><summary>How do I find a problem?</summary><p>Use the search bar at the top, or tap Explore on the Problems page and choose a category.</p></details>
+        <details><summary>How do I find a problem?</summary><p>Tap Explore on the Problems page and choose a category.</p></details>
         <details><summary>How is the Top 10 decided?</summary><p>The list is ordered by previously recorded votes.</p></details>
         <details><summary>Where is my data saved?</summary><p>Submitted problems and votes are stored in this browser only. Other visitors do not see them, and clearing site data removes them.</p></details>
       </div>
@@ -404,26 +395,352 @@ try{
   }
 }catch(e){}
 var selectedQuestions=[
-  {"id":"daily-b2b-1","t":"How can small suppliers tell whether they can cover wages and materials while waiting for a large buyer to pay?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-2","t":"How can an exporter with a signed order but little collateral pay suppliers before production starts?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-3","t":"How can a small manufacturer find procurement teams that already buy the kinds of components it makes?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-4","t":"How can a factory fill an extra production shift with workers who can operate its machines safely?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-6","t":"How can manufacturers tell which customer orders will miss their delivery dates when a truck fails to arrive?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-7","t":"How can a small business compare what two suppliers will actually charge once freight, taxes, and payment terms are included?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-8","t":"How can a business track a GST filing issue that needs a tax officer’s intervention before the deadline passes?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-11","t":"How can a factory identify a machine fault remotely so the technician arrives with the right spare parts?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-16","t":"How can a small accounts team tell which invoices a single bank transfer covers when the customer sends no payment breakdown?","c":"B2B Services","up":0},
-  {"id":"daily-b2b-20","t":"How can a manufacturer give a buyer a quote that stays workable if material prices change before the order is confirmed?","c":"B2B Services","up":0},
-  {"id":"beauty-2","t":"How can shoppers tell whether branded cosmetics are genuine before buying them?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-3","t":"How can shoppers check whether a batch of cosmetics has been flagged for failing quality standards?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-4","t":"How can customers check a hair dye’s ingredients, safety warnings, and patch-test instructions before using it?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-5","t":"How can shoppers tell which skincare and personal care claims are backed by evidence?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-6","t":"How can salons assess a beauty worker’s practical skills before hiring them?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-7","t":"How can people find a qualified dermatologist when few are available nearby?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-8","t":"How can shoppers choose the right foundation shade online when swatches look different across screens and lighting?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-10","t":"How can customers see the full cost of a salon service, including hair-length charges and add-ons, before booking?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-11","t":"How can customers check whether a salon disinfects reusable tools between appointments?","c":"Beauty & Personal Care","up":0},
-  {"id":"beauty-12","t":"How can small salons reduce last-minute cancellations and fill open slots?","c":"Beauty & Personal Care","up":0}
+  {"id":"daily-b2b-1","t":"How can small suppliers tell whether they can cover wages and materials while waiting for a large buyer to pay?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-2","t":"How can an exporter with a signed order but little collateral pay suppliers before production starts?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-3","t":"How can a small manufacturer find procurement teams that already buy the kinds of components it makes?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-4","t":"How can a factory fill an extra production shift with workers who can operate its machines safely?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-6","t":"How can manufacturers tell which customer orders will miss their delivery dates when a truck fails to arrive?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-7","t":"How can a small business compare what two suppliers will actually charge once freight, taxes, and payment terms are included?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-8","t":"How can a business track a GST filing issue that needs a tax officer’s intervention before the deadline passes?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-11","t":"How can a factory identify a machine fault remotely so the technician arrives with the right spare parts?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-16","t":"How can a small accounts team tell which invoices a single bank transfer covers when the customer sends no payment breakdown?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-20","t":"How can a manufacturer give a buyer a quote that stays workable if material prices change before the order is confirmed?","c":"B2B Services","up":0,"priority":true},
+  {"id":"beauty-2","t":"How can shoppers tell whether branded cosmetics are genuine before buying them?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-3","t":"How can shoppers check whether a batch of cosmetics has been flagged for failing quality standards?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-4","t":"How can customers check a hair dye’s ingredients, safety warnings, and patch-test instructions before using it?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-5","t":"How can shoppers tell which skincare and personal care claims are backed by evidence?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-6","t":"How can salons assess a beauty worker’s practical skills before hiring them?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-7","t":"How can people find a qualified dermatologist when few are available nearby?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-8","t":"How can shoppers choose the right foundation shade online when swatches look different across screens and lighting?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-10","t":"How can customers see the full cost of a salon service, including hair-length charges and add-ons, before booking?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-11","t":"How can customers check whether a salon disinfects reusable tools between appointments?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-12","t":"How can small salons reduce last-minute cancellations and fill open slots?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"final-3.01","t":"Why do customers need government escalation channels to recover fees from non-travel service agencies?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.02","t":"Why do service-booking apps use guilt-based wording to pressure customers into optional paid protection?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.03","t":"How can customers prevent unwanted subscription renewals and find a clear cancellation process for services?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.04","t":"How can households verify that the LPG cylinder delivered to them contains the correct quantity of gas?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.05","t":"How can consumers understand fine-print eligibility and exclusions in non-travel service promotions before paying?","c":"Consumer Services","up":0,"priority":false},
+  {"id":"final-3.06","t":"How can customers challenge a manufacturer’s refusal to honor an appliance warranty or issue a refund?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.07","t":"How can ordinary consumers prepare evidence and file complaints against businesses without needing legal expertise?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.08","t":"How do parents find trustworthy evening childcare for short hours?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.09","t":"Why can't pet owners find trusted home-stay alternatives to boarding kennels?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.10","t":"Why is specialized care missing for silk, embroidery and designer clothing?","c":"Consumer Services","up":0,"priority":false},
+  {"id":"final-3.11","t":"Why do households lack emergency backup services when domestic help quits suddenly?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.12","t":"How can in-store shoppers check real-time availability before traveling to a physical retail outlet?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-4.01","t":"Why is reliable same-day delivery of personalized gifts ordered online still difficult?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.02","t":"How can shoppers recover payment when online orders are marked delivered but never reach the buyer?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.03","t":"Why do e-commerce platforms deny returns or exchanges despite published eligibility rules?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.04","t":"How can customers prevent repeated cancellation of scheduled defective-product return pickups?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.05","t":"How can online buyers request refunds or alternatives when committed delivery dates keep slipping after purchase?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.06","t":"How can buyers document damage to an e-commerce product at unboxing so sellers cannot dismiss valid complaints?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.07","t":"How can customers track refunds that remain pending after an accepted e-commerce return?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.08","t":"Why do shoppers receive counterfeit products?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.09","t":"Why are unexpected handling fees added specifically to cash-on-delivery orders?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.10","t":"How can shoppers detect tax-inclusive price claims that change into extra mandatory checkout charges?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.11","t":"Why are fake and disguised reviews so common on shopping platforms?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.12","t":"How can online buyers assess a seller’s delivery reliability before placing a high-value order?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.13","t":"How can customers verify that an electronic product is compatible with their existing devices before purchasing it?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.14","t":"How can online grocery customers verify missing or substituted items without filming each order?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.15","t":"How can buyers confirm that the delivered large appliance has the exact model and specifications they ordered?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.16","t":"How can shoppers detect and reject preselected paid extras, insurance, or donations at e-commerce checkout?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.17","t":"How can shoppers distinguish genuine limited-stock offers from misleading urgency tactics?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.18","t":"How can online platforms enable price negotiation and bulk discounts?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.19","t":"How can quick-commerce customers identify produce damaged by picking and packing before the order is accepted?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.20","t":"Why do small online orders arrive in oversized wasteful packaging?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.21","t":"Why can't working professionals return online purchases outside of business hours?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.22","t":"Why do fashion products look different in reality?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.23","t":"Why do online marketplaces accept rural delivery pin codes without ensuring doorstep fulfillment is available?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-5.01","t":"Why do coaching institutes refuse enrolment fee refunds even when students followed the terms?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.02","t":"How can prospective students verify coaching institutes’ selection-rate and placement-guarantee claims?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.03","t":"Why are people pushed into paid workshops with false urgency and then denied a seat and a refund?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.04","t":"Why do students lose hostel fees when the coaching service itself was deficient?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.05","t":"How can students detect when multiple coaching institutes claim credit for the same exam topper?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.06","t":"Why do institutes not clearly say whether a course is recognised by UGC or AICTE?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.07","t":"How can students verify coaching faculty credentials and advertised refund rules before enrollment?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.08","t":"Why are students pushed to sign agreements upfront before they can judge the course?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.09","t":"How can students in schools without reliable internet access benefit from high-quality digital education?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.10","t":"How can schools provide practical computer-based learning when they have limited devices and infrastructure?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.11","t":"How can primary schools identify reading and foundational mathematics gaps early and personalize interventions?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.12","t":"How can schools identify students at risk of dropping out and intervene before they discontinue their education?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.13","t":"How can students and families receive better guidance when transitioning from middle school to secondary school?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.14","t":"How can students with physical disabilities independently identify and access schools with suitable infrastructure?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.15","t":"How can schools with limited libraries provide affordable, engaging reading materials to students?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.16","t":"How can teenagers gain practical vocational skills while continuing their regular school education?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.17","t":"Why do fresh graduates lack practical coding skills despite strong academic performance?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.18","t":"Why are college choices influenced by referral fees instead of student aptitude?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.19","t":"Why hasn't tutoring shifted from answer-giving to skill-building learning?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.20","t":"Why don't global learning platforms support high-quality regional language instruction?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.21","t":"Why don't schools provide step-by-step, student-friendly kits for complex assignments?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.22","t":"Why are mock tests and analytics inaccessible to low-income exam candidates?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.23","t":"Why is scholarship information fragmented and inaccessible to low-income and rural students?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-6.01","t":"Why do people pay insurance premiums for policies that are never issued?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.02","t":"How can insurance policyholders spot exclusions and challenge incorrect premium charges or rejected policy refunds?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.03","t":"Why do digital lending apps hide or misstate loan terms?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.04","t":"How can banks identify account takeovers and suspicious transfers before a compromised account loses funds?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.05","t":"How can bank customers find one clear owner and escalation path for disputes involving loans or credit cards?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.06","t":"Why must customers wait 30 days for a bank to respond before they can approach the RBI Ombudsman?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.07","t":"Why can't customers easily tell whether a lending app is legal?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.08","t":"Why do new credit card users not understand charges, interest and repayment cycles?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.09","t":"Why do pensioners struggle to get their pension problems solved by banks?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.10","t":"Why do rural customers file far fewer banking complaints than people in metro cities?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.11","t":"How can borrowers independently verify that lenders are charging the correct interest, penalties, and loan-servicing fees?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.12","t":"How can credit-card users automatically identify incorrect charges and resolve billing disputes?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.13","t":"How can people identify and resolve unexpected restrictions, charges, or problems associated with their bank accounts?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.14","t":"How can ATM users efficiently recover money when their accounts are debited but cash is not dispensed?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.15","t":"How can borrowers detect incorrect information in their credit reports and get it corrected without navigating complicated procedures?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.16","t":"How can families discover and claim forgotten bank deposits and financial assets belonging to deceased relatives?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.17","t":"How can first-time insurance buyers compare coverage and exclusions in understandable language before purchase?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.18","t":"Why do families lose track of wedding gift money?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.19","t":"Why do migrant workers lose money on remittances?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.20","t":"Why does investing feel intimidating to ordinary people?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.21","t":"How can individuals automatically categorize and reconcile monthly bank transactions to understand household spending?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.22","t":"Why can't users redeem credit card reward points easily?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.23","t":"How can international card users compare exchange-rate markups and foreign-transaction fees before paying?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-7.01","t":"Why can't customers check a restaurant's hygiene before ordering on delivery apps?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.02","t":"Why do food delivery orders arrive with wrong or reduced items?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.03","t":"Why do quick-commerce dark stores stock expired products?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.04","t":"How can restaurant diners identify dishes containing undisclosed ingredient substitutes sold as the original food?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.05","t":"Why do customers not know how to report unhygienic food at a restaurant?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.06","t":"How can packaged-food buyers check misleading ingredient claims such as “natural,” “rich in milk solids,” or “premium chocolate” against the actual label?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.07","t":"How can consumers identify unverified disease-treatment claims made on packaged beverages?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.08","t":"How can households verify the quality and purity of milk and dairy products before consuming them?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.09","t":"How can small food manufacturers detect contaminated or substandard products before distributing them to customers?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.10","t":"How can street-food vendors learn and maintain proper food-hygiene practices without expensive training programs?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.11","t":"How can small food vendors understand and complete food-safety registration and compliance procedures without relying on costly intermediaries?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.12","t":"How can small fruit sellers limit spoilage while storing unsold produce without affordable cold rooms?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.13","t":"How can vegetable vendors predict demand and prevent unsold produce from spoiling?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.14","t":"How can small fish vendors preserve safe freshness during short-distance handling and retail display without costly refrigeration?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.15","t":"How can egg distributors reduce breakage and spoilage during transportation from farms to retail stores?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.16","t":"How can low-income households identify affordable, nutritious meals that help them meet their dietary requirements?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.17","t":"Why can't hosts prepare restaurant-quality meals at home within 15 minutes?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.18","t":"Why can't tiffin subscribers customize daily meals?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.19","t":"How can buyers verify alcohol authenticity before purchase?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.20","t":"Why can't consumers track sugar content in packaged snacks?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.21","t":"Why do office workers resort to unhealthy afternoon snacks?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.22","t":"How can buyers assess adulteration and freshness risks in pre-ground spice powders?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.23","t":"How can consumers verify water purification in delivery cans?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.24","t":"Why do diners waste time waiting for restaurant tables?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-8.01","t":"How can home-service gig workers access benefits despite fragmented registration and fluctuating earnings?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.02","t":"How can cleaners, electricians, and other home-service platform workers contest sudden account deactivation?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.03","t":"Why do a few customer ratings determine how often home-service workers appear in booking results?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.04","t":"How can home-service platform workers resolve withheld earnings or unfair penalties without expensive disputes?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.05","t":"Why do home-service marketplaces restrict independent follow-up work with previous customers?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.06","t":"How can households prevent emergency plumbers from raising callout quotes after arriving at the property?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.07","t":"Why can't customers cancel or get refunds when an assigned technician doesn't respond?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.08","t":"How can homeowners verify a repair technician's skills and previous work before allowing them into their homes?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.09","t":"How can households estimate a fair market price for planned plumbing, electrical, and carpentry tasks before booking?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.10","t":"How can homeowners verify whether appliance replacement parts were needed, genuine, and fairly priced?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.11","t":"How can households maintain tamper-resistant appliance repair records, replaced-parts histories, and warranty proof?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.12","t":"How can households identify whether an electrical, plumbing or structural problem requires urgent professional attention?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.13","t":"How can independent carpenters, masons and other skilled workers find consistent local work without paying large commissions to intermediaries?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.14","t":"How can homeowners track whether construction and renovation contractors are using the agreed quantities and quality of materials?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.15","t":"How can homeowners enforce the workmanship warranty when a previously repaired appliance fails again?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.16","t":"How can homeowners compare renovation bids that use inconsistent labor, material, and quantity descriptions?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.17","t":"How do people moving struggle to dispose old furniture?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.18","t":"How can homeowners detect unquoted extras and scope changes in house-painting invoices?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.19","t":"How do homeowners verify carpenter work quality before payment?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.20","t":"Why are pest control treatments ineffective within months?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.21","t":"How do customers find water tank cleaning services?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.22","t":"How do customers book electricians for small jobs?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.23","t":"Why do home deep cleaning services lack quality standards?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-9.01","t":"How can courier companies identify and resolve delayed parcels before a promised delivery window expires?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.02","t":"How can couriers locate and resolve parcels that never reach their intended recipient?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.03","t":"Why do courier agents refuse delivery to a valid door address within an advertised coverage area?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.04","t":"How can shippers establish courier accountability for parcels found damaged on arrival?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.05","t":"Why do hundreds of courier grievances stay pending?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.06","t":"How can small transporters access up-to-date lane-wise road freight-rate benchmarks?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.07","t":"Why is there a shortage of truck drivers that leaves trucks idle?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.08","t":"How can small transport operators reduce the number of trucks returning empty after completing deliveries?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.09","t":"How can businesses track shipments across multiple transport companies without manually calling different operators?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.10","t":"How can small exporters predict unexpected logistics expenses before accepting international orders?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.11","t":"How can farmers find affordable transportation for small quantities of agricultural produce without booking an entire truck?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.12","t":"How can shippers log temperature excursions and prove cold-chain compliance during transport of sensitive goods?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.13","t":"How can small warehouses prevent inventory discrepancies when goods are received, moved or dispatched?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.14","t":"How can logistics companies identify repeated loading and unloading delays at warehouses and distribution centers?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.15","t":"How can businesses compare end-to-end road, rail, and multimodal freight costs and reliability?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.16","t":"Why is booking cargo vehicles harder than passenger transport?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.17","t":"How can small parcel shippers compare courier tariffs and surcharges across providers before booking?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.18","t":"Why can't reverse logistics be dynamically priced like forward shipping?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.19","t":"Why can't small shippers access bulk shipping discounts?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.20","t":"How can logistics operators use impact sensors and chain-of-custody records to prevent mishandling of fragile freight?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-10.01","t":"How can UPI users recognize fake QR codes, fraudulent collect requests, and cashback scams before authorizing payment?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.02","t":"Why are so many UPI fraud cases never reported officially?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.03","t":"Why do money-mule accounts make stolen money so hard to recover?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.04","t":"Why must victims act within the first hour to freeze stolen money?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.05","t":"How can a payer quickly trace and reverse a digital payment debited from their account but not credited to the merchant?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.06","t":"Why is there no chargeback for high-value digital payments when fraud occurs?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.07","t":"How can merchants understand when UPI acceptance fees or payment-processing charges apply to a transaction?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.08","t":"Why do merchants face chargebacks and settlement delays?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.09","t":"How can small shops confirm incoming UPI payments securely even when connectivity is unreliable or screenshots are fake?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.10","t":"How can street vendors maintain a consolidated daily sales ledger across several UPI apps?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.11","t":"How can merchants match identical-amount incoming payments to the correct customer order?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.12","t":"How can merchants detect and refund two payments made for the same order?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.13","t":"How can businesses match payment-gateway records against bank settlement batches and identify missing payouts?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.14","t":"How can recurring-payment systems support temporary mandate pauses without terminating a subscription?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.15","t":"Why are cashback eligibility, expiry, and redemption conditions difficult to understand in payment apps?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.16","t":"How do users manage multiple payment app wallets?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-11.01","t":"How can apartment associations coordinate preventive maintenance of shared lifts, water pumps, and electrical systems?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.02","t":"How can apartment residents check line-item charges on recurring society maintenance bills?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.03","t":"Why do builders delay possession for years?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.04","t":"Why must buyers keep paying EMIs on stalled projects?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.05","t":"Why do builders and housing boards refuse refunds even after years of delay?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.06","t":"Why do state RERA authorities fail to enforce the law properly?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.07","t":"Why does buyers' certainty vanish when a builder goes into insolvency?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.08","t":"Why must buyers choose between RERA, NCLT and consumer forums, each with different costs?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.09","t":"Why do stalled but viable projects stay stuck for lack of funds?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.10","t":"How can homebuyers independently verify whether a housing project is legally registered and its approvals are valid before paying a booking amount?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.11","t":"How can property buyers assess a builder’s historical delays and current construction progress against promised completion dates?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.12","t":"How can property buyers calculate the full upfront and recurring cost of a home, including taxes, registration, brokerage, and maintenance fees?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.13","t":"How can property buyers verify the legal ownership history of a property without depending entirely on brokers?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.14","t":"How can prospective tenants verify unresolved repairs and basic-utility problems before signing a lease?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.15","t":"How can homebuyers identify discrepancies between promised apartment amenities and facilities actually delivered?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.16","t":"How can owners remotely track daily progress, material use, and budget changes in a self-managed house construction project?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.17","t":"How can homebuyers organize construction records, payment receipts and communications when filing complaints through RERA?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.18","t":"Why don't homebuyers have standardized neighborhood quality data reports?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.19","t":"Why don't apartments use QR gates for visitor parking management?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.20","t":"Why don't apartments have smart water sub-meters?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.21","t":"Why are half of rental listings fake broker clickbait?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.22","t":"How do buyers discover dampness after moving into homes?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.23","t":"How can residents diagnose concealed dampness and moisture ingress discovered after occupying a home?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.24","t":"How do property ads lie about commute times?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-12.01","t":"Why must startups report one breach to two regulators on two different clocks?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.02","t":"Why do standard SaaS vendor contracts fall short of data processor requirements under the DPDP rules?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.03","t":"Why can't many companies say where a customer's data physically lives, making erasure impossible?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.04","t":"Why do small startups struggle with the cost of DPDP compliance?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.05","t":"Why can missing a security safeguard cost up to ₹250 crore?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.06","t":"Why does consent risk becoming a click-through ritual instead of an auditable record?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.07","t":"Why do SaaS startups often lack testing evidence to defend themselves after a breach?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.08","t":"Why can't startups rely on consent managers yet?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.09","t":"How can businesses flag abnormal employee activity and unauthorized access to customer records across their software apps?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.10","t":"How can businesses automatically revoke access to SaaS tools when employees leave or change roles?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.11","t":"How can small organizations keep track of software subscriptions that are rarely used but continue generating expenses?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.12","t":"How can small enterprises maintain secure backups of business-critical documents without employing full-time IT professionals?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.13","t":"How can companies monitor important changes to shared documents when multiple employees edit the same files?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.14","t":"How can small businesses manage customer consent and personal-data deletion requests across different software tools?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.15","t":"How can organizations identify suspicious files and phishing links received through business email and messaging platforms?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.16","t":"How can small businesses automatically generate clear security incident reports from technical logs without specialist knowledge?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.17","t":"How can organizations check whether their third-party software providers meet basic data-protection and cybersecurity requirements before sharing business information?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.18","t":"Why are CRM systems too complex for 3-person businesses?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.19","t":"Why can't shop owners create websites without coding knowledge?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.20","t":"How can data flow seamlessly between Excel, CRM, and invoicing systems?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.21","t":"Why do meetings waste 4 hours daily instead of summaries?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.22","t":"How do small teams struggle with manual payroll calculations?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.23","t":"How can kirana stores predict restocking needs using past sales data?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.24","t":"Is there a way for businesses to collect quick customer feedback beyond surveys?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.25","t":"How can small brands optimize digital ads within limited budgets?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-13.01","t":"How can vehicle owners verify workshop diagnoses before paying for potentially unnecessary car repairs?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.02","t":"Why do valet customers lack car parking visibility?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.03","t":"Why do drivers circle markets for 20 minutes finding parking?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.04","t":"Why do factory workers lack affordable first-mile transport to factory jobs?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.05","t":"How can local authorities prioritize dangerous road segments for practical crash-reduction improvements?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.06","t":"How can road-safety teams find recurring overspeeding hotspots before serious collisions happen?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.07","t":"How can hit-and-run victims and responders preserve vehicle-identification evidence quickly after a crash?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.08","t":"How can accident responders confirm eligibility and admission procedures for cashless emergency treatment?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.09","t":"How can planners reconcile inconsistent road-accident datasets from different public agencies?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.10","t":"Why are FASTag users charged by mistake, even when their vehicle wasn't at the toll plaza?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.11","t":"Why do cab drivers cancel rides after asking for the destination?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.12","t":"Why can app-based fares rise up to two times the base fare at peak hours?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.13","t":"How can daily commuters identify safer routes that avoid dangerous intersections and frequently reported road hazards?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.14","t":"How can people living far from metro or railway stations find affordable and reliable last-mile transportation?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.15","t":"How can public-bus riders see reliable live arrival estimates at stops where tracking is currently unavailable?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.16","t":"How can commuters compare the actual total cost of traveling through multiple public-transport systems?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.17","t":"How can bus passengers submit verifiable incident reports about reckless driving or unsafe conditions?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.18","t":"How can electric-vehicle drivers identify working, compatible charging stations before reaching them?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.19","t":"How can elderly passengers and people with mobility disabilities determine which public-transport routes and stations are accessible?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.20","t":"How can fleet operators detect risky driving from vehicle telemetry before a collision occurs?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.21","t":"How can daily commuters predict transport disruptions and choose alternative routes without checking multiple unrelated applications?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.22","t":"How can parents receive school-bus delay alerts and child pickup or drop-off confirmations?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.23","t":"Why aren't office shuttles dynamically routed based on real-time employee demand?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.24","t":"How can women find safer late-night commute options with verified drivers and emergency support?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-14.01","t":"How can travelers obtain timely refunds from cancelled hotel, bus, or tour-package bookings?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.02","t":"How can flight passengers identify booking-platform cancellation charges that exceed the airline’s own fees?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.03","t":"How can travelers see all compulsory booking-platform fees before reaching the final payment screen?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.04","t":"How can railway passengers receive refunds when promised confirmed accommodation cannot be provided?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.05","t":"How can air passengers receive early warning and rebooking support during large-scale airline disruptions?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.06","t":"How can passengers track and accelerate overdue refunds after airlines cancel flights?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.07","t":"How can flight passengers insist on the eligible cash refund instead of unwanted travel credits?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.08","t":"How can flyers verify unexplained deductions from airline cancellation refunds?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.09","t":"How can passengers check whether airline cancellation fees are valid for bookings cancelled soon after purchase?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.10","t":"How can passengers collect the evidence required to escalate unresolved airline grievances through AirSewa?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.11","t":"Why are baggage problems a recurring passenger complaint?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.12","t":"Why do flight delays affect lakhs of passengers every month?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.13","t":"How can tourists verify whether local guides are authorized and trustworthy before hiring them?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.14","t":"How can travelers budget total destination expenses, including attraction charges, permits, and local trips?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.15","t":"How can tourists find accurate information about accessibility facilities at historical monuments and tourist attractions?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.16","t":"How can travelers identify official ticket-booking channels for monuments and popular attractions instead of fraudulent websites?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.17","t":"How can tourists verify fair taxi and auto fares for individual local trips in unfamiliar cities?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.18","t":"How can travelers identify medical facilities and emergency assistance while visiting remote tourist destinations?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.19","t":"How can tourists receive reliable updates about temporary closures, restricted entry and permit requirements at attractions?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.20","t":"How can travelers find safe and suitable accommodation when visiting smaller Indian towns with limited verified online information?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.21","t":"How can tourists obtain trustworthy local safety information in their preferred language when visiting unfamiliar regions?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.22","t":"How can travelers plan realistic multi-destination trips that account for local transport availability, sightseeing duration and seasonal restrictions?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.23","t":"Why is hotel and café WiFi unreliable for travelers?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.24","t":"How can solo women travelers find women-focused trip-planning, lodging, and community safety resources?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.25","t":"Why is it so hard to find power outlets for devices while traveling?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.26","t":"How can regional menus be made more accessible for interstate travellers?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.27","t":"How can tourists find authentic experiences beyond major attractions?","c":"Travel","up":0,"priority":false},
+  {"id":"final-15.01","t":"How can patients audit itemized hospital bills for unsupported, duplicated, or excessive charges after treatment?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.02","t":"Why do patients get unnecessary diagnostic tests and procedures?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.03","t":"How can patients obtain a comparable estimate of total hospital treatment costs before admission?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.04","t":"Why are medicines sold above the government's ceiling prices?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.05","t":"How can patients verify health-insurance eligibility and required documents before submitting a claim?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.06","t":"How can patients challenge cashless health claims provisionally approved at admission but denied at discharge?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.07","t":"How can policyholders track delayed or partially settled health-insurance claims and escalate them?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.08","t":"How can rural patients check availability of a specific diagnostic test at nearby centers before travel?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.09","t":"How can patients easily obtain and organize medical records from different hospitals and diagnostic laboratories?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.10","t":"How can patients and community health workers coordinate reminders and missed follow-ups for chronic tests, antenatal checkups, and vaccinations?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.11","t":"How can rural patients identify the nearest currently available specialist consultation, separate from diagnostic testing?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.12","t":"How can hospitals automatically identify missing patient information before scheduled medical consultations?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.13","t":"How can patients verify whether medicines purchased from pharmacies belong to batches identified in official drug-quality alerts?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.14","t":"How can small clinics monitor the availability of essential medicines and medical supplies before stocks run out?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.15","t":"How can discharged patients receive clear, language-appropriate instructions about medicines, recovery and when to seek urgent medical attention?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.16","t":"Why do medicine prices vary wildly across pharmacy chains?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.17","t":"Why do patients lack tools to compare conflicting diagnoses confidently?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.18","t":"Why do emergency rooms lack systems to prioritize critical patients instantly?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.19","t":"Why are diagnostic services not designed for women's privacy and mobility needs?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.20","t":"Why do branded drugs dominate prescriptions despite equivalent, cheaper generic alternatives?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-16.01","t":"How can residents find verified animal-rescue responders during urgent incidents involving stray or injured animals?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.02","t":"How can qualified job applicants diagnose and improve résumé compatibility with applicant-tracking systems?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.03","t":"How can citizens route a government-service grievance to the correct authority with complete evidence at first submission?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.04","t":"How can citizens monitor overdue state-government grievances and escalate cases with no resolution update?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.05","t":"How can phone users block repeat unsolicited marketing calls and texts without missing legitimate service alerts?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.06","t":"How can regulators identify unregistered telemarketers and connect repeat spam reports to their operators?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.07","t":"How can consumers report spam calls with minimal manual entry from their call logs?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.08","t":"How can rural households independently check whether their drinking-water source meets safety standards?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.09","t":"How can village residents know when waste-collection vehicles will actually reach their neighborhoods?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.10","t":"How can communities file geotagged reports of overflowing drains and track repair completion?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.11","t":"How can households locate authorized disposal points for e-waste, batteries, household hazards, construction debris, and bulky waste?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.12","t":"How can small villages coordinate the collection of recyclable materials when they generate insufficient quantities for regular commercial pickups?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.13","t":"How can residents identify and report broken streetlights with accurate location information?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.14","t":"How can local communities track recurring water-supply interruptions and document how long each interruption lasts?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.15","t":"How can village councils monitor whether community waste-processing and water-treatment facilities are functioning consistently?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.16","t":"Why can't citizens verify whether segregated waste is actually recycled?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.17","t":"Why don't smart water systems detect underground leaks automatically?","c":"Other","up":0,"priority":true},
+  {"id":"final-16.18","t":"How can residents report hazardous trees on public land and request urgent inspection or removal?","c":"Other","up":0,"priority":false},
+  {"id":"final-16.19","t":"How can housing societies plan preventive drain clearing and waterlogging mitigation before monsoon rains?","c":"Other","up":0,"priority":true},
+  {"id":"daily-b2b-5","t":"How can sports-equipment makers find a lab that runs every test their buyer requires before the shipment deadline?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-9","t":"How can a supplier turn electricity bills and fuel records into the emissions data a major buyer asks for?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-10","t":"How can a manufacturer work out how many orders it needs to break even after a marketplace’s fees and returns?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-12","t":"How can a business take over an unfinished freelance project when the files and accounts are controlled by the contractor?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-13","t":"How can a business check whether a successful prototype can be reproduced consistently across a small production run?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-14","t":"How can several neighbourhood restaurants share a bulk ingredient order when they need different quantities on different days?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-15","t":"How can a retailer tell whether buying directly from a brand will tie up too much cash in slow-selling stock?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-17","t":"How can a retailer avoid promising a delivery date before its supplier has reserved the stock?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-18","t":"How can a small supplier check whether its certificates and past contracts meet a tender’s requirements before preparing a bid?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-19","t":"How can a factory estimate whether an equipment upgrade will cut its electricity bill enough to pay for itself?","c":"B2B Services","up":0,"priority":false},
+  {"id":"beauty-1","t":"How can customers check whether an injectable beauty treatment offered by a salon or clinic is legally permitted?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-9","t":"How can people with fragrance sensitivities find suitable beauty products without buying full-size products to try them?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-13","t":"How can independent beauty professionals build a steady base of repeat customers beyond referrals?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-14","t":"How can customers find makeup artists experienced with their skin tone?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-15","t":"How can working women book a saree draping professional at short notice?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-16","t":"How can customers make sure they’ll get their preferred stylist when they book a salon appointment?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-17","t":"How can customers find skincare products suited to India’s humid and polluted conditions?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-18","t":"How can families find affordable mehendi artists for small celebrations at home?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-19","t":"How can men find affordable barbers who specialise in beard shaping and grooming?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-20","t":"How can salons reduce wait times for customers with confirmed appointments?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-21","t":"How can people who make skincare at home buy small quantities of verified cosmetic-grade ingredients?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-22","t":"How can older adults and people with limited mobility book affordable at-home grooming services?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-23","t":"How can salon customers reduce hair damage from colouring or bleaching?","c":"Beauty & Personal Care","up":0,"priority":false}
 ];
 var selectedIds=new Set(selectedQuestions.map(function(report){return report.id;}));
 db.reports=db.reports.filter(function(report){
@@ -437,7 +754,7 @@ selectedQuestions.forEach(function(report){
 });
 function save(){try{localStorage.setItem('stg2',JSON.stringify(db));}catch(e){}}
 function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
-var filterCat='',query='';
+var filterCat='';
 var groupedCategories=new Map([
   ['Healthcare','Healthtech'],['Agriculture','Food & Beverage'],['Food','Food & Beverage'],
   ['Agri-Food','Food & Beverage'],['Agriculture & Food','Food & Beverage'],
@@ -448,20 +765,31 @@ var groupedCategories=new Map([
   ['Finance','FinTech'],['Commerce','E-commerce'],['Commerce & Consumer Services','Consumer Services'],
   ['Housing & Real Estate','Real Estate']
 ]);
-function matches(r){
-  var category=groupedCategories.get(r.c)||(cats.includes(r.c)?r.c:"Other");
-  return (!filterCat||category===filterCat)&&(!query||(r.t+' '+r.c+' '+category+' '+(r.d||'')).toLowerCase().includes(query));
+function reportCategory(report){
+  return groupedCategories.get(report.c)||(cats.includes(report.c)?report.c:'Other');
 }
+var priorityById=new Map(selectedQuestions.map(function(report){return [report.id,report.priority];}));
+var previousCategory='';
 function render(){
-  var pl=document.getElementById('pl');pl.textContent='';var n=0;
-  var visibleReports=db.reports;
-  visibleReports.forEach(function(r){
-    if(!matches(r))return;n++;
-    var c=el('li');
-    c.appendChild(el('h3','',r.t));if(r.d)c.appendChild(el('p','',r.d));
-    pl.appendChild(c);
+  var pl=document.getElementById('pl'),more=document.getElementById('more-problems'),moreList=document.getElementById('more-list');
+  pl.textContent='';moreList.textContent='';
+  if(previousCategory!==filterCat)more.open=false;
+  previousCategory=filterCat;
+  var visibleReports=db.reports.filter(function(report){return priorityById.get(report.id)!==false;});
+  db.reports.filter(function(report){return !filterCat||reportCategory(report)===filterCat;}).forEach(function(report){
+    var priority=priorityById.get(report.id)!==false;
+    if(!priority&&!filterCat)return;
+    var list=priority?pl:moreList;
+    var row=el('li');
+    row.appendChild(el('h3','',report.t));
+    if(report.d)row.appendChild(el('p','',report.d));
+    list.appendChild(row);
   });
-  var f=!!(filterCat||query);
+  var n=pl.children.length+moreList.children.length;
+  more.hidden=moreList.children.length===0;
+  moreList.start=pl.children.length+1;
+  more.querySelector('summary').textContent='More problems ('+moreList.children.length+')';
+  var f=!!filterCat;
   document.getElementById('lh').textContent=f?n+' matching problem'+(n===1?'':'s'):'All problems · '+visibleReports.length;
   document.getElementById('nomatch').hidden=n>0;
   var fc=document.getElementById('fclear');fc.hidden=!filterCat;fc.textContent=filterCat?filterCat+' ✕':'';
@@ -477,16 +805,13 @@ function renderTop(visibleReports){
   });
 }
 document.getElementById('fclear').addEventListener('click',function(){filterCat='';render();});
-var s=document.getElementById('s');
-s.addEventListener('input',function(){query=s.value.trim().toLowerCase();render();});
-document.getElementById('sf').addEventListener('submit',function(e){e.preventDefault();query=s.value.trim().toLowerCase();render();nav('problems');});
 document.getElementById('rf').addEventListener('submit',function(e){
   e.preventDefault();
   var t=document.getElementById('rt').value.trim(),m=document.getElementById('rm');
   if(!t){m.textContent='Add a title for the problem.';return;}
   if(db.reports.some(function(report){return questionKey(report.t)===questionKey(t);})){m.textContent='This problem is already listed.';return;}
   db.reports.unshift({t:t,c:document.getElementById('rc').value,d:document.getElementById('rd').value.trim(),up:0});
-  filterCat='';query='';s.value='';
+  filterCat='';
   save();render();this.reset();m.textContent='Submitted. Taking you to the list.';
   setTimeout(function(){m.textContent='';nav('problems');},700);
 });
