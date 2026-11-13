@@ -6,7 +6,7 @@
 <title>Switch the Glitch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@650&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 /* SWITCH THE GLITCH: LOCKED THEME. Black main, purple only glowing from edges. */
 :root{
@@ -126,19 +126,15 @@ a{color:inherit;text-decoration:none}
 .tile .ic{width:24px;height:24px;border:0;border-radius:0;background:none;color:var(--soft);transition:color .2s}
 .tile .ico{width:20px;height:20px;stroke-width:1.5}
 .tile:hover .ic,.tile[aria-current="page"] .ic{color:var(--white)}
-.toplist{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:12px}
-.top-item{display:flex;align-items:center;gap:16px;padding:16px 22px}
-.rank{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--purple);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
-.top-main{flex:1;min-width:0}
-.top-main .tag{margin-bottom:6px}
-.top-main h3{margin:0;font-size:16px;font-weight:500}
-.top-item .btn-outline{flex:none;cursor:pointer;font-family:inherit}
-.prob-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.prob-list .pad{min-width:0}
+.prob-list{margin:0 0 14px;padding-inline-start:2.2rem}
+.prob-list li{padding:16px 0 16px 10px;border-bottom:1px solid var(--card2);overflow-wrap:anywhere}
+.prob-list li::marker{color:#b9aaff;font-weight:700;font-variant-numeric:tabular-nums}
+.prob-list h3{margin:0;font-size:clamp(16px,2.2vw,19px);font-weight:500}
+.prob-list p{margin:5px 0 0;color:var(--soft);font-size:14px}
 .list-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
 .list-head .sec-h{margin:0}
 .btn-outline{cursor:pointer;font-family:inherit}
-@media(max-width:760px){.prob-list{grid-template-columns:1fr}}
+
 #nomatch{margin:14px 0 0;font-size:14px;color:var(--soft)}
 #nomatch a{color:var(--white);text-decoration:underline}
 
@@ -229,41 +225,22 @@ footer a:hover{color:var(--white)}
 }
 @media(max-width:560px){.logo{font-size:15px}.logo .mark{width:36px;height:36px}.prob-grid{grid-template-columns:1fr}.hero{padding:40px 0 50px}}
 
-.feature{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;scroll-margin-top:16px}
-.feat-h{margin:0;text-align:center;font-size:clamp(30px,5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.05}
-.feat-sub{margin:12px 0 32px;text-align:center;color:var(--soft);font-size:15px}
-.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 22px;width:100%;max-width:960px;align-items:start;justify-items:center}
-.gift{display:flex;flex-direction:column;align-items:center;width:100%;min-width:0}
-.box{position:relative;display:block;width:min(190px,100%);height:150px;border:0;background:none;padding:0;cursor:pointer;perspective:700px;-webkit-tap-highlight-color:transparent}
-.box-body{position:absolute;left:9%;right:9%;bottom:0;height:100px;z-index:2;border-radius:0 0 8px 8px;background:linear-gradient(90deg,#D6D6D6,var(--light) 14%,var(--light) 86%,#CACACA);box-shadow:0 16px 24px rgba(0,0,0,.6)}
-.box-body::before,.box-lid::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;background:var(--purple)}
-.box-body::after{content:"?";position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);color:var(--white);font-weight:700;font-size:15px}
-.box-lid{position:absolute;left:3%;right:3%;bottom:96px;height:42px;z-index:3;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,var(--white),var(--light));transform-origin:50% 100%;transition:transform .6s cubic-bezier(.3,1.3,.5,1);box-shadow:0 3px 0 rgba(0,0,0,.18)}
-.gift:not(.open) .box:hover .box-lid,.box:focus-visible .box-lid{transform:translateY(-6px)}
-.gift.open .box-lid{transform:rotateX(115deg)}
-.peek{position:absolute;left:24%;right:24%;bottom:70px;height:58px;z-index:1;border-radius:3px 3px 0 0;background-color:var(--white);background-image:linear-gradient(rgba(0,0,0,.1) 1px,transparent 1px);background-size:100% 12px;transform:translateY(48px);opacity:0;transition:transform .5s .2s ease,opacity .3s .2s}
-.gift.open .peek{transform:translateY(-4px);opacity:1}
-.slip{position:relative;width:100%;max-width:260px;margin-top:18px;padding:16px 18px 20px;border-radius:3px;background-color:var(--light);background-image:linear-gradient(rgba(30,31,33,.07) 1px,transparent 1px);background-size:100% 26px;color:var(--ink);transform:rotate(-1.2deg);box-shadow:0 12px 24px rgba(0,0,0,.55);text-align:left}
-.slip::after{content:"";position:absolute;right:0;bottom:0;width:22px;height:22px;background:linear-gradient(135deg,#BDBDBD 50%,var(--black) 50%)}
-.gift.fresh .slip{animation:unfold .5s ease backwards}
-@keyframes unfold{from{opacity:0;transform:translateY(-18px) rotate(-5deg) scale(.94)}to{opacity:1;transform:rotate(-1.2deg)}}
-.slip .tag{margin-bottom:8px}
-.slip h3{margin:0 0 6px;font-size:16px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:var(--ink)}
-.slip p{margin:0;color:#4A4B4F;font-size:13.5px}
-.slip .row{flex-wrap:wrap;margin-top:12px}
-.slip .btn-outline{white-space:nowrap;border-color:var(--ink);color:var(--ink);padding:7px 14px;font-size:12px}
-.slip .btn-outline:hover{background:var(--ink);color:var(--white)}
-.shuffle{margin-top:40px}
-@media(max-width:760px){.gifts{grid-template-columns:repeat(2,1fr);gap:30px 14px}}
-@media(prefers-reduced-motion:reduce){.box-lid,.peek{transition:none}.gift.fresh .slip{animation:none}}
+#v-problems{padding-top:100vh;padding-top:100svh}
 .cat-sec{scroll-margin-top:16px;padding-top:30px}
+.cat-sec .sec-h{margin:0 0 24px;font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(32px,6vw,60px);font-weight:700;line-height:1.05;letter-spacing:-.05em}
 .cat-sec .ex-chips{margin-bottom:48px;gap:10px}
-.cat-sec .chip{font-size:15px;padding:10px 18px}
-.chip.active{background:var(--purple);border-color:var(--purple);color:var(--white)}
+.cat-sec .chip{padding:10px 18px;font-family:"Space Grotesk",Arial,sans-serif;font-size:16px;font-weight:700;line-height:1.2}
+.cat-sec .chip.active{background:var(--purple);border-color:var(--purple);color:var(--white)}
 .list-head{scroll-margin-top:16px}
 .nav-actions{grid-column:2}
 .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 151px);min-height:calc(100svh - 151px);padding:24px 0}
-.hero h1{max-width:none;font-weight:700;letter-spacing:-.035em}
+.hero h1{max-width:100%;font-family:"Bitcount Prop Single","Space Grotesk",monospace;font-size:clamp(43px,10vw,122px);font-weight:650;line-height:1.02;letter-spacing:-.035em;text-transform:uppercase}
+.hero h1 span{display:block;margin-top:.13em;color:#a999ff}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .hero h1,.hero h1 span{background-image:repeating-linear-gradient(180deg,transparent 0 3px,rgba(0,0,0,.15) 3px 4px),linear-gradient(180deg,#fff,#e8e3f7);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1 span{background-image:repeating-linear-gradient(180deg,transparent 0 3px,rgba(0,0,0,.17) 3px 4px),linear-gradient(180deg,#c6baff,#9d89ff)}
+}
+@media(forced-colors:active){.hero h1,.hero h1 span{background:none;color:CanvasText}}
 .hero-mark{width:72px;height:72px;margin-bottom:22px;fill:none;stroke:var(--white);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 .hero-mark .knob{fill:var(--white);stroke:none}
 .tagline{margin:18px 0 0;font-size:clamp(20px,3vw,28px);font-weight:500;color:var(--light);letter-spacing:-.01em}
@@ -306,25 +283,19 @@ footer a:hover{color:var(--white)}
   </form>
   <main id="top">
     <section class="hero" data-views="problems">
-      <h1>Switch the Glitch</h1>
+      <h1>Switch the <span>Glitch</span></h1>
       <p class="tagline">Every glitch, in one place</p>
       <p class="sub">Browse the problems people face, or submit your own.</p>
-      <a class="btn btn-ico" id="exb" href="#explore"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Explore</a>
+      <a class="btn btn-ico" id="exb" href="#catsec"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Explore</a>
     </section>
 
     <section id="v-problems" data-views="problems">
-      <div class="feature" id="pg2">
-        <h2 class="feat-h">Open a box, meet a problem</h2>
-        <p class="feat-sub">Tap a box to see what is inside.</p>
-        <div class="gifts" id="acc"></div>
-        <button class="btn-outline shuffle" id="shuf" type="button">Wrap them again</button>
-      </div>
       <div class="cat-sec" id="catsec">
         <h2 class="sec-h">Browse by category</h2>
         <div class="ex-chips" id="exchips"></div>
       </div>
       <div class="list-head"><h2 class="sec-h" id="lh">All problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button></div>
-      <div class="prob-list" id="pl"></div>
+      <ol class="prob-list" id="pl"></ol>
       <p id="nomatch" hidden>No problem matches your search. <a href="#submit">Submit it as a new problem</a>.</p>
     </section>
 
@@ -351,8 +322,8 @@ footer a:hover{color:var(--white)}
     
 
     <section class="view" id="v-top10" data-views="top10" hidden>
-      <h2 class="sec-h">Top 10 problems, ranked by Same problem votes</h2>
-      <ol class="toplist" id="tl"></ol>
+      <h2 class="sec-h">Top 10 problems</h2>
+      <ol class="prob-list" id="tl"></ol>
     </section>
 
     <section class="view" id="v-help" data-views="help" hidden>
@@ -360,8 +331,7 @@ footer a:hover{color:var(--white)}
       <div class="faq">
         <details open><summary>How do I submit a problem?</summary><p>Open Submit a problem, add a title, pick a category and describe what is going wrong.</p></details>
         <details><summary>How do I find a problem?</summary><p>Use the search bar at the top, or tap Explore on the Problems page and choose a category.</p></details>
-        <details><summary>What does Same problem do?</summary><p>It shows how many people face the same problem. Each tap adds one.</p></details>
-        <details><summary>How is the Top 10 decided?</summary><p>Problems are ranked by their Same problem count, highest first.</p></details>
+        <details><summary>How is the Top 10 decided?</summary><p>The list is ordered by previously recorded votes.</p></details>
         <details><summary>Where is my data saved?</summary><p>Submitted problems and votes are stored in this browser only. Other visitors do not see them, and clearing site data removes them.</p></details>
       </div>
       <div class="card pad helpcta"><h3>Can’t find your problem?</h3><p>Submit it so it appears in the list.</p><a class="btn" href="#submit">Submit a problem</a></div>
@@ -409,68 +379,101 @@ function nav(v){if(location.hash==='#'+v)go(v);else location.hash=v;}
 window.addEventListener('hashchange',function(){go(location.hash.slice(1));});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var v=a.getAttribute('href').slice(1);if(views.indexOf(v)>-1&&location.hash==='#'+v){e.preventDefault();go(v);}});
 
-var db={reports:[
- {t:'Wi-Fi keeps dropping every few minutes',c:'Technology',d:'Drops about every ten minutes on the 2.4 GHz band.',up:3},
- {t:'Code won’t compile after an update',c:'Technology',d:'Build fails right after upgrading dependencies.',up:2},
- {t:'Monthly budget is not adding up',c:'Finance',d:'Expenses and income never match at month end.',up:0},
- {t:'Team can’t decide between two options',c:'Employment',d:'Discussions go in circles with no clear way to choose.',up:0},
- {t:'Phone battery drains too fast',c:'Technology',d:'Battery falls from full to empty in a few hours.',up:0},
- {t:'Laptop is slow to start',c:'Technology',d:'Takes several minutes before it is usable after boot.',up:0},
- {t:'Water supply is irregular in the morning',c:'Water',d:'Taps run dry at peak hours.',up:0},
- {t:'Passwords keep getting locked out',c:'Cybersecurity',d:'Accounts lock after a few attempts and recovery is slow.',up:0},
- {t:'Daily commute takes too long',c:'Transportation & Logistics',d:'Traffic and connections add over an hour each way.',up:0},
- {t:'Email inbox is overflowing',c:'Employment',d:'Important messages get buried under routine ones.',up:0}
-]};
-try{var sv=JSON.parse(localStorage.getItem('stg2')||'null');if(sv&&sv.reports&&sv.reports.length)db=sv;}catch(e){}
+var legacyExamples=[
+  ["Wi-Fi keeps dropping every few minutes","Technology","Drops about every ten minutes on the 2.4 GHz band."],
+  ["Code won’t compile after an update","Technology","Build fails right after upgrading dependencies."],
+  ["Monthly budget is not adding up","Finance","Expenses and income never match at month end."],
+  ["Team can’t decide between two options","Employment","Discussions go in circles with no clear way to choose."],
+  ["Phone battery drains too fast","Technology","Battery falls from full to empty in a few hours."],
+  ["Laptop is slow to start","Technology","Takes several minutes before it is usable after boot."],
+  ["Water supply is irregular in the morning","Water","Taps run dry at peak hours."],
+  ["Passwords keep getting locked out","Cybersecurity","Accounts lock after a few attempts and recovery is slow."],
+  ["Daily commute takes too long","Transportation & Logistics","Traffic and connections add over an hour each way."],
+  ["Email inbox is overflowing","Employment","Important messages get buried under routine ones."]
+];
+var db={reports:[]};
+function questionKey(title){return title.normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}]+/gu," ").trim();}
+try{
+  var saved=JSON.parse(localStorage.getItem("stg2")||"null");
+  if(saved&&Array.isArray(saved.reports)){
+    db.reports=saved.reports.filter(function(report){
+      return report&&typeof report.t==="string"&&!String(report.id||"").startsWith("starter-")&&
+        !String(report.id||"").startsWith("fix-my-itch-")&&
+        !legacyExamples.some(function(example){return report.t===example[0]&&report.c===example[1]&&report.d===example[2];});
+    });
+  }
+}catch(e){}
+var selectedQuestions=[
+  {"id":"daily-b2b-1","t":"How can small suppliers tell whether they can cover wages and materials while waiting for a large buyer to pay?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-2","t":"How can an exporter with a signed order but little collateral pay suppliers before production starts?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-3","t":"How can a small manufacturer find procurement teams that already buy the kinds of components it makes?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-4","t":"How can a factory fill an extra production shift with workers who can operate its machines safely?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-6","t":"How can manufacturers tell which customer orders will miss their delivery dates when a truck fails to arrive?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-7","t":"How can a small business compare what two suppliers will actually charge once freight, taxes, and payment terms are included?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-8","t":"How can a business track a GST filing issue that needs a tax officer’s intervention before the deadline passes?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-11","t":"How can a factory identify a machine fault remotely so the technician arrives with the right spare parts?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-16","t":"How can a small accounts team tell which invoices a single bank transfer covers when the customer sends no payment breakdown?","c":"B2B Services","up":0},
+  {"id":"daily-b2b-20","t":"How can a manufacturer give a buyer a quote that stays workable if material prices change before the order is confirmed?","c":"B2B Services","up":0},
+  {"id":"beauty-2","t":"How can shoppers tell whether branded cosmetics are genuine before buying them?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-3","t":"How can shoppers check whether a batch of cosmetics has been flagged for failing quality standards?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-4","t":"How can customers check a hair dye’s ingredients, safety warnings, and patch-test instructions before using it?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-5","t":"How can shoppers tell which skincare and personal care claims are backed by evidence?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-6","t":"How can salons assess a beauty worker’s practical skills before hiring them?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-7","t":"How can people find a qualified dermatologist when few are available nearby?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-8","t":"How can shoppers choose the right foundation shade online when swatches look different across screens and lighting?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-10","t":"How can customers see the full cost of a salon service, including hair-length charges and add-ons, before booking?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-11","t":"How can customers check whether a salon disinfects reusable tools between appointments?","c":"Beauty & Personal Care","up":0},
+  {"id":"beauty-12","t":"How can small salons reduce last-minute cancellations and fill open slots?","c":"Beauty & Personal Care","up":0}
+];
+var selectedIds=new Set(selectedQuestions.map(function(report){return report.id;}));
+db.reports=db.reports.filter(function(report){
+  var id=String(report.id||'');
+  return selectedIds.has(id)||(!id.startsWith('daily-b2b-')&&!id.startsWith('beauty-'));
+});
+var savedIds=new Set(db.reports.map(function(report){return report.id;}));
+var existingTitles=new Set(db.reports.map(function(report){return questionKey(report.t);}));
+selectedQuestions.forEach(function(report){
+  if(!savedIds.has(report.id)&&!existingTitles.has(questionKey(report.t)))db.reports.push(report);
+});
 function save(){try{localStorage.setItem('stg2',JSON.stringify(db));}catch(e){}}
 function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
 var filterCat='',query='';
-function matches(r){return(!filterCat||r.c===filterCat)&&(!query||(r.t+' '+r.c+' '+(r.d||'')).toLowerCase().indexOf(query)>-1);}
-function vote(r){r.up++;save();render();}
-function voteBtn(r){var b=el('button','btn-outline','Same problem · '+r.up);b.type='button';b.setAttribute('aria-label','I have this problem too. '+r.up+' so far');b.onclick=function(){vote(r);};return b;}
+var groupedCategories=new Map([
+  ['Healthcare','Healthtech'],['Agriculture','Food & Beverage'],['Food','Food & Beverage'],
+  ['Agri-Food','Food & Beverage'],['Agriculture & Food','Food & Beverage'],
+  ['Education','EdTech'],['Education & Employment','EdTech'],['Learning & Careers','EdTech'],
+  ['MSMEs','B2B Services'],['Manufacturing','B2B Services'],['Business & Manufacturing','B2B Services'],
+  ['Transportation & Logistics','Logistics'],['Mobility & Logistics','Logistics'],
+  ['Travel, Transportation & Logistics','Logistics'],['Tourism','Travel'],
+  ['Finance','FinTech'],['Commerce','E-commerce'],['Commerce & Consumer Services','Consumer Services'],
+  ['Housing & Real Estate','Real Estate']
+]);
+function matches(r){
+  var category=groupedCategories.get(r.c)||(cats.includes(r.c)?r.c:"Other");
+  return (!filterCat||category===filterCat)&&(!query||(r.t+' '+r.c+' '+category+' '+(r.d||'')).toLowerCase().includes(query));
+}
 function render(){
   var pl=document.getElementById('pl');pl.textContent='';var n=0;
-  db.reports.forEach(function(r){
+  var visibleReports=db.reports;
+  visibleReports.forEach(function(r){
     if(!matches(r))return;n++;
-    var c=el('article','card pad');
-    c.appendChild(el('span','tag',r.c));c.appendChild(el('h3','',r.t));if(r.d)c.appendChild(el('p','',r.d));
-    var a=el('div','row');a.appendChild(voteBtn(r));c.appendChild(a);pl.appendChild(c);
+    var c=el('li');
+    c.appendChild(el('h3','',r.t));if(r.d)c.appendChild(el('p','',r.d));
+    pl.appendChild(c);
   });
   var f=!!(filterCat||query);
-  document.getElementById('lh').textContent=f?n+' matching problem'+(n===1?'':'s'):'All problems · '+db.reports.length;
+  document.getElementById('lh').textContent=f?n+' matching problem'+(n===1?'':'s'):'All problems · '+visibleReports.length;
   document.getElementById('nomatch').hidden=n>0;
-  var fc=document.getElementById('fclear');fc.hidden=!filterCat;fc.textContent=filterCat?'Category: '+filterCat+' ✕':'';
+  var fc=document.getElementById('fclear');fc.hidden=!filterCat;fc.textContent=filterCat?filterCat+' ✕':'';
   document.querySelectorAll('.chip').forEach(function(c){var on=c.textContent===filterCat;c.classList.toggle('active',on);c.setAttribute('aria-pressed',on?'true':'false');});
-  renderTop();renderFeatured();
+  renderTop(visibleReports);
 }
-var picked=[],openSet={};
-function pickGifts(){var t=db.reports.map(function(r){return r.t;});for(var i=t.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=t[i];t[i]=t[j];t[j]=x;}picked=t.slice(0,6);openSet={};}
-function renderFeatured(){
-  var acc=document.getElementById('acc');acc.textContent='';
-  if(!picked.length)pickGifts();
-  picked.forEach(function(title,n){
-    var r=null;db.reports.forEach(function(x){if(x.t===title)r=x;});if(!r)return;
-    var open=!!openSet[title],g=el('div','gift'+(open?' open':''));
-    var b=el('button','box');b.type='button';b.setAttribute('aria-expanded',open?'true':'false');b.setAttribute('aria-label','Surprise box '+(n+1));
-    b.appendChild(el('span','peek'));b.appendChild(el('span','box-body'));b.appendChild(el('span','box-lid'));
-    var sl=el('div','slip');sl.hidden=!open;
-    sl.appendChild(el('span','tag',r.c));sl.appendChild(el('h3','',r.t));sl.appendChild(el('p','',r.d||'No description added.'));
-    var row=el('div','row');row.appendChild(voteBtn(r));
-    var more=el('button','btn-outline','More in '+r.c);more.type='button';
-    more.onclick=function(){filterCat=r.c;render();document.getElementById('lh').scrollIntoView({behavior:'smooth'});};
-    row.appendChild(more);sl.appendChild(row);
-    b.onclick=function(){var o=!openSet[title];openSet[title]=o;g.classList.toggle('open',o);g.classList.toggle('fresh',o);sl.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');};
-    g.appendChild(b);g.appendChild(sl);acc.appendChild(g);
-  });
-}
-document.getElementById('shuf').addEventListener('click',function(){pickGifts();renderFeatured();});
-function renderTop(){
+function renderTop(visibleReports){
   var tl=document.getElementById('tl');tl.textContent='';
-  db.reports.slice().sort(function(a,b){return b.up-a.up;}).slice(0,10).forEach(function(r,i){
-    var li=el('li','card top-item');
-    li.appendChild(el('span','rank',String(i+1)));
-    var m=el('div','top-main');m.appendChild(el('span','tag',r.c));m.appendChild(el('h3','',r.t));li.appendChild(m);
-    li.appendChild(voteBtn(r));tl.appendChild(li);
+  visibleReports.slice().sort(function(a,b){return b.up-a.up;}).slice(0,10).forEach(function(r){
+    var li=el('li');
+    li.appendChild(el('h3','',r.t));
+    tl.appendChild(li);
   });
 }
 document.getElementById('fclear').addEventListener('click',function(){filterCat='';render();});
@@ -481,17 +484,18 @@ document.getElementById('rf').addEventListener('submit',function(e){
   e.preventDefault();
   var t=document.getElementById('rt').value.trim(),m=document.getElementById('rm');
   if(!t){m.textContent='Add a title for the problem.';return;}
+  if(db.reports.some(function(report){return questionKey(report.t)===questionKey(t);})){m.textContent='This problem is already listed.';return;}
   db.reports.unshift({t:t,c:document.getElementById('rc').value,d:document.getElementById('rd').value.trim(),up:0});
   filterCat='';query='';s.value='';
   save();render();this.reset();m.textContent='Submitted. Taking you to the list.';
   setTimeout(function(){m.textContent='';nav('problems');},700);
 });
-var cats=['Healthcare','Agriculture','Education','Employment','MSMEs','Women’s Safety','Water','Environment','Energy','Transportation & Logistics','Finance','Cybersecurity','Technology','Food','Public Services','Tourism','Digital Inclusion','Manufacturing','Commerce','Consumer Services','Beauty & Personal Care','Home Services','Housing & Real Estate'];
+var cats=['B2B Services','Beauty & Personal Care','Consumer Services','E-commerce','EdTech','FinTech','Food & Beverage','Home Services','Logistics','Payment Issues','Real Estate','SaaS','Transportation','Travel','Healthtech','Other'];
 var exb=document.getElementById('exb'),rc=document.getElementById('rc');
 var chips=document.getElementById('exchips');
 cats.forEach(function(c){rc.appendChild(el('option','',c));});
 cats.forEach(function(c){var b=el('button','chip',c);b.type='button';b.setAttribute('aria-pressed','false');b.onclick=function(){filterCat=(filterCat===c)?'':c;render();document.getElementById('lh').scrollIntoView({behavior:'smooth'});};chips.appendChild(b);});
-exb.addEventListener('click',function(e){e.preventDefault();document.getElementById('pg2').scrollIntoView({behavior:'smooth'});});
+exb.addEventListener('click',function(e){e.preventDefault();document.getElementById('catsec').scrollIntoView({behavior:'smooth'});});
 var sp=document.getElementById('sp'),gear=document.getElementById('gear');
 function openSp(){sp.hidden=false;document.body.style.overflow='hidden';gear.setAttribute('aria-expanded','true');document.getElementById('spc').focus();}
 function closeSp(nf){sp.hidden=true;document.body.style.overflow='';gear.setAttribute('aria-expanded','false');if(!nf)gear.focus();}
