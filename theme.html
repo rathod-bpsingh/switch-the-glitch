@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CoinFusion – Unleash Bitcoin full potential</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  /* palette: only the supplied codes */
+  --black:#000000; --white:#FFFFFF; --white2:#FDFDFD; --light:#F0F0F0; --soft:#BBBBBB; --grey:#8A8A8A;
+  --card:#1F2123; --card2:#313131; --ink:#1E1F21;
+  --purple:#5846FB; --purple2:#523FFF;
+  --pink:#FF83D5; --yellow:#FFC200; --cyan:#00B4FF; --blue:#1668E8;
+  --font:"Space Grotesk","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--black);color:var(--white);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+/* nav */
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:28px 0}
+.logo{font-weight:700;font-size:18px;color:var(--purple);letter-spacing:.2px}
+.pill{display:flex;gap:6px;background:var(--white);border-radius:999px;padding:6px}
+.pill a{color:var(--black);font-size:13px;padding:9px 18px;border-radius:999px;transition:background .2s}
+.pill a:hover{background:var(--light)}
+.cta-sm{justify-self:end;font-size:13px;color:var(--soft);border:1px solid var(--card2);padding:9px 18px;border-radius:999px;transition:border-color .2s,color .2s}
+.cta-sm:hover{border-color:var(--purple);color:var(--white)}
+
+/* hero */
+.hero{text-align:center;padding:110px 0 90px;position:relative}
+.hero::before{content:"";position:absolute;right:-12%;top:-140px;width:72%;height:620px;border-radius:50%;z-index:-1;
+  background:radial-gradient(closest-side,rgba(88,70,251,.55),rgba(88,70,251,0));filter:blur(40px)}
+.hero::before{right:-24%;top:-220px;width:55%;height:560px}
+.hero::after{content:"";position:absolute;left:-24%;bottom:-140px;width:50%;height:460px;border-radius:50%;z-index:-1;background:radial-gradient(closest-side,rgba(82,63,255,.45),rgba(82,63,255,0));filter:blur(40px)}
+h1{font-size:clamp(44px,8vw,84px);line-height:1.04;font-weight:500;letter-spacing:-.025em;margin:0 auto;max-width:11ch}
+.sub{color:var(--light);font-size:15px;max-width:34ch;margin:28px auto 36px}
+.btn{display:inline-block;background:var(--purple);color:var(--white);font-family:inherit;font-weight:500;font-size:14px;border:0;border-radius:999px;padding:14px 30px;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover{background:var(--purple2);transform:translateY(-2px)}
+
+/* news */
+.news h2{font-size:16px;font-weight:500;margin:0 0 18px}
+.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.news-card{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:999px;padding:16px 22px;font-size:12.5px;color:var(--light);line-height:1.4;transition:background .2s}
+.news-card:hover{background:var(--card2)}
+.news-card svg{flex:none;width:34px;height:34px}
+
+/* features */
+.sec{padding:110px 0 30px}
+.sec h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;font-weight:500;max-width:18ch;margin:0 0 40px}
+.feat{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}
+.f{background:var(--card);border-radius:32px;padding:30px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end}
+.f h3{font-size:20px;font-weight:500;margin:0 0 8px}
+.f p{margin:0;color:var(--soft);font-size:14px;max-width:32ch}
+.f.big{background:radial-gradient(90% 80% at 100% 100%,rgba(88,70,251,.9),rgba(88,70,251,0) 70%),radial-gradient(60% 60% at 0% 0%,rgba(82,63,255,.45),rgba(82,63,255,0) 70%),var(--black)}
+.f.big p{color:var(--light)}
+.f.warm{background:radial-gradient(80% 70% at 0% 0%,rgba(255,194,0,.5),rgba(255,194,0,0) 70%),var(--black)}
+.f.warm p{color:var(--light)}
+.dot{width:44px;height:44px;border-radius:50%;margin-bottom:auto}
+
+/* talk */
+.talk{margin:110px 0 0;border-radius:40px;position:relative;overflow:hidden;padding:36px 48px 48px;
+  background:radial-gradient(40% 110% at 100% 50%,rgba(88,70,251,.8),rgba(88,70,251,0) 100%),radial-gradient(45% 70% at 0% 100%,rgba(82,63,255,.55),rgba(82,63,255,0) 100%),radial-gradient(40% 40% at 100% 0%,rgba(88,70,251,.5),rgba(88,70,251,0) 100%),
+  var(--black)}
+.talk-top{display:flex;justify-content:space-between;align-items:center}
+.talk-logo{font-weight:700;font-size:16px;color:var(--purple)}
+.talk-actions{display:flex;align-items:center;gap:22px}
+.outline{border:1px solid var(--white);color:var(--white);border-radius:999px;padding:9px 22px;font-size:13px;font-weight:500;transition:background .2s,color .2s}
+.outline:hover{background:var(--white);color:var(--black)}
+.burger{display:grid;gap:5px;width:26px}.burger i{display:block;height:1.5px;background:var(--white)}
+.talk-main{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;padding:90px 0 60px}
+.talk h2{margin:0;max-width:none;font-weight:700;font-size:clamp(44px,8.5vw,104px);line-height:.98;letter-spacing:-.035em}
+.talk h2 span{display:block}.talk h2 .in{padding-left:.5em}
+.talk-side{max-width:210px;font-size:12.5px;padding-bottom:20px}
+.talk-side p{margin:0 0 16px;line-height:1.5}
+.arrow{display:block;height:1px;background:var(--white);position:relative}
+.arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--white);border-right:1px solid var(--white);transform:rotate(45deg)}
+.talk-wrap{position:relative}
+.talk-img{height:260px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(180deg,var(--black) 0,var(--card2) 30%,var(--grey) 75%,var(--soft) 100%)}
+.talk-img::before{content:"";position:absolute;left:0;right:0;top:0;height:46%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 2px,transparent 2px 90px)}
+.talk-img::after{content:"";position:absolute;left:8%;bottom:0;width:30%;height:58%;background:rgba(240,240,240,.25);border-radius:12px 12px 0 0}
+.round-btn{position:absolute;right:28px;top:-34px;width:68px;height:68px;border-radius:50%;background:var(--white);display:grid;place-items:center;color:var(--black);font-size:26px;font-weight:700;z-index:2;transition:transform .2s}
+.round-btn:hover{transform:rotate(45deg)}
+
+/* join */
+.join{margin:110px 0 0;background:radial-gradient(50% 100% at 100% 100%,rgba(88,70,251,.7),rgba(88,70,251,0) 100%),radial-gradient(45% 90% at 0% 0%,rgba(82,63,255,.5),rgba(82,63,255,0) 100%),var(--black);border-radius:40px;padding:64px 28px;text-align:center}
+.join h2{margin:0 auto 14px;max-width:16ch;font-size:clamp(28px,4.5vw,48px);font-weight:500;letter-spacing:-.02em}
+.join p{color:var(--soft);margin:0 auto 28px;max-width:40ch;font-size:15px}
+.join form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.join input{background:var(--black);border:1px solid var(--card2);border-radius:999px;color:var(--white);font-family:inherit;font-size:14px;padding:14px 22px;width:min(320px,100%)}
+.join input::placeholder{color:var(--grey)}
+.join input:focus{outline:none;border-color:var(--purple)}
+.msg{min-height:22px;margin-top:16px;font-size:13px;color:var(--white)}
+
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:60px 0 40px;color:var(--grey);font-size:13px}
+footer nav{display:flex;gap:22px}
+footer a:hover{color:var(--white)}
+
+@media(max-width:900px){
+  .news-grid{grid-template-columns:repeat(2,1fr)}
+  .feat{grid-template-columns:1fr}
+  .nav{grid-template-columns:1fr auto}
+  .cta-sm{display:none}
+  .talk{padding:28px 24px 32px}.talk-main{grid-template-columns:1fr;padding:60px 0 40px}.talk-side{max-width:none}
+}
+@media(max-width:560px){
+  .pill a{padding:8px 11px;font-size:12px}
+  .logo{font-size:15px}
+  .news-grid{grid-template-columns:1fr}
+  .hero{padding:70px 0 60px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="#top">CoinFusion</a>
+    <nav class="pill" aria-label="Main">
+      <a href="#learn">Learn</a><a href="#build">Build</a><a href="#explore">Explore</a><a href="#join">Join</a><a href="#help">Help</a>
+    </nav>
+    <a class="cta-sm" href="#join">Connect wallet</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Unleash Bitcoin full potential</h1>
+      <p class="sub">Stacks enables DeFi, NFTs, apps, and smart contracts for Bitcoin.</p>
+      <a class="btn" href="#build">See what’s built on Stacks</a>
+    </section>
+
+    <section class="news" id="explore">
+      <h2>Latest ecosystem news</h2>
+      <div class="news-grid">
+        <a class="news-card" href="#"><svg viewBox="0 0 34 34" fill="none" stroke="#FFC200" stroke-width="4" stroke-linecap="round"><path d="M26 6H10v22h16"/><circle cx="10" cy="6" r="3" fill="#FFC200"/><circle cx="10" cy="28" r="3" fill="#FFC200"/><circle cx="26" cy="6" r="3" fill="#FFC200"/><circle cx="26" cy="28" r="3" fill="#FFC200"/></svg><span>Alex raises $8.6M to bring DeFi to the Bitcoin network</span></a>
+        <a class="news-card" href="#"><svg viewBox="0 0 34 34" fill="none" stroke="#1668E8" stroke-width="5" stroke-linecap="round"><path d="M17 7H11a10 10 0 000 20h6"/><path d="M29 11h-6a6 6 0 000 12h6"/></svg><span>NYC to get its own cryptocurrency after new city vote</span></a>
+        <a class="news-card" href="#"><svg viewBox="0 0 34 34"><rect width="34" height="34" rx="8" fill="#FFFFFF"/><path d="M11 8h13v4h-8v4h7v4h-7v6h-5z" fill="#000000"/></svg><span>Alex raises $8.6M to bring DeFi to the Bitcoin network</span></a>
+        <a class="news-card" href="#"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="none" stroke="#FFC200" stroke-width="3"/><text x="17" y="23" text-anchor="middle" font-size="18" font-weight="700" fill="#FFC200" font-family="Space Grotesk,Arial">₿</text></svg><span>Alex raises $8.6M to bring DeFi to the Bitcoin network</span></a>
+      </div>
+    </section>
+
+    <section class="sec" id="build">
+      <h2>Everything you need to build on Bitcoin</h2>
+      <div class="feat">
+        <div class="f big"><div class="dot" style="background:var(--white)"></div><h3>Smart contracts</h3><p>Write contracts that settle on Bitcoin and stay readable and predictable.</p></div>
+        <div class="f"><div class="dot" style="background:var(--cyan)"></div><h3>DeFi</h3><p>Lend, borrow, and swap while your funds stay anchored to Bitcoin.</p></div>
+        <div class="f warm"><div class="dot" style="background:var(--pink)"></div><h3>NFTs and apps</h3><p>Launch collections and apps that your users can own and carry anywhere.</p></div>
+      </div>
+    </section>
+
+    <section class="talk" id="talk">
+      <div class="talk-top">
+        <span class="talk-logo">CoinFusion.</span>
+        <div class="talk-actions"><a class="outline" href="#join">Let’s talk</a><span class="burger" aria-hidden="true"><i></i><i></i></span></div>
+      </div>
+      <div class="talk-main">
+        <h2><span>Let’s talk</span><span class="in">to build on</span><span>Bitcoin</span></h2>
+        <div class="talk-side"><p>Tell us what you want to launch. Our team helps you go from idea to a working Bitcoin product.</p><span class="arrow"></span></div>
+      </div>
+      <div class="talk-wrap"><a class="round-btn" href="#join" aria-label="Join the list">↓</a><div class="talk-img" role="img" aria-label="Studio workspace"></div></div>
+    </section>
+
+    <section class="join" id="join">
+      <h2>Start building with CoinFusion</h2>
+      <p>Get weekly updates on new projects, grants, and guides.</p>
+      <form id="f" novalidate>
+        <input id="em" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email">
+        <button class="btn" type="submit">Join the list</button>
+      </form>
+      <div class="msg" id="msg" role="status"></div>
+    </section>
+  </main>
+
+  <footer id="help">
+    <span>© 2026 CoinFusion</span>
+    <nav aria-label="Footer"><a href="#learn" id="learn">Learn</a><a href="#build">Build</a><a href="#explore">Explore</a><a href="#help">Help</a></nav>
+  </footer>
+</div>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=document.getElementById('em').value.trim(), m=document.getElementById('msg');
+  var ok=/^\S+@\S+\.\S+$/.test(v);
+  m.textContent=ok?'You’re on the list. Check your inbox to confirm.':'Enter a valid email address, for example name@example.com.';
+});
+</script>
+</body>
+</html>
