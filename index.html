@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Switch the Glitch – Turn any glitch into a fix</title>
+<title>Switch the Glitch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,8 +19,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{margin:0;background:var(--black);color:var(--white);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+body{margin:0;overflow-x:clip;background:var(--black);color:var(--white);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--purple);outline-offset:3px}
 
@@ -97,6 +96,51 @@ a{color:inherit;text-decoration:none}
 .cm{color:var(--soft);font-size:13px;margin:8px 0 0}
 .pad p{margin:0 0 6px;color:var(--soft);font-size:14px}
 @media(max-width:900px){.board{grid-template-columns:1fr}}
+.board.one{grid-template-columns:1fr}
+.view{padding-top:34px}
+#how{padding-top:30px}
+.faq{display:grid;gap:14px;margin-bottom:14px}
+.faq details{background:var(--card);border-radius:32px;padding:20px 28px}
+.faq summary{cursor:pointer;font-weight:500;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--soft);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;color:var(--soft);font-size:14px;max-width:62ch}
+.helpcta .btn{margin-top:8px}
+.nav-actions{display:flex;align-items:center;gap:10px;justify-self:end}
+.gear{width:42px;height:42px;border-radius:50%;border:1px solid var(--card2);background:var(--card);color:var(--white);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,background .2s}
+.gear:hover{border-color:var(--purple);background:var(--card2)}
+.gear .ico{width:20px;height:20px}
+.settings{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:flex;justify-content:flex-end;align-items:flex-start;padding:calc(20px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sp{width:min(420px,100%);max-height:100%;overflow-y:auto;background:var(--card);border:1px solid var(--card2);border-radius:32px;padding:24px}
+.sp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.sp-head h2{margin:0;font-size:18px;font-weight:500}
+.sp-head button{width:38px;height:38px;border-radius:50%;border:1px solid var(--card2);background:var(--black);color:var(--white);font-size:18px;cursor:pointer}
+.sp-sec{font-size:12px;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px}
+.sp-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.sp-grid:last-child{margin-bottom:0}
+.tile{display:flex;flex-direction:row;align-items:center;gap:14px;text-align:left;background:var(--black);border:1px solid var(--card2);border-radius:16px;padding:14px 18px;color:var(--white);font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.3;transition:border-color .2s,background .2s,transform .15s}
+.tile:hover{transform:translateX(3px)}
+.tile:hover,.tile:focus-visible{border-color:var(--purple);background:var(--card2)}
+.tile[aria-current="page"]{border-color:var(--purple)}
+.tile .ic{width:24px;height:24px;border:0;border-radius:0;background:none;color:var(--soft);transition:color .2s}
+.tile .ico{width:20px;height:20px;stroke-width:1.5}
+.tile:hover .ic,.tile[aria-current="page"] .ic{color:var(--white)}
+.toplist{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:12px}
+.top-item{display:flex;align-items:center;gap:16px;padding:16px 22px}
+.rank{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--purple);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.top-main{flex:1;min-width:0}
+.top-main .tag{margin-bottom:6px}
+.top-main h3{margin:0;font-size:16px;font-weight:500}
+.top-item .btn-outline{flex:none;cursor:pointer;font-family:inherit}
+.prob-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.prob-list .pad{min-width:0}
+.list-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.list-head .sec-h{margin:0}
+.btn-outline{cursor:pointer;font-family:inherit}
+@media(max-width:760px){.prob-list{grid-template-columns:1fr}}
+#nomatch{margin:14px 0 0;font-size:14px;color:var(--soft)}
+#nomatch a{color:var(--white);text-decoration:underline}
 
 .explore{position:fixed;inset:0;z-index:50;overflow-y:auto;overscroll-behavior:contain;background-color:var(--black);background-image:radial-gradient(40% 55% at 100% 15%,rgba(88,70,251,.55),rgba(88,70,251,0) 100%),radial-gradient(45% 50% at 0% 100%,rgba(82,63,255,.45),rgba(82,63,255,0) 100%),linear-gradient(rgba(49,49,49,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(49,49,49,.35) 1px,transparent 1px);background-size:auto,auto,56px 56px,56px 56px;background-attachment:fixed}
 .ex-bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:14px;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 18px;background:rgba(0,0,0,.85);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--card2)}
@@ -185,6 +229,46 @@ footer a:hover{color:var(--white)}
 }
 @media(max-width:560px){.logo{font-size:15px}.logo .mark{width:36px;height:36px}.prob-grid{grid-template-columns:1fr}.hero{padding:40px 0 50px}}
 
+.feature{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;scroll-margin-top:16px}
+.feat-h{margin:0;text-align:center;font-size:clamp(30px,5vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.feat-sub{margin:12px 0 32px;text-align:center;color:var(--soft);font-size:15px}
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 22px;width:100%;max-width:960px;align-items:start;justify-items:center}
+.gift{display:flex;flex-direction:column;align-items:center;width:100%;min-width:0}
+.box{position:relative;display:block;width:min(190px,100%);height:150px;border:0;background:none;padding:0;cursor:pointer;perspective:700px;-webkit-tap-highlight-color:transparent}
+.box-body{position:absolute;left:9%;right:9%;bottom:0;height:100px;z-index:2;border-radius:0 0 8px 8px;background:linear-gradient(90deg,#D6D6D6,var(--light) 14%,var(--light) 86%,#CACACA);box-shadow:0 16px 24px rgba(0,0,0,.6)}
+.box-body::before,.box-lid::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:22px;margin-left:-11px;background:var(--purple)}
+.box-body::after{content:"?";position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);color:var(--white);font-weight:700;font-size:15px}
+.box-lid{position:absolute;left:3%;right:3%;bottom:96px;height:42px;z-index:3;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,var(--white),var(--light));transform-origin:50% 100%;transition:transform .6s cubic-bezier(.3,1.3,.5,1);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.gift:not(.open) .box:hover .box-lid,.box:focus-visible .box-lid{transform:translateY(-6px)}
+.gift.open .box-lid{transform:rotateX(115deg)}
+.peek{position:absolute;left:24%;right:24%;bottom:70px;height:58px;z-index:1;border-radius:3px 3px 0 0;background-color:var(--white);background-image:linear-gradient(rgba(0,0,0,.1) 1px,transparent 1px);background-size:100% 12px;transform:translateY(48px);opacity:0;transition:transform .5s .2s ease,opacity .3s .2s}
+.gift.open .peek{transform:translateY(-4px);opacity:1}
+.slip{position:relative;width:100%;max-width:260px;margin-top:18px;padding:16px 18px 20px;border-radius:3px;background-color:var(--light);background-image:linear-gradient(rgba(30,31,33,.07) 1px,transparent 1px);background-size:100% 26px;color:var(--ink);transform:rotate(-1.2deg);box-shadow:0 12px 24px rgba(0,0,0,.55);text-align:left}
+.slip::after{content:"";position:absolute;right:0;bottom:0;width:22px;height:22px;background:linear-gradient(135deg,#BDBDBD 50%,var(--black) 50%)}
+.gift.fresh .slip{animation:unfold .5s ease backwards}
+@keyframes unfold{from{opacity:0;transform:translateY(-18px) rotate(-5deg) scale(.94)}to{opacity:1;transform:rotate(-1.2deg)}}
+.slip .tag{margin-bottom:8px}
+.slip h3{margin:0 0 6px;font-size:16px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:var(--ink)}
+.slip p{margin:0;color:#4A4B4F;font-size:13.5px}
+.slip .row{flex-wrap:wrap;margin-top:12px}
+.slip .btn-outline{white-space:nowrap;border-color:var(--ink);color:var(--ink);padding:7px 14px;font-size:12px}
+.slip .btn-outline:hover{background:var(--ink);color:var(--white)}
+.shuffle{margin-top:40px}
+@media(max-width:760px){.gifts{grid-template-columns:repeat(2,1fr);gap:30px 14px}}
+@media(prefers-reduced-motion:reduce){.box-lid,.peek{transition:none}.gift.fresh .slip{animation:none}}
+.cat-sec{scroll-margin-top:16px;padding-top:30px}
+.cat-sec .ex-chips{margin-bottom:48px;gap:10px}
+.cat-sec .chip{font-size:15px;padding:10px 18px}
+.chip.active{background:var(--purple);border-color:var(--purple);color:var(--white)}
+.list-head{scroll-margin-top:16px}
+.nav-actions{grid-column:2}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 151px);min-height:calc(100svh - 151px);padding:24px 0}
+.hero h1{max-width:none;font-weight:700;letter-spacing:-.035em}
+.hero-mark{width:72px;height:72px;margin-bottom:22px;fill:none;stroke:var(--white);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.hero-mark .knob{fill:var(--white);stroke:none}
+.tagline{margin:18px 0 0;font-size:clamp(20px,3vw,28px);font-weight:500;color:var(--light);letter-spacing:-.01em}
+.hero .sub{margin:14px auto 34px}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 </style>
 </head>
 <body>
@@ -199,6 +283,8 @@ footer a:hover{color:var(--white)}
   <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M8 16h2M12 16h2"/></symbol>
   <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
   <symbol id="i-split" viewBox="0 0 24 24"><path d="M12 21v-7M12 14L6 8M12 14l6-6"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M5 20v-8M12 20V5M19 20v-5"/></symbol>
   <symbol id="logo-mark" viewBox="0 0 48 48"><path d="M8 24L24 12M8 24L24 36M24 12L40 24M24 36L40 24" stroke="#8A8A8A" stroke-width="2" fill="none"/>
     <circle cx="8" cy="24" r="4" fill="#BBBBBB"/>
     <circle cx="24" cy="12" r="4" fill="#313131" stroke="#8A8A8A" stroke-width="1.5"/>
@@ -211,178 +297,212 @@ footer a:hover{color:var(--white)}
 
 <div class="wrap">
   <header class="nav">
-    <span class="logo"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle class="knob" cx="8" cy="12" r="2.5"/></svg><a href="#top">Switch the Glitch</a></span>
-        <a class="cta-sm" href="#community">Sign in</a>
+    <div class="nav-actions"><button class="gear" id="gear" type="button" aria-label="Settings" aria-haspopup="dialog" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg></button></div>
   </header>
-  <div class="tabs-wrap"><nav class="tabs" aria-label="Main">
-      <a href="#problems" aria-current="page" aria-label="Problems"><svg class="ico"><use href="#i-alert"/></svg><span>Problems</span></a>
-      <a href="#community" aria-label="Community"><svg class="ico"><use href="#i-users"/></svg><span>Community</span></a>
-      <a href="#solutions" aria-label="Support"><svg class="ico"><use href="#i-check"/></svg><span>Support</span></a>
-      <a href="#board" id="t-sub" aria-label="Submit a problem"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Submit a problem</span></a>
-      <a href="#help" aria-label="Help"><svg class="ico"><use href="#i-help"/></svg><span>Help</span></a>
-    </nav></div>
   <form class="search" id="sf" role="search" novalidate>
     <svg class="ico s-ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
     <input id="s" type="search" placeholder="Search for a problem" aria-label="Search for a problem" autocomplete="off">
     <button class="btn" type="submit">Search</button>
   </form>
   <main id="top">
-    <section class="hero">
-      <h1>Turn any glitch into a fix</h1>
-      <p class="sub">Describe what’s going wrong. Get clear steps to solve it.</p>
+    <section class="hero" data-views="problems">
+      <h1>Switch the Glitch</h1>
+      <p class="tagline">Every glitch, in one place</p>
+      <p class="sub">Browse the problems people face, or submit your own.</p>
       <a class="btn btn-ico" id="exb" href="#explore"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Explore</a>
     </section>
 
-    <section id="problems">
-      <h2 class="sec-h">Problems people solve here</h2>
-      <div class="prob-grid">
-        <a class="prob" href="#how"><svg class="ico" style="color:var(--cyan)"><use href="#i-wifi"/></svg><span>Wi-Fi keeps dropping every few minutes</span></a>
-        <a class="prob" href="#how"><svg class="ico" style="color:var(--yellow)"><use href="#i-calc"/></svg><span>Monthly budget is not adding up</span></a>
-        <a class="prob" href="#how"><svg class="ico" style="color:var(--white)"><use href="#i-code"/></svg><span>Code won’t compile after an update</span></a>
-        <a class="prob" href="#how"><svg class="ico" style="color:var(--blue)"><use href="#i-split"/></svg><span>Team can’t decide between two options</span></a>
+    <section id="v-problems" data-views="problems">
+      <div class="feature" id="pg2">
+        <h2 class="feat-h">Open a box, meet a problem</h2>
+        <p class="feat-sub">Tap a box to see what is inside.</p>
+        <div class="gifts" id="acc"></div>
+        <button class="btn-outline shuffle" id="shuf" type="button">Wrap them again</button>
       </div>
+      <div class="cat-sec" id="catsec">
+        <h2 class="sec-h">Browse by category</h2>
+        <div class="ex-chips" id="exchips"></div>
+      </div>
+      <div class="list-head"><h2 class="sec-h" id="lh">All problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button></div>
+      <div class="prob-list" id="pl"></div>
+      <p id="nomatch" hidden>No problem matches your search. <a href="#submit">Submit it as a new problem</a>.</p>
     </section>
 
-    <section id="board" hidden>
-      <h2 class="sec-h">Solutions board: report, comment and review</h2>
+    <section class="view" id="v-submit" data-views="submit" hidden>
+      <h2 class="sec-h">Submit a problem</h2>
       <div class="board">
         <form class="card pad" id="rf" novalidate>
           <h3>Report a problem</h3>
           <input id="rt" placeholder="Problem title" aria-label="Problem title" maxlength="80">
           <select id="rc" aria-label="Category"></select>
-          <textarea id="rd" rows="3" placeholder="What’s going wrong? Add a fix if you know one" aria-label="Details" maxlength="400"></textarea>
+          <textarea id="rd" rows="3" placeholder="What’s going wrong? Add details that help others recognise it" aria-label="Details" maxlength="400"></textarea>
           <button class="btn" type="submit">Report</button>
           <div class="msg" id="rm" role="status"></div>
         </form>
         <div class="card pad">
-          <h3>Public reviews</h3>
-          <form id="vf" novalidate>
-            <select id="vr" aria-label="Rating"><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option></select>
-            <input id="vt" placeholder="Review Switch the Glitch" aria-label="Review" maxlength="160">
-            <button class="btn" type="submit">Post review</button>
-          </form>
-          <div id="vl"></div>
-        </div>
-      </div>
-      <div class="rlist" id="rl"></div>
-    </section>
-
-    <section class="sec" id="how">
-      <h2>From stuck to solved in three steps</h2>
-      <div class="feat">
-        <div class="f glow-corner"><div class="ic" style="color:var(--white)"><svg class="ico"><use href="#i-alert"/></svg></div><h3>Describe the glitch</h3><p>Tell us what’s broken in your own words. No technical terms needed.</p></div>
-        <div class="f"><div class="ic" style="color:var(--cyan)"><svg class="ico"><use href="#i-flow"/></svg></div><h3>Break it into steps</h3><p>We split the problem into small parts and find the cause of each.</p></div>
-        <div class="f glow-warm"><div class="ic" style="color:var(--yellow)"><svg class="ico"><use href="#i-toggle"/></svg></div><h3>Switch to the fix</h3><p>Follow the steps, tick them off, and see the problem go away.</p></div>
-      </div>
-    </section>
-
-    <section class="talk glow-edges" id="solutions">
-      <div class="talk-top">
-        <a class="logo" href="#top"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle class="knob" cx="8" cy="12" r="2.5"/></svg><span>Switch the Glitch</span></a>
-        <div class="talk-actions"><a class="btn-outline" href="#community">Ask for help</a><span class="burger" aria-hidden="true"><i></i><i></i></span></div>
-      </div>
-      <div class="talk-main">
-        <h2><span>Stuck on it?</span><span class="in">Let’s fix it</span><span>together</span></h2>
-        <div class="talk-side"><p>Tell us what’s broken. We’ll help you find the cause and switch it to a fix.</p><span class="arrow"></span></div>
-      </div>
-      <div class="talk-wrap"><a class="round-btn" href="#community" aria-label="Join the list">↓</a>
-        <div class="talk-img" role="img" aria-label="A problem splits into two steps and ends in a fix">
-          <svg viewBox="0 0 800 260" preserveAspectRatio="xMidYMid slice" font-family="Space Grotesk,Arial,sans-serif" font-size="14">
-            <g fill="none" stroke="#313131" stroke-width="2"><path d="M190 130h90M360 130h60M420 130V70h60M420 130v60h60M620 70h40q20 0 20 20v20M620 190h40q20 0 20-20v-20M680 130h30"/></g>
-            <g fill="#1F2123" stroke="#313131" stroke-width="2"><rect x="60" y="100" width="130" height="60" rx="30"/><rect x="280" y="100" width="80" height="60" rx="30"/><rect x="480" y="45" width="140" height="50" rx="25"/><rect x="480" y="165" width="140" height="50" rx="25"/></g>
-            <rect x="710" y="100" width="110" height="60" rx="30" fill="#5846FB"/>
-            <g fill="#BBBBBB" text-anchor="middle"><text x="125" y="136">Problem</text><text x="320" y="136">Why?</text><text x="550" y="75">Step 1</text><text x="550" y="195">Step 2</text></g>
-            <text x="765" y="136" text-anchor="middle" fill="#FFFFFF" font-weight="700">Fix ✓</text>
-          </svg>
+          <h3>Tips for a good report</h3>
+          <p>Say what you expected and what happened instead.</p>
+          <p>Mention the device, app or place involved.</p>
+          <p>Say how often it happens.</p>
         </div>
       </div>
     </section>
 
-    <section class="join" id="community">
-      <h2>Get a new fix every week</h2>
-      <p>Short guides for everyday problems, sent to your inbox.</p>
-      <form id="f" novalidate>
-        <input id="em" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email">
-        <button class="btn" type="submit">Join the list</button>
-      </form>
-      <div class="msg" id="msg" role="status"></div>
+    
+
+    <section class="view" id="v-top10" data-views="top10" hidden>
+      <h2 class="sec-h">Top 10 problems, ranked by Same problem votes</h2>
+      <ol class="toplist" id="tl"></ol>
     </section>
+
+    <section class="view" id="v-help" data-views="help" hidden>
+      <h2 class="sec-h">Help</h2>
+      <div class="faq">
+        <details open><summary>How do I submit a problem?</summary><p>Open Submit a problem, add a title, pick a category and describe what is going wrong.</p></details>
+        <details><summary>How do I find a problem?</summary><p>Use the search bar at the top, or tap Explore on the Problems page and choose a category.</p></details>
+        <details><summary>What does Same problem do?</summary><p>It shows how many people face the same problem. Each tap adds one.</p></details>
+        <details><summary>How is the Top 10 decided?</summary><p>Problems are ranked by their Same problem count, highest first.</p></details>
+        <details><summary>Where is my data saved?</summary><p>Submitted problems and votes are stored in this browser only. Other visitors do not see them, and clearing site data removes them.</p></details>
+      </div>
+      <div class="card pad helpcta"><h3>Can’t find your problem?</h3><p>Submit it so it appears in the list.</p><a class="btn" href="#submit">Submit a problem</a></div>
+    </section>
+
+    
+
+    
+
+    
   </main>
 
-  <div class="explore" id="ex" hidden role="dialog" aria-modal="true" aria-label="Explore categories">
-    <div class="ex-bar"><button id="exc" type="button" aria-label="Back">←</button><span class="logo"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle class="knob" cx="8" cy="12" r="2.5"/></svg><span>Switch the Glitch</span></span></div>
-    <div class="ex-wrap">
-      <div class="ex-title">ALL PROBLEMS</div>
-      <div class="ex-lab">Category</div>
-      <div class="ex-chips" id="exchips"></div>
+  <div class="settings" id="sp" hidden role="dialog" aria-modal="true" aria-label="Settings">
+    <div class="sp">
+      <div class="sp-head"><h2>Settings</h2><button id="spc" type="button" aria-label="Close settings">✕</button></div>
+      <p class="sp-sec">Navigate</p>
+      <div class="sp-grid">
+        <a class="tile" href="#problems" data-view="problems"><span class="ic"><svg class="ico"><use href="#i-alert"/></svg></span>Problems</a>
+        <a class="tile" href="#submit" data-view="submit"><span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>Submit a problem</a>
+        <a class="tile" href="#help" data-view="help"><span class="ic"><svg class="ico"><use href="#i-help"/></svg></span>Help</a>
       </div>
+      <p class="sp-sec">Insights</p>
+      <div class="sp-grid">
+        <a class="tile" href="#top10" data-view="top10"><span class="ic"><svg class="ico"><use href="#i-trophy"/></svg></span>Top 10 problems</a>
+      </div>
+    </div>
   </div>
 
-  <footer id="help">
+  <footer id="foot">
     <span>© 2026 Switch the Glitch</span>
-    <nav aria-label="Footer"><a href="#problems">Problems</a><a href="#how">How it works</a><a href="#solutions">Solutions</a><a href="#community">Community</a></nav>
+    <nav aria-label="Footer"><a href="#problems">Problems</a><a href="#submit">Submit a problem</a><a href="#top10">Top 10</a><a href="#help">Help</a></nav>
   </footer>
 </div>
 <script>
-var pr=document.getElementById('problems'),bd=document.getElementById('board');
-function setMode(on){pr.hidden=on;bd.hidden=!on;}
-document.querySelectorAll('a[href="#problems"]').forEach(function(a){a.addEventListener('click',function(){setMode(false);});});
-document.getElementById('sf').addEventListener('submit',function(){setMode(false);});
-var tabs=document.querySelectorAll('.tabs a');
-tabs.forEach(function(a){a.addEventListener('click',function(){tabs.forEach(function(x){x.removeAttribute('aria-current');});a.setAttribute('aria-current','page');});});
-document.getElementById('t-sub').addEventListener('click',function(e){e.preventDefault();setMode(true);bd.scrollIntoView({behavior:'smooth'});document.getElementById('rt').focus({preventScroll:true});});
-var db={reports:[{t:'Wi-Fi keeps dropping every few minutes',c:'Wi-Fi',d:'Drops about every ten minutes on the 2.4 GHz band.',up:3,cm:['Try switching to the 5 GHz band.']},{t:'Code won’t compile after an update',c:'Code',d:'Build fails right after upgrading dependencies.',up:2,cm:[]}],reviews:[{r:5,t:'Clear steps, fixed my router issue.'}]};
-try{var sv=JSON.parse(localStorage.getItem('stg')||'null');if(sv&&sv.reports&&sv.reviews)db=sv;}catch(e){}
-function save(){try{localStorage.setItem('stg',JSON.stringify(db));}catch(e){}}
-function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
-function render(){
-  var rl=document.getElementById('rl');rl.textContent='';
-  db.reports.forEach(function(r){
-    var c=el('article','card pad');
-    c.appendChild(el('span','tag',r.c));c.appendChild(el('h3','',r.t));c.appendChild(el('p','',r.d));
-    var a=el('div','row');var up=el('button','btn-outline','Helpful · '+r.up);up.type='button';up.onclick=function(){r.up++;save();render();};a.appendChild(up);c.appendChild(a);
-    r.cm.forEach(function(m){c.appendChild(el('p','cm',m));});
-    var f=el('form','row');var inp=el('input');inp.placeholder='Add a comment or fix';inp.setAttribute('aria-label','Comment');inp.maxLength=200;
-    var b=el('button','btn-outline','Comment');b.type='submit';f.appendChild(inp);f.appendChild(b);
-    f.onsubmit=function(e){e.preventDefault();var v=inp.value.trim();if(!v)return;r.cm.push(v);save();render();};
-    c.appendChild(f);rl.appendChild(c);
-  });
-  var vl=document.getElementById('vl');vl.textContent='';
-  db.reviews.forEach(function(v){vl.appendChild(el('p','cm','★'.repeat(v.r)+' '+v.t));});
+var views=['problems','submit','help','top10'];
+var tabs=document.querySelectorAll('a[data-view]');
+function go(v){
+  if(views.indexOf(v)<0)v='problems';
+  document.querySelectorAll('[data-views]').forEach(function(x){x.hidden=x.getAttribute('data-views').split(' ').indexOf(v)<0;});
+  tabs.forEach(function(a){if(a.getAttribute('data-view')===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(v==='submit'){var rt=document.getElementById('rt');if(rt)rt.focus({preventScroll:true});}
 }
+function nav(v){if(location.hash==='#'+v)go(v);else location.hash=v;}
+window.addEventListener('hashchange',function(){go(location.hash.slice(1));});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var v=a.getAttribute('href').slice(1);if(views.indexOf(v)>-1&&location.hash==='#'+v){e.preventDefault();go(v);}});
+
+var db={reports:[
+ {t:'Wi-Fi keeps dropping every few minutes',c:'Technology',d:'Drops about every ten minutes on the 2.4 GHz band.',up:3},
+ {t:'Code won’t compile after an update',c:'Technology',d:'Build fails right after upgrading dependencies.',up:2},
+ {t:'Monthly budget is not adding up',c:'Finance',d:'Expenses and income never match at month end.',up:0},
+ {t:'Team can’t decide between two options',c:'Employment',d:'Discussions go in circles with no clear way to choose.',up:0},
+ {t:'Phone battery drains too fast',c:'Technology',d:'Battery falls from full to empty in a few hours.',up:0},
+ {t:'Laptop is slow to start',c:'Technology',d:'Takes several minutes before it is usable after boot.',up:0},
+ {t:'Water supply is irregular in the morning',c:'Water',d:'Taps run dry at peak hours.',up:0},
+ {t:'Passwords keep getting locked out',c:'Cybersecurity',d:'Accounts lock after a few attempts and recovery is slow.',up:0},
+ {t:'Daily commute takes too long',c:'Transportation & Logistics',d:'Traffic and connections add over an hour each way.',up:0},
+ {t:'Email inbox is overflowing',c:'Employment',d:'Important messages get buried under routine ones.',up:0}
+]};
+try{var sv=JSON.parse(localStorage.getItem('stg2')||'null');if(sv&&sv.reports&&sv.reports.length)db=sv;}catch(e){}
+function save(){try{localStorage.setItem('stg2',JSON.stringify(db));}catch(e){}}
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+var filterCat='',query='';
+function matches(r){return(!filterCat||r.c===filterCat)&&(!query||(r.t+' '+r.c+' '+(r.d||'')).toLowerCase().indexOf(query)>-1);}
+function vote(r){r.up++;save();render();}
+function voteBtn(r){var b=el('button','btn-outline','Same problem · '+r.up);b.type='button';b.setAttribute('aria-label','I have this problem too. '+r.up+' so far');b.onclick=function(){vote(r);};return b;}
+function render(){
+  var pl=document.getElementById('pl');pl.textContent='';var n=0;
+  db.reports.forEach(function(r){
+    if(!matches(r))return;n++;
+    var c=el('article','card pad');
+    c.appendChild(el('span','tag',r.c));c.appendChild(el('h3','',r.t));if(r.d)c.appendChild(el('p','',r.d));
+    var a=el('div','row');a.appendChild(voteBtn(r));c.appendChild(a);pl.appendChild(c);
+  });
+  var f=!!(filterCat||query);
+  document.getElementById('lh').textContent=f?n+' matching problem'+(n===1?'':'s'):'All problems · '+db.reports.length;
+  document.getElementById('nomatch').hidden=n>0;
+  var fc=document.getElementById('fclear');fc.hidden=!filterCat;fc.textContent=filterCat?'Category: '+filterCat+' ✕':'';
+  document.querySelectorAll('.chip').forEach(function(c){var on=c.textContent===filterCat;c.classList.toggle('active',on);c.setAttribute('aria-pressed',on?'true':'false');});
+  renderTop();renderFeatured();
+}
+var picked=[],openSet={};
+function pickGifts(){var t=db.reports.map(function(r){return r.t;});for(var i=t.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=t[i];t[i]=t[j];t[j]=x;}picked=t.slice(0,6);openSet={};}
+function renderFeatured(){
+  var acc=document.getElementById('acc');acc.textContent='';
+  if(!picked.length)pickGifts();
+  picked.forEach(function(title,n){
+    var r=null;db.reports.forEach(function(x){if(x.t===title)r=x;});if(!r)return;
+    var open=!!openSet[title],g=el('div','gift'+(open?' open':''));
+    var b=el('button','box');b.type='button';b.setAttribute('aria-expanded',open?'true':'false');b.setAttribute('aria-label','Surprise box '+(n+1));
+    b.appendChild(el('span','peek'));b.appendChild(el('span','box-body'));b.appendChild(el('span','box-lid'));
+    var sl=el('div','slip');sl.hidden=!open;
+    sl.appendChild(el('span','tag',r.c));sl.appendChild(el('h3','',r.t));sl.appendChild(el('p','',r.d||'No description added.'));
+    var row=el('div','row');row.appendChild(voteBtn(r));
+    var more=el('button','btn-outline','More in '+r.c);more.type='button';
+    more.onclick=function(){filterCat=r.c;render();document.getElementById('lh').scrollIntoView({behavior:'smooth'});};
+    row.appendChild(more);sl.appendChild(row);
+    b.onclick=function(){var o=!openSet[title];openSet[title]=o;g.classList.toggle('open',o);g.classList.toggle('fresh',o);sl.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');};
+    g.appendChild(b);g.appendChild(sl);acc.appendChild(g);
+  });
+}
+document.getElementById('shuf').addEventListener('click',function(){pickGifts();renderFeatured();});
+function renderTop(){
+  var tl=document.getElementById('tl');tl.textContent='';
+  db.reports.slice().sort(function(a,b){return b.up-a.up;}).slice(0,10).forEach(function(r,i){
+    var li=el('li','card top-item');
+    li.appendChild(el('span','rank',String(i+1)));
+    var m=el('div','top-main');m.appendChild(el('span','tag',r.c));m.appendChild(el('h3','',r.t));li.appendChild(m);
+    li.appendChild(voteBtn(r));tl.appendChild(li);
+  });
+}
+document.getElementById('fclear').addEventListener('click',function(){filterCat='';render();});
+var s=document.getElementById('s');
+s.addEventListener('input',function(){query=s.value.trim().toLowerCase();render();});
+document.getElementById('sf').addEventListener('submit',function(e){e.preventDefault();query=s.value.trim().toLowerCase();render();nav('problems');});
 document.getElementById('rf').addEventListener('submit',function(e){
   e.preventDefault();
   var t=document.getElementById('rt').value.trim(),m=document.getElementById('rm');
   if(!t){m.textContent='Add a title for the problem.';return;}
-  db.reports.unshift({t:t,c:document.getElementById('rc').value,d:document.getElementById('rd').value.trim(),up:0,cm:[]});
-  save();render();this.reset();m.textContent='Reported. Thank you.';
+  db.reports.unshift({t:t,c:document.getElementById('rc').value,d:document.getElementById('rd').value.trim(),up:0});
+  filterCat='';query='';s.value='';
+  save();render();this.reset();m.textContent='Submitted. Taking you to the list.';
+  setTimeout(function(){m.textContent='';nav('problems');},700);
 });
-document.getElementById('vf').addEventListener('submit',function(e){
-  e.preventDefault();
-  var t=document.getElementById('vt').value.trim();if(!t)return;
-  db.reviews.unshift({r:+document.getElementById('vr').value,t:t});
-  save();render();this.reset();
-});
-render();
-var cats=['Healthcare','Agriculture','Education','Employment','MSMEs','Women’s Safety','Water','Environment','Energy','Transportation & Logistics','Finance','Cybersecurity','Food','Public Services','Tourism','Digital Inclusion','Manufacturing','Commerce','Consumer Services','Beauty & Personal Care','Home Services','Housing & Real Estate'];
-var ex=document.getElementById('ex'),exl=document.getElementById('exl'),exb=document.getElementById('exb'),rc=document.getElementById('rc');
-function closeEx(nf){ex.hidden=true;document.body.style.overflow='';if(!nf)exb.focus();}
-var pl=cats.map(function(c){return [c];});
+var cats=['Healthcare','Agriculture','Education','Employment','MSMEs','Women’s Safety','Water','Environment','Energy','Transportation & Logistics','Finance','Cybersecurity','Technology','Food','Public Services','Tourism','Digital Inclusion','Manufacturing','Commerce','Consumer Services','Beauty & Personal Care','Home Services','Housing & Real Estate'];
+var exb=document.getElementById('exb'),rc=document.getElementById('rc');
 var chips=document.getElementById('exchips');
 cats.forEach(function(c){rc.appendChild(el('option','',c));});
-cats.forEach(function(c,i){var b=el('button','chip',c);b.style.animationDelay=(i*25)+'ms';b.type='button';b.onclick=function(){rc.value=c;closeEx(true);setMode(true);bd.scrollIntoView({behavior:'smooth'});};chips.appendChild(b);});
-exb.addEventListener('click',function(e){e.preventDefault();ex.hidden=false;document.body.style.overflow='hidden';ex.scrollTop=0;document.getElementById('exc').focus();});
-document.getElementById('exc').addEventListener('click',function(){closeEx();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ex.hidden)closeEx();});
-var s=document.getElementById('s');
-function filterProblems(){var q=s.value.trim().toLowerCase();document.querySelectorAll('.prob').forEach(function(p){p.style.display=(!q||p.textContent.toLowerCase().indexOf(q)>-1)?'':'none';});}
-s.addEventListener('input',filterProblems);
-document.getElementById('sf').addEventListener('submit',function(e){e.preventDefault();filterProblems();document.getElementById('problems').scrollIntoView({behavior:'smooth'});});
-document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
-  var ok=/^\S+@\S+\.\S+$/.test(document.getElementById('em').value.trim());
-  document.getElementById('msg').textContent=ok?'You’re on the list. Check your inbox to confirm.':'Enter a valid email address, for example name@example.com.';
-});
+cats.forEach(function(c){var b=el('button','chip',c);b.type='button';b.setAttribute('aria-pressed','false');b.onclick=function(){filterCat=(filterCat===c)?'':c;render();document.getElementById('lh').scrollIntoView({behavior:'smooth'});};chips.appendChild(b);});
+exb.addEventListener('click',function(e){e.preventDefault();document.getElementById('pg2').scrollIntoView({behavior:'smooth'});});
+var sp=document.getElementById('sp'),gear=document.getElementById('gear');
+function openSp(){sp.hidden=false;document.body.style.overflow='hidden';gear.setAttribute('aria-expanded','true');document.getElementById('spc').focus();}
+function closeSp(nf){sp.hidden=true;document.body.style.overflow='';gear.setAttribute('aria-expanded','false');if(!nf)gear.focus();}
+gear.addEventListener('click',openSp);
+document.getElementById('spc').addEventListener('click',function(){closeSp();});
+sp.addEventListener('click',function(e){if(e.target===sp)closeSp();});
+sp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){closeSp(true);});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sp.hidden)closeSp();});
+render();
+go(location.hash.slice(1));
 </script>
+
 </body>
 </html>
