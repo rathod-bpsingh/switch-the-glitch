@@ -168,6 +168,10 @@ a{color:inherit;text-decoration:none}
 
 /* ---- Layout ---- */
 .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+body > .wrap{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}
+body > .wrap > #top{flex:1 0 auto;min-width:0}
+#foot{flex-shrink:0}
+#foot nav{flex-wrap:wrap;row-gap:8px}
 .nav{display:grid;grid-template-columns:1fr auto;align-items:center;padding:28px 0}
 .cta-sm{justify-self:end;font-size:13px;color:var(--soft);border:1px solid var(--card2);padding:9px 18px;border-radius:999px;transition:border-color .2s,color .2s}
 .cta-sm:hover{border-color:var(--purple);color:var(--white)}
@@ -303,15 +307,7 @@ footer a:hover{color:var(--white)}
 #idea-workspace label{margin-bottom:14px}
 #workshop{scroll-margin-top:16px}
 .idea-lab h2{margin-top:20px}
-.feature-nav{display:flex;justify-content:flex-end;padding-top:12px;position:relative;z-index:5}
-#feature-menu{position:relative}
-#feature-menu summary{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--card2);border-radius:10px;background:var(--card);cursor:pointer;font-size:22px;list-style:none}
-#feature-menu summary::-webkit-details-marker{display:none}
-.feature-menu-links{position:absolute;right:0;top:calc(100% + 8px);min-width:168px;border:1px solid var(--card2);border-radius:10px;background:var(--card);padding:6px}
-.feature-menu-links a{display:block;padding:10px;border-radius:6px}
-.feature-menu-links a:hover,.feature-menu-links a:focus-visible{background:var(--card2)}
-.feature-menu-links span{margin-right:6px;color:#c6baff}
-body.workshop-theme{
+#workshop.workshop-theme{
   color-scheme:light;
   --white:#302439;--soft:#594b62;--card:#fffdf7;--card2:#d9cbb7;
   color:var(--white);
@@ -331,30 +327,24 @@ body.workshop-theme{
   to{background-position:85% 55%,18% 58%,75% 35%,22% 25%,65% 25%}
 }
 @media(prefers-reduced-motion:reduce){
-  body.workshop-theme{
+  #workshop.workshop-theme{
     animation:none;
     background-position:0% 10%,100% 0%,0% 100%,100% 85%,40% 60%;
   }
 }
-.workshop-theme .spot{display:none}
-.workshop-theme .idea-lab{max-width:880px;min-height:0;margin:24px auto 56px;padding:0;border:0;background:none;display:grid;gap:clamp(16px,3vw,24px)}
+#workshop{max-width:880px;min-height:0;margin:24px auto 56px;padding:clamp(16px,4vw,32px);border:0;border-radius:16px;display:grid;gap:clamp(16px,3vw,24px)}
 .workshop-back{justify-self:start;display:inline-flex;align-items:center;min-height:44px;color:#533673;font-size:14px;font-weight:500}
 .workshop-back:hover{text-decoration:underline}
-.workshop-theme #workshop{margin-top:4px;gap:10px;align-content:start}
+#workshop{margin-top:44px;gap:10px;align-content:start}
 #workshop .workshop-back{min-height:32px}
 #workshop .workshop-heading p{margin-top:4px}
-.workshop-theme #workshop h2{font-size:clamp(34px,6vw,54px)}
-.workshop-theme .idea-lab > *{min-width:0}
+#workshop h2{font-size:clamp(34px,6vw,54px)}
+#workshop > *{min-width:0}
 .workshop-theme .workshop-heading{margin:0;padding:0}
-.workshop-theme .idea-lab h2{
+#workshop h2{
   margin:0;color:#492e66;font-family:Georgia,"Times New Roman",serif;
   font-size:clamp(44px,8vw,76px);line-height:1.08;letter-spacing:-.045em;text-transform:none;
 }
-.workshop-theme .idea-lab #idea-placeholder-title{
-  font-family:"Palatino Linotype",Palatino,Georgia,serif;
-  font-size:clamp(46px,8.5vw,84px);font-weight:700;line-height:1.08;letter-spacing:-.05em;
-}
-#idea-placeholder-title em{font-weight:inherit;color:#69458e}
 .workshop-heading p{margin:8px 0 0}
 .workshop-theme .idea-selectors{margin:0;padding:16px;background:#e8eddf;border:1px solid #c2ccb8;border-radius:12px}
 .workshop-theme .idea-selectors label{color:#344832}
@@ -380,8 +370,34 @@ body.workshop-theme{
 .workshop-theme .btn:hover{background:#4b306e}
 .workshop-theme .btn-outline{background:transparent;color:#533673;border-color:#9278af}
 .workshop-theme .btn-outline:hover{background:#e6d8f0;color:#412b5a}
-.workshop-theme #feature-menu,.workshop-theme #foot,.workshop-theme #foot a{color:var(--white)}
-.workshop-theme .feature-menu-links span{color:#684aab}
+.workshop-theme #foot,.workshop-theme #foot a{color:var(--white)}
+#workshop.workshop-olive{
+  color-scheme:light;
+  --white:#293125;--soft:#505a45;--card:#fffdf4;--card2:#c9cbb6;
+  background:
+    radial-gradient(ellipse at 93% 2%,#d5dec4,transparent 46%),
+    radial-gradient(ellipse at 8% 15%,#ddcfe6b3,transparent 46%),
+    radial-gradient(ellipse at 94% 57%,#c7dbe0b3,transparent 44%),
+    radial-gradient(ellipse at 13% 92%,#e8ced2c4,transparent 51%),
+    #eee8d7;
+  animation:none;
+}
+#workshop.workshop-olive h2{color:#293125;font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.workshop-olive .workshop-back{color:#3f592d}
+.workshop-olive .idea-selectors,.workshop-olive #idea-workspace,.workshop-olive .workshop-copy{
+  background:var(--card);border-color:var(--card2);border-radius:10px;
+}
+.workshop-olive .idea-selectors label{color:var(--white)}
+.workshop-olive #idea-problem-field{grid-column:1/-1}
+.workshop-olive #idea-question{background:#e5ead8;color:#303b27;border-left-color:#738758}
+.workshop-olive #idea-workspace label{border-bottom-color:var(--card2)}
+.workshop-olive #idea-workspace label textarea,.workshop-olive .idea-selectors select{background:#f5f2e6;color:var(--white)}
+.workshop-olive .btn{background:#465f35;color:#fffdf4;border-radius:9px;min-height:44px;padding:10px 18px;font-weight:700}
+.workshop-olive .btn:hover{background:#354b28}
+.workshop-olive .btn-outline{background:transparent;color:#3f592d;border:1px solid #71825b}
+.workshop-olive .btn-outline:hover{background:#e5ead8;color:#344a28}
+.workshop-olive :focus-visible{outline-color:#3f592d}
+.workshop-olive #idea-status:empty{display:none}
 </style>
 </head>
 <body>
@@ -409,15 +425,6 @@ body.workshop-theme{
 <div class="spot" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
 
 <div class="wrap">
-  <nav class="feature-nav" aria-label="Feature navigation" data-views="problems workshop idea-lab submit top10 help" hidden>
-    <details id="feature-menu">
-      <summary aria-label="Open feature menu"><span aria-hidden="true">☰</span></summary>
-      <div class="feature-menu-links">
-        <a href="#idea-lab"><span aria-hidden="true">✦</span> Idea Lab</a>
-        <a href="#workshop"><span aria-hidden="true">⚒</span> Workshop</a>
-      </div>
-    </details>
-  </nav>
   <header class="nav" data-views="problem-detail" hidden>
     <div class="nav-actions">
       <details class="score-info">
@@ -481,7 +488,7 @@ body.workshop-theme{
       <p id="nomatch" hidden>There are no problems in this category yet. <a href="#submit">Submit it as a new problem</a>.</p>
     </section>
 
-    <section id="workshop" class="idea-lab" data-views="workshop" tabindex="-1" hidden aria-labelledby="idea-lab-title">
+    <section id="workshop" class="idea-lab workshop-theme workshop-olive" data-views="problems" tabindex="-1" hidden aria-labelledby="idea-lab-title">
       <a href="#catsec" class="workshop-back">← Categories</a>
       <div class="workshop-heading">
         <h2 id="idea-lab-title">Workshop</h2>
@@ -512,12 +519,6 @@ body.workshop-theme{
           <p id="idea-status" role="status"></p>
         </div>
         <textarea id="idea-copy-fallback" rows="8" aria-label="Your plan for manual copying" readonly hidden></textarea>
-      </div>
-    </section>
-
-    <section class="idea-lab" data-views="idea-lab" aria-labelledby="idea-placeholder-title" hidden>
-      <div class="workshop-heading">
-        <h2 id="idea-placeholder-title">Idea <em>Lab</em></h2>
       </div>
     </section>
 
@@ -553,7 +554,7 @@ body.workshop-theme{
       <div class="faq">
         <details open><summary>How do I submit a problem?</summary><p>Open Submit a problem, add a title, pick a category and describe what is going wrong.</p></details>
         <details><summary>How do I find a problem?</summary><p>Tap Explore to see the top 12 problems, or browse by category to find more.</p></details>
-        <details><summary>How is the Top 12 decided?</summary><p>The list is ordered by previously recorded votes.</p></details>
+        <details><summary>How is the Top 12 decided?</summary><p>The list ranks problems by overall editorial score, with at most one problem per category.</p></details>
         <details><summary>Where is my data saved?</summary><p>Submitted problems and votes are stored in this browser only. Other visitors do not see them, and clearing site data removes them.</p></details>
       </div>
       <div class="card pad helpcta"><h3>Can’t find your problem?</h3><p>Submit it so it appears in the list.</p><a class="btn" href="#submit">Submit a problem</a></div>
@@ -579,10 +580,9 @@ body.workshop-theme{
   </footer>
 </div>
 <script>
-var views=['problems','submit','help','top10','problem-detail','idea-lab','workshop'];
+var views=['problems','submit','help','top10','problem-detail'];
 var tabs=document.querySelectorAll('a[data-view]');
 function go(v){
-  document.getElementById('feature-menu').open=false;
   var route=v.split('/');
   var category=cats.find(function(name){return encodeURIComponent(name)===route[1];});
   var fromExplore=route[1]==='explore';
@@ -591,9 +591,8 @@ function go(v){
   var returning=route[0]==='category'&&(category||fromExplore);
   if(detail)v='problem-detail';
   else if(returning||v==='problem-detail')v='problems';
-  var destination=(v==='explore-problems'||v==='catsec')?document.getElementById(v):null;
+  var destination=(v==='explore-problems'||v==='catsec'||v==='workshop')?document.getElementById(v):null;
   if(views.indexOf(v)<0)v='problems';
-  document.body.classList.toggle('workshop-theme',v==='workshop'||v==='idea-lab');
   document.querySelectorAll('[data-views]').forEach(function(x){x.hidden=x.getAttribute('data-views').split(' ').indexOf(v)<0;});
   tabs.forEach(function(a){if(a.getAttribute('data-view')===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   document.querySelector('.score-info').open=false;
@@ -614,28 +613,17 @@ function go(v){
     document.getElementById('problem-title').focus({preventScroll:true});
     return;
   }
-  if(v==='problems'&&filterCat){filterCat='';render();}
+  if(v==='problems'&&filterCat&&destination?.id!=='workshop'){filterCat='';render();}
   if(destination){
     destination.scrollIntoView();
     if(destination.id!=='catsec')destination.focus({preventScroll:true});
   }else{
     window.scrollTo({top:0,behavior:'smooth'});
   }
-  if(v==='workshop')document.getElementById('workshop').focus({preventScroll:true});
   if(v==='submit'){var rt=document.getElementById('rt');if(rt)rt.focus({preventScroll:true});}
 }
 function nav(v){if(location.hash==='#'+v)go(v);else location.hash=v;}
 window.addEventListener('hashchange',function(){go(location.hash.slice(1));});
-var featureMenu=document.getElementById('feature-menu');
-document.addEventListener('click',function(event){
-  if(featureMenu.open&&!featureMenu.contains(event.target))featureMenu.open=false;
-});
-document.addEventListener('keydown',function(event){
-  if(event.key==='Escape'&&featureMenu.open){
-    featureMenu.open=false;
-    featureMenu.querySelector('summary').focus();
-  }
-});
 var scoreInfo=document.querySelector('.score-info');
 document.addEventListener('click',function(event){
   if(scoreInfo.open&&!scoreInfo.contains(event.target))scoreInfo.open=false;
@@ -1056,7 +1044,7 @@ function matchesCategory(report,category){
   return false;
 }
 var priorityById=new Map(selectedQuestions.map(function(report){return [report.id,report.priority];}));
-var topProblems=rankedReports(db.reports,12);
+var topProblems;
 var previousCategory='';
 var categorySorts=new Map();
 var categorySort=document.getElementById('category-sort');
@@ -1508,7 +1496,20 @@ function sortByProblemScore(reports,sort){
   return reports.slice().sort(function(a,b){return score(b)-score(a);});
 }
 function rankedReports(reports,limit){
-  return reports.slice().sort(function(a,b){return (Number(b.up)||0)-(Number(a.up)||0);}).slice(0,limit);
+  function overall(report){
+    var ratings=problemDetails[report.id][1];
+    return ratings.reduce(function(sum,value){return sum+value;},0)/ratings.length;
+  }
+  var ranked=reports.filter(function(report){
+    return Object.hasOwn(problemDetails,report.id);
+  }).sort(function(a,b){return overall(b)-overall(a);});
+  var categories=new Set();
+  return ranked.filter(function(report){
+    var category=reportCategory(report);
+    if(categories.has(category))return false;
+    categories.add(category);
+    return true;
+  }).slice(0,limit);
 }
 function renderTop(){
   var tl=document.getElementById('tl');tl.textContent='';
@@ -1531,6 +1532,7 @@ document.getElementById('rf').addEventListener('submit',function(e){
 });
 var cats=['B2B Services','Beauty & Personal Care','Consumer Services','E-commerce','EdTech','FinTech','Food & Beverage','Home Services','Logistics','Payment Issues','Real Estate','SaaS','Transportation','Travel','Healthtech','Agriculture','Jobs & Employment'].sort(function(a,b){return a.localeCompare(b,'en');});
 cats.push('Common Problems');
+topProblems=rankedReports(db.reports,12);
 var rc=document.getElementById('rc');
 var chips=document.getElementById('exchips');
 cats.forEach(function(c){rc.appendChild(el('option','',c));});
