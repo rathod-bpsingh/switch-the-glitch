@@ -135,6 +135,15 @@ a{color:inherit;text-decoration:none}
 .prob-list p{margin:5px 0 0;color:var(--soft);font-size:14px}
 .list-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
 .list-head .sec-h{margin:0}
+.category-sort{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:14px}
+.category-sort select{font:inherit;color:var(--white);background:var(--card);border:1px solid var(--card2);border-radius:8px;min-height:44px;padding:8px 12px}
+.sort-info summary{display:grid;place-items:center;width:44px;height:44px;cursor:pointer;list-style:none;color:#c6baff;font-size:22px}
+.sort-info summary::-webkit-details-marker{display:none}
+.category-sort:has(.sort-info[open]){flex-basis:100%}
+.sort-info[open]{display:contents}
+.sort-info-copy{flex-basis:100%;padding:12px 16px;background:var(--card);border:1px solid var(--card2);border-radius:12px}
+.sort-info-copy ul{margin:0;padding-left:1.25em}
+.sort-info-copy p{margin:8px 0 0;color:var(--soft)}
 .btn-outline{cursor:pointer;font-family:inherit}
 
 #nomatch{margin:14px 0 0;font-size:14px;color:var(--soft)}
@@ -248,7 +257,7 @@ footer a:hover{color:var(--white)}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 
 /* ---- Flat fanned problem deck ---- */
-#v-carousel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100svh;margin-inline:calc((100% - 100vw)/2);overflow:clip;background:#000;padding:28px 0 38px;--cw:clamp(176px,74vw,350px);--ch:calc(var(--cw) * 1.34)}
+#v-carousel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100svh;margin-inline:calc((100% - 100vw)/2);overflow:clip;background:#000;padding:28px 0 38px;--cw:min(74vw,350px,calc((100vw - 24px) * .59));--ch:calc(var(--cw) * 1.34)}
 #featured-title{position:relative;z-index:1;margin:0;text-align:center;font:500 clamp(34px,10.5vw,66px)/1.12 "Bitcount Prop Single","Space Grotesk",monospace;letter-spacing:.045em;text-transform:uppercase}
 .c3d-stage{position:relative;width:100%;height:calc(var(--ch) * 1.39);user-select:none;touch-action:pan-y;cursor:grab;isolation:isolate}
 .c3d-card{position:absolute;left:50%;top:50%;width:var(--cw);height:var(--ch);margin:calc(var(--ch) * -.49) 0 0 calc(var(--cw) * -.5);transform-origin:50% 50%;will-change:transform;touch-action:none}
@@ -283,6 +292,96 @@ footer a:hover{color:var(--white)}
 .score-info summary::-webkit-details-marker{display:none}
 .score-info-panel{position:absolute;right:0;top:calc(100% + 8px);width:min(360px,calc(100vw - 56px));padding:16px;background:#18151f;border:1px solid var(--card2);border-radius:12px}
 .ai-notice{color:var(--soft);border-left:2px solid #c6baff;padding-left:12px}
+.idea-lab{margin:44px auto 56px;padding:clamp(18px,4vw,36px);border:1px solid var(--card2);border-radius:20px;background:var(--black)}
+.idea-lab h2{margin:0;color:#c6baff;font-size:clamp(28px,5vw,44px)}
+.idea-lab p{color:var(--soft)}
+.idea-selectors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.idea-lab label{display:grid;gap:6px;min-width:0;font-weight:600}
+.idea-lab select,.idea-lab textarea{width:100%;min-width:0;min-height:44px;padding:10px 12px;font:inherit;font-weight:400;color:var(--white);background:var(--card);border:1px solid var(--card2);border-radius:8px}
+.idea-lab textarea{resize:vertical}
+#idea-workspace label textarea{min-height:0;padding:6px 10px;line-height:1.55;overflow-y:hidden;resize:none}
+#idea-workspace label{margin-bottom:14px}
+#workshop{scroll-margin-top:16px}
+.idea-lab h2{margin-top:20px}
+.feature-nav{display:flex;justify-content:flex-end;padding-top:12px;position:relative;z-index:5}
+#feature-menu{position:relative}
+#feature-menu summary{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--card2);border-radius:10px;background:var(--card);cursor:pointer;font-size:22px;list-style:none}
+#feature-menu summary::-webkit-details-marker{display:none}
+.feature-menu-links{position:absolute;right:0;top:calc(100% + 8px);min-width:168px;border:1px solid var(--card2);border-radius:10px;background:var(--card);padding:6px}
+.feature-menu-links a{display:block;padding:10px;border-radius:6px}
+.feature-menu-links a:hover,.feature-menu-links a:focus-visible{background:var(--card2)}
+.feature-menu-links span{margin-right:6px;color:#c6baff}
+body.workshop-theme{
+  color-scheme:light;
+  --white:#302439;--soft:#594b62;--card:#fffdf7;--card2:#d9cbb7;
+  color:var(--white);
+  background-color:#f1e8d8;
+  background-image:
+    radial-gradient(ellipse at 16% 20%,#b6cdae,transparent 58%),
+    radial-gradient(ellipse at 82% 24%,#d2bce9,transparent 56%),
+    radial-gradient(ellipse at 22% 80%,#f4d8bb,transparent 49%),
+    radial-gradient(ellipse at 80% 78%,#e5b6ca,transparent 54%),
+    radial-gradient(ellipse at 52% 54%,#efb591,transparent 57%);
+  background-size:130% 130%;
+  background-repeat:no-repeat;
+  animation:workshop-colors 32s ease-in-out infinite alternate;
+}
+@keyframes workshop-colors{
+  from{background-position:0% 10%,100% 0%,0% 100%,100% 85%,40% 60%}
+  to{background-position:85% 55%,18% 58%,75% 35%,22% 25%,65% 25%}
+}
+@media(prefers-reduced-motion:reduce){
+  body.workshop-theme{
+    animation:none;
+    background-position:0% 10%,100% 0%,0% 100%,100% 85%,40% 60%;
+  }
+}
+.workshop-theme .spot{display:none}
+.workshop-theme .idea-lab{max-width:880px;min-height:0;margin:24px auto 56px;padding:0;border:0;background:none;display:grid;gap:clamp(16px,3vw,24px)}
+.workshop-back{justify-self:start;display:inline-flex;align-items:center;min-height:44px;color:#533673;font-size:14px;font-weight:500}
+.workshop-back:hover{text-decoration:underline}
+.workshop-theme #workshop{margin-top:4px;gap:10px;align-content:start}
+#workshop .workshop-back{min-height:32px}
+#workshop .workshop-heading p{margin-top:4px}
+.workshop-theme #workshop h2{font-size:clamp(34px,6vw,54px)}
+.workshop-theme .idea-lab > *{min-width:0}
+.workshop-theme .workshop-heading{margin:0;padding:0}
+.workshop-theme .idea-lab h2{
+  margin:0;color:#492e66;font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(44px,8vw,76px);line-height:1.08;letter-spacing:-.045em;text-transform:none;
+}
+.workshop-theme .idea-lab #idea-placeholder-title{
+  font-family:"Palatino Linotype",Palatino,Georgia,serif;
+  font-size:clamp(46px,8.5vw,84px);font-weight:700;line-height:1.08;letter-spacing:-.05em;
+}
+#idea-placeholder-title em{font-weight:inherit;color:#69458e}
+.workshop-heading p{margin:8px 0 0}
+.workshop-theme .idea-selectors{margin:0;padding:16px;background:#e8eddf;border:1px solid #c2ccb8;border-radius:12px}
+.workshop-theme .idea-selectors label{color:#344832}
+.workshop-theme #idea-workspace{
+  margin:0;padding:clamp(12px,3vw,22px);
+  background:var(--card);border:1px solid var(--card2);border-radius:12px;
+}
+.workshop-theme #idea-question{
+  overflow-wrap:anywhere;font-size:clamp(19px,3vw,26px);line-height:1.3;margin:0 0 10px;
+  color:#492e66;background:#efe7f7;border-left:3px solid #8764b0;border-radius:5px;
+  padding:12px 14px;
+}
+.workshop-theme #idea-workspace label{gap:8px;padding:14px 0;margin:0;border-bottom:1px solid #e6dbca}
+.workshop-theme #idea-workspace label textarea{background:#fcf5e8;border-color:var(--card2)}
+.workshop-copy{
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin-top:18px;padding:12px;
+  background:#eee7f4;border:1px solid #d9cce5;border-radius:10px;
+}
+.workshop-copy p{margin:0}
+#idea-suggest-note{flex-basis:100%;font-size:14px;line-height:1.5}
+.workshop-theme :focus-visible{outline-color:#7653a4}
+.workshop-theme .btn{background:#604287;color:#fffaf0}
+.workshop-theme .btn:hover{background:#4b306e}
+.workshop-theme .btn-outline{background:transparent;color:#533673;border-color:#9278af}
+.workshop-theme .btn-outline:hover{background:#e6d8f0;color:#412b5a}
+.workshop-theme #feature-menu,.workshop-theme #foot,.workshop-theme #foot a{color:var(--white)}
+.workshop-theme .feature-menu-links span{color:#684aab}
 </style>
 </head>
 <body>
@@ -310,6 +409,15 @@ footer a:hover{color:var(--white)}
 <div class="spot" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
 
 <div class="wrap">
+  <nav class="feature-nav" aria-label="Feature navigation" data-views="problems workshop idea-lab submit top10 help" hidden>
+    <details id="feature-menu">
+      <summary aria-label="Open feature menu"><span aria-hidden="true">☰</span></summary>
+      <div class="feature-menu-links">
+        <a href="#idea-lab"><span aria-hidden="true">✦</span> Idea Lab</a>
+        <a href="#workshop"><span aria-hidden="true">⚒</span> Workshop</a>
+      </div>
+    </details>
+  </nav>
   <header class="nav" data-views="problem-detail" hidden>
     <div class="nav-actions">
       <details class="score-info">
@@ -346,11 +454,71 @@ footer a:hover{color:var(--white)}
         <h2 class="sec-h">Browse by category</h2>
         <div class="ex-chips" id="exchips"></div>
       </div>
-      <div class="list-head" id="explore-problems" tabindex="-1"><h2 class="sec-h" id="lh" tabindex="-1">Top 12 problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button></div>
+      <div class="list-head" id="explore-problems" tabindex="-1"><h2 class="sec-h" id="lh" tabindex="-1">Top 12 problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button>
+        <div class="category-sort" id="category-sort-control">
+          <label for="category-sort">Sort by</label>
+          <select id="category-sort">
+            <option value="featured">Top 10</option>
+            <option value="severity">Most serious</option>
+            <option value="frequency">Most frequent</option>
+          </select>
+          <details class="sort-info">
+            <summary aria-label="How problem sorting works" title="How problem sorting works">ⓘ</summary>
+            <div class="sort-info-copy">
+              <ul>
+                <li><strong>Featured</strong> shows the original Top 12 in Explore or Top 10 in a category.</li>
+                <li><strong>Most serious</strong> puts problems with the greatest estimated impact first.</li>
+                <li><strong>Most frequent</strong> puts problems people are estimated to face most often first.</li>
+              </ul>
+              <p>You choose what matters. The site ranks problems using AI-assisted estimates. Tap a problem to see its scores and explanation.</p>
+            </div>
+          </details>
+        </div>
+      </div>
       <ol class="explore-cards" id="explore-cards" aria-labelledby="lh"></ol>
       <ol class="prob-list" id="pl" hidden></ol>
       <details id="more-problems" hidden><summary class="btn-outline">More problems</summary><ol class="prob-list" id="more-list"></ol></details>
       <p id="nomatch" hidden>There are no problems in this category yet. <a href="#submit">Submit it as a new problem</a>.</p>
+    </section>
+
+    <section id="workshop" class="idea-lab" data-views="workshop" tabindex="-1" hidden aria-labelledby="idea-lab-title">
+      <a href="#catsec" class="workshop-back">← Categories</a>
+      <div class="workshop-heading">
+        <h2 id="idea-lab-title">Workshop</h2>
+        <p>Pick a problem and turn it into a plan you can test.</p>
+      </div>
+      <div class="idea-selectors">
+        <label>Category
+          <select id="idea-category">
+            <option value="">Choose a category</option>
+          </select>
+        </label>
+        <label id="idea-problem-field" hidden>Problem
+          <select id="idea-problem"></select>
+        </label>
+      </div>
+      <div id="idea-workspace" hidden>
+        <h3 id="idea-question"></h3>
+        <label>Who faces this?<textarea rows="1" maxlength="1000" autocomplete="off"></textarea></label>
+        <label>How do they handle it today?<textarea rows="1" maxlength="1000" autocomplete="off"></textarea></label>
+        <label>What could I build?<textarea rows="1" maxlength="1000" autocomplete="off"></textarea></label>
+        <label>What should I test first?<textarea rows="1" maxlength="1000" autocomplete="off"></textarea></label>
+        <label>What should my first prototype include?<textarea rows="1" maxlength="1000" autocomplete="off"></textarea></label>
+        <label>How will I know it helps?<textarea rows="1" maxlength="1000" autocomplete="off"></textarea></label>
+        <div class="workshop-copy">
+          <button class="btn btn-outline" id="idea-suggest" type="button" aria-describedby="idea-suggest-note" hidden>Suggest answers</button>
+          <button class="btn" id="idea-copy" type="button">Copy my plan</button>
+          <p id="idea-suggest-note" hidden>These AI-assisted drafts use the selected problem and category. Check the assumptions and edit the answers before using your plan.</p>
+          <p id="idea-status" role="status"></p>
+        </div>
+        <textarea id="idea-copy-fallback" rows="8" aria-label="Your plan for manual copying" readonly hidden></textarea>
+      </div>
+    </section>
+
+    <section class="idea-lab" data-views="idea-lab" aria-labelledby="idea-placeholder-title" hidden>
+      <div class="workshop-heading">
+        <h2 id="idea-placeholder-title">Idea <em>Lab</em></h2>
+      </div>
     </section>
 
     <section class="view" id="v-submit" data-views="submit" hidden>
@@ -411,19 +579,21 @@ footer a:hover{color:var(--white)}
   </footer>
 </div>
 <script>
-var views=['problems','submit','help','top10','problem-detail'];
+var views=['problems','submit','help','top10','problem-detail','idea-lab','workshop'];
 var tabs=document.querySelectorAll('a[data-view]');
 function go(v){
+  document.getElementById('feature-menu').open=false;
   var route=v.split('/');
   var category=cats.find(function(name){return encodeURIComponent(name)===route[1];});
   var fromExplore=route[1]==='explore';
-  var list=fromExplore?topProblems:category?db.reports.filter(function(report){return matchesCategory(report,category);}):[];
+  var list=fromExplore?db.reports:category?db.reports.filter(function(report){return matchesCategory(report,category);}):[];
   var detail=route[0]==='problem'?list.find(function(report){return problemKey(report)===route[2];}):null;
   var returning=route[0]==='category'&&(category||fromExplore);
   if(detail)v='problem-detail';
   else if(returning||v==='problem-detail')v='problems';
   var destination=(v==='explore-problems'||v==='catsec')?document.getElementById(v):null;
   if(views.indexOf(v)<0)v='problems';
+  document.body.classList.toggle('workshop-theme',v==='workshop'||v==='idea-lab');
   document.querySelectorAll('[data-views]').forEach(function(x){x.hidden=x.getAttribute('data-views').split(' ').indexOf(v)<0;});
   tabs.forEach(function(a){if(a.getAttribute('data-view')===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   document.querySelector('.score-info').open=false;
@@ -447,21 +617,32 @@ function go(v){
   if(v==='problems'&&filterCat){filterCat='';render();}
   if(destination){
     destination.scrollIntoView();
-    if(destination.id==='explore-problems')destination.focus({preventScroll:true});
+    if(destination.id!=='catsec')destination.focus({preventScroll:true});
   }else{
     window.scrollTo({top:0,behavior:'smooth'});
   }
+  if(v==='workshop')document.getElementById('workshop').focus({preventScroll:true});
   if(v==='submit'){var rt=document.getElementById('rt');if(rt)rt.focus({preventScroll:true});}
 }
 function nav(v){if(location.hash==='#'+v)go(v);else location.hash=v;}
 window.addEventListener('hashchange',function(){go(location.hash.slice(1));});
+var featureMenu=document.getElementById('feature-menu');
+document.addEventListener('click',function(event){
+  if(featureMenu.open&&!featureMenu.contains(event.target))featureMenu.open=false;
+});
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'&&featureMenu.open){
+    featureMenu.open=false;
+    featureMenu.querySelector('summary').focus();
+  }
+});
 var scoreInfo=document.querySelector('.score-info');
 document.addEventListener('click',function(event){
   if(scoreInfo.open&&!scoreInfo.contains(event.target))scoreInfo.open=false;
 });
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var v=a.getAttribute('href').slice(1);if(v.startsWith('problem/')&&location.hash!==a.hash&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){
   history.replaceState(null,'','#category/'+v.split('/').slice(1).join('/'));
-}if((views.indexOf(v)>-1||v==='explore-problems')&&location.hash==='#'+v){e.preventDefault();go(v);}});
+}if((views.indexOf(v)>-1||v==='explore-problems'||v==='workshop')&&location.hash==='#'+v){e.preventDefault();go(v);}});
 
 var legacyExamples=[
   ["Wi-Fi keeps dropping every few minutes","Technology","Drops about every ten minutes on the 2.4 GHz band."],
@@ -877,6 +1058,12 @@ function matchesCategory(report,category){
 var priorityById=new Map(selectedQuestions.map(function(report){return [report.id,report.priority];}));
 var topProblems=rankedReports(db.reports,12);
 var previousCategory='';
+var categorySorts=new Map();
+var categorySort=document.getElementById('category-sort');
+categorySort.addEventListener('change',function(){
+  categorySorts.set(filterCat,categorySort.value);
+  render();
+});
 var problemDetails={
   "daily-b2b-2":[["A signed purchase order confirms future demand, but it does not put cash in the exporter’s account. Suppliers may require a deposit before production, while lenders may ask for assets the exporter cannot pledge.", "The exporter has to pay for materials or production before a finished shipment can generate an invoice. Even if the order is profitable, the business may lack the cash needed to fulfill it. Taking on another order can widen that gap instead of easing it.", "The financing decision depends on more than the order value. The business needs to know what it must pay at each stage, whether the buyer can change or cancel the order, and how long it may take to collect after shipment. Those details determine whether funding can last through the full production and payment cycle."], [7.8, 6.0, 5.8, 6.3]],
   "daily-b2b-3":[["Small manufacturers know what their machines can produce, but buyer directories rarely reveal which procurement teams are sourcing those components. Sales teams spend time approaching firms whose tolerances, volumes, or materials do not match their capabilities.", "A buyer in the right industry is not necessarily a fit. Its team might need a different material, precision level, or order volume. A broad contact list leaves the manufacturer to uncover those differences one conversation at a time.", "The key missing information is what a buyer is sourcing now or expects to source soon, and who handles that purchase. Without that context, a capable manufacturer can overlook a good match or spend weeks on leads that never turn into requests for quotes."], [6.5, 6.0, 5.8, 7.5]],
@@ -1270,10 +1457,17 @@ function problemHeading(report,categoryKey){
 function render(){
   var pl=document.getElementById('pl'),more=document.getElementById('more-problems'),moreList=document.getElementById('more-list');
   pl.textContent='';moreList.textContent='';
-  if(previousCategory!==filterCat)more.open=false;
+  if(previousCategory!==filterCat){
+    more.open=false;
+    document.querySelector('.sort-info').open=false;
+  }
   previousCategory=filterCat;
   var categoryReports=filterCat?db.reports.filter(function(report){return matchesCategory(report,filterCat);}):[];
-  var featured=new Set(filterCat?categoryProblems(filterCat):[]);
+  var sort=categorySorts.get(filterCat)||'featured';
+  categorySort.value=sort;
+  categorySort.options[0].textContent=filterCat?'Top 10':'Top 12';
+  if(sort!=='featured')categoryReports=sortByProblemScore(categoryReports,sort);
+  var featured=new Set(filterCat&&sort==='featured'?categoryProblems(filterCat):categoryReports.slice(0,10));
   pl.hidden=!filterCat;
   categoryReports.forEach(function(report){
     var priority=featured.has(report);
@@ -1297,12 +1491,21 @@ function render(){
   exploreCards.hidden=f;
   exploreCards.replaceChildren();
   if(f)return;
-  topProblems.forEach(function(report){
+  var exploreReports=sort==='featured'?topProblems:sortByProblemScore(db.reports,sort).slice(0,12);
+  exploreReports.forEach(function(report){
     var row=el('li','explore-row');
     row.appendChild(problemHeading(report,'explore'));
     if(report.d)row.appendChild(el('p','',report.d));
     exploreCards.appendChild(row);
   });
+}
+function sortByProblemScore(reports,sort){
+  var index=sort==='severity'?0:3;
+  function score(report){
+    var detail=problemDetails[report.id];
+    return detail?detail[1][index]:-1;
+  }
+  return reports.slice().sort(function(a,b){return score(b)-score(a);});
 }
 function rankedReports(reports,limit){
   return reports.slice().sort(function(a,b){return (Number(b.up)||0)-(Number(a.up)||0);}).slice(0,limit);
@@ -1332,6 +1535,324 @@ var rc=document.getElementById('rc');
 var chips=document.getElementById('exchips');
 cats.forEach(function(c){rc.appendChild(el('option','',c));});
 cats.forEach(function(c){var b=el('button','chip',c);b.type='button';b.setAttribute('aria-pressed','false');b.onclick=function(){filterCat=(filterCat===c)?'':c;render();document.getElementById('lh').scrollIntoView({behavior:'smooth'});};chips.appendChild(b);});
+(function setupIdeaLab(){
+  var category=document.getElementById('idea-category');
+  var problem=document.getElementById('idea-problem');
+  var problemField=document.getElementById('idea-problem-field');
+  var workspace=document.getElementById('idea-workspace');
+  var heading=document.getElementById('idea-question');
+  var fields=Array.from(workspace.querySelectorAll('label textarea'));
+  var status=document.getElementById('idea-status');
+  var fallback=document.getElementById('idea-copy-fallback');
+  var suggest=document.getElementById('idea-suggest');
+  var suggestNote=document.getElementById('idea-suggest-note');
+  var suggestions=new Map(Object.entries({
+  "daily-b2b-1": [
+    "Small suppliers who pay wages and buy materials before customers settle invoices.",
+    "They check bank balances and spreadsheets, then call buyers to confirm payment dates.",
+    "A weekly cash forecast that flags bills at risk if a payment slips.",
+    "Ask three suppliers to walk through their last cash shortfall and when they spotted it.",
+    "One screen with sample invoices, due dates, and a late-payment toggle.",
+    "Check whether suppliers can identify the first week they run short and say what they would do."
+  ],
+  "daily-b2b-2": [
+    "Small exporters with confirmed orders but limited collateral.",
+    "They negotiate deposits, ask suppliers for credit, or approach lenders.",
+    "A timeline comparing production expenses with buyer deposits and expected collections.",
+    "Ask exporters which expenses must be paid before shipment and which can be deferred.",
+    "Map one sample order and its expected payment dates.",
+    "Check whether users can identify the largest funding gap and when it occurs."
+  ],
+  "daily-b2b-3": [
+    "Small manufacturers seeking buyers for the components they make.",
+    "They rely on referrals, directories, and calls to procurement teams.",
+    "A searchable directory matching component requirements to supplier capabilities.",
+    "Ask manufacturers to show how they qualify an incoming lead.",
+    "Match five fictional buyer requests with sample supplier profiles.",
+    "Check whether users can find a suitable buyer faster than with a plain directory."
+  ],
+  "daily-b2b-4": [
+    "Factory supervisors staffing short-notice production shifts.",
+    "They call workers and consult separate training and shift records.",
+    "A roster showing available workers and stations they are qualified to cover.",
+    "Check whether supervisors can access current training and availability records.",
+    "Use a sample shift with three stations and a small worker roster.",
+    "Check whether supervisors spot both staffing and qualification gaps."
+  ],
+  "daily-b2b-5": [
+    "Sports-equipment makers arranging testing before shipment.",
+    "They contact labs individually to ask about tests, capacity, and lead times.",
+    "A requirements checklist with a lab coverage and scheduling comparison.",
+    "Ask manufacturers to share an anonymized testing request and lab replies.",
+    "Compare three sample labs against one test checklist.",
+    "Check whether users find missing tests and scheduling conflicts before booking."
+  ],
+  "daily-b2b-6": [
+    "Dispatch teams assigning customer orders to trucks.",
+    "They check loading lists and call drivers when pickups slip.",
+    "A dispatch board that shows which orders are at risk after a missed pickup.",
+    "Ask dispatchers to reconstruct a recent missed pickup and their prioritization decisions.",
+    "Simulate one late truck serving three orders.",
+    "Check whether users identify the earliest delivery at risk and choose an alternative."
+  ],
+  "daily-b2b-7": [
+    "Small businesses comparing quotes from suppliers.",
+    "They review quotes in email and manually add freight and other charges.",
+    "A quote comparison that separates total cost from payment timing.",
+    "Ask purchasing staff to compare two real anonymized quotes and note hidden assumptions.",
+    "Build one worksheet for two quotes, one quantity, and one destination.",
+    "Check whether users find the cheaper delivered option and identify the earlier cash outflow."
+  ],
+  "daily-b2b-8": [
+    "Small businesses following up on a filing issue that needs an officer.",
+    "They track case numbers, notices, and follow-ups in email or notes.",
+    "A case timeline with deadlines, outstanding documents, and follow-up reminders.",
+    "Ask a business owner which updates they could see in a recent filing case.",
+    "Use one fictional case with three milestones and a deadline.",
+    "Check whether users can identify the next action and the last confirmed update."
+  ],
+  "daily-b2b-9": [
+    "Small suppliers asked by buyers for emissions information.",
+    "They gather electricity bills and fuel records and reconcile them manually.",
+    "A worksheet that organizes usage records by site, source, and reporting period.",
+    "Ask suppliers and buyers which input records and reporting fields they actually use.",
+    "Organize sample energy records for one site and period.",
+    "Check whether a reviewer can trace a reported quantity back to its source record."
+  ],
+  "daily-b2b-10": [
+    "Manufacturers considering selling through online marketplaces.",
+    "They estimate fees, shipping, and returns in spreadsheets.",
+    "A break-even simulator with editable fees and return assumptions.",
+    "Ask sellers which costs were hardest to predict before launch.",
+    "Model one product under two fee or return scenarios.",
+    "Check whether users can explain how a change in returns affects break-even sales."
+  ],
+  "daily-b2b-11": [
+    "Factory maintenance teams reporting machine faults to technicians.",
+    "They send error descriptions, photos, or voice notes and arrange a visit.",
+    "A fault intake form that gathers model details, symptoms, and recent changes.",
+    "Ask technicians what information they request before choosing tools and parts.",
+    "Use one fictional fault report and a technician review screen.",
+    "Check whether a technician needs fewer follow-up questions."
+  ],
+  "daily-b2b-12": [
+    "Small businesses taking over work from a departing freelancer.",
+    "They request files, account access, and documentation through email or chat.",
+    "A handover checklist for files, owners, permissions, and unfinished tasks.",
+    "Ask project leads which missing items delayed their last handover.",
+    "Create a sample checklist and identify missing handoff items for one project.",
+    "Check whether a replacement can identify the current files and next task."
+  ],
+  "daily-b2b-13": [
+    "Manufacturers preparing to repeat a successful prototype in a small batch.",
+    "They record material and process differences during trial runs.",
+    "A batch comparison sheet linking specifications to inspection results.",
+    "Ask an operator which changes are most likely to differ across batches.",
+    "Compare inspection data for one prototype and three sample units.",
+    "Check whether the team can spot which variation exceeds the agreed limit."
+  ],
+  "daily-b2b-14": [
+    "Neighborhood restaurants trying to meet a wholesaler minimum together.",
+    "They coordinate quantities, payment, and delivery over group chats.",
+    "A shared order sheet that tracks commitments and each restaurant’s share.",
+    "Ask restaurant owners how often their quantities and delivery needs align.",
+    "Use one ingredient and three sample restaurants with different needs.",
+    "Check whether users can reach the minimum and agree on delivery and payment."
+  ],
+  "daily-b2b-15": [
+    "Retailers considering direct purchases that require bigger orders.",
+    "They compare wholesale prices with estimated sales and money tied up in stock.",
+    "A calculator comparing direct and distributor purchases over time.",
+    "Ask retailers to explain a recent decision about taking a larger order.",
+    "Model one product with sample prices, minimum quantities, and sales rates.",
+    "Check whether users can find when savings stop justifying excess stock."
+  ],
+  "daily-b2b-16": [
+    "Accounts teams matching lump-sum bank payments with open invoices.",
+    "They cross-check amounts, references, and buyer emails manually.",
+    "A reconciliation screen that shows candidate invoice matches and flags ambiguity.",
+    "Ask accountants how they decide when several invoices add up to the same amount.",
+    "Use a sample bank transfer that can match more than one group of invoices.",
+    "Check whether users recognize the ambiguity and request the right payment reference."
+  ],
+  "daily-b2b-17": [
+    "Retailers promising delivery dates based on a supplier’s stock.",
+    "They ask the supplier to verify and reserve stock before confirming an order.",
+    "An order tracker distinguishing listed stock from stock held for a buyer.",
+    "Ask retailers when a reservation becomes reliable enough to promise delivery.",
+    "Simulate two orders competing for the same stock.",
+    "Check whether users can tell which order is safe to confirm."
+  ],
+  "daily-b2b-18": [
+    "Small suppliers screening tenders before preparing bids.",
+    "They read eligibility requirements and check certificates and contracts manually.",
+    "A tender checklist linking each condition to evidence and expiry dates.",
+    "Ask suppliers which eligibility checks take the most time.",
+    "Use one sample tender and a set of fictional certificates.",
+    "Check whether users find a missing or expired document before preparing the bid."
+  ],
+  "daily-b2b-19": [
+    "Factory owners evaluating upgrades that promise lower electricity bills.",
+    "They compare supplier estimates with past bills and machine use.",
+    "A payback worksheet using the factory’s operating hours and electricity rates.",
+    "Ask owners which operating assumptions they can verify from their records.",
+    "Compare one upgrade under two sample usage schedules.",
+    "Check whether users can identify which assumption changes payback the most."
+  ],
+  "daily-b2b-20": [
+    "Manufacturers quoting work before their material prices are locked in.",
+    "They add a margin buffer or set an expiry date on quotes.",
+    "A quote sensitivity tool showing margins if key material prices rise.",
+    "Ask sales staff what price change would cause them to revisit a quote.",
+    "Use one quote and two prices for the same material.",
+    "Check whether users can identify when the margin falls below their target."
+  ]
+}));
+  var drafts=new Map();
+  var availableReports=new Map();
+  cats.forEach(function(name){category.add(new Option(name,name));});
+
+  var approaches={
+    'Agriculture':['growers and the people who collect or buy their produce','a harvest-to-sale timeline','time to coordinate a pickup or avoid a missed handoff'],
+    'Beauty & Personal Care':['customers who recently booked or bought the service or product, and providers who sell it','a comparison of two listings with the relevant product or service details','whether customers can explain what they are paying for or verify what they need'],
+    'Consumer Services':['consumers who recently tried to book, cancel, or resolve the service','one request with the relevant terms, evidence, and status','whether a customer can identify the next step without asking support'],
+    'E-commerce':['online shoppers who recently faced this issue and merchants who handle it','one sample order from listing through checkout or resolution','whether shoppers spot the relevant cost, discrepancy, or next step sooner'],
+    'EdTech':['learners, families, or educators dealing with the decision described','one course, application, or lesson with the information needed at that step','whether participants can complete the task or explain their choice without extra help'],
+    'FinTech':['people who recently dealt with the relevant financial product or transaction','a fictional quote, statement, or case with its key terms and dates','whether users can explain the cost or status using the information shown'],
+    'Food & Beverage':['buyers or vendors who encounter this during ordering, storage, or preparation','one product, batch, or order and the information people need to check','whether users can identify missing information or make the intended choice faster'],
+    'Home Services':['households affected by the issue and local service workers','one sample service request, quote, or repair record','whether both sides agree on the scope, status, or evidence needed'],
+    'Logistics':['dispatchers, shippers, or carriers responsible for the affected handoff','one sample shipment with a delay, exception, or cost change','whether an operator can identify the affected shipment and its next action'],
+    'Payment Issues':['payers or merchants who recently faced the issue','one fictional payment with the references, amounts, and events needed to trace it','whether participants distinguish a confirmed payment from an unresolved one'],
+    'Real Estate':['buyers, tenants, or residents making the decision in the question','one sample property and the records or costs needed to evaluate it','whether participants can identify a missing record, cost, or commitment'],
+    'SaaS':['small-team staff responsible for the workflow in the question','one fictional workflow across two tools with a missing or inconsistent record','whether staff can complete the task with fewer manual checks'],
+    'Transportation':['people who use or operate the relevant route, vehicle, or service','one sample trip or incident and the information available at that moment','whether people can choose or report the next step more confidently'],
+    'Travel':['travelers who faced this during planning or on a recent trip','one itinerary, booking, or travel issue with a realistic change or constraint','whether the traveler can make the next decision without searching several sources'],
+    'Healthtech':['patients, caregivers, or clinic staff who handle the process in the question','one fictional appointment, record, or billing journey','whether a participant can find the relevant information without an extra call or visit'],
+    'Jobs & Employment':['workers, applicants, or employers involved in the decision','one fictional job, shift, application, or benefits case','whether participants understand the requirement or next step faster'],
+    'Common Problems':['people who recently faced the issue and the organization that handles it','one recurring case with its location, evidence, and status','whether residents can find the responsible party or see the next action'],
+    'B2B Services':['business owners or staff responsible for the decision in the question','one sample business case with the relevant documents or records','whether a staff member can make the decision with fewer follow-up checks']
+  };
+
+  function buildSuggestions(report){
+    var prepared=suggestions.get(problemKey(report));
+    if(prepared){
+      var answers=prepared.slice();
+      answers[3]+=' Compare their accounts and note what they already tried before assuming a new tool would help.';
+      answers[5]+=' Give the same task to users with their current method and compare the results.';
+      return answers;
+    }
+    var approach=approaches[category.value];
+    var detail=Object.hasOwn(problemDetails,report.id)?problemDetails[report.id]:null;
+    var context=detail?detail[0][0]:report.d;
+    return [
+      'Start with '+approach[0]+'. Screen for people who can describe a specific recent case.',
+      context
+        ? context+' Ask participants to show the steps they actually took and where they lost time or had to follow up.'
+        : 'Ask participants to describe the last time they faced this problem. Record the tools, messages, or people they relied on.',
+      'Build a simple interactive walkthrough around '+approach[1]+'. Use the problem statement as the goal and make the next decision clear.',
+      'Ask three people to walk through their last case. Find out when they first noticed the problem, what they tried, and whether better information at that point would have helped.',
+      'Start with '+approach[1]+'. Use fictional data and include a missing detail or change that the visitor has to handle.',
+      'Check '+approach[2]+'. Compare the same task with and without the prototype, and note where users still get stuck.'
+    ];
+  }
+
+  function fitAnswer(field){
+    field.style.height='auto';
+    field.style.height=Math.ceil(field.scrollHeight+field.offsetHeight-field.clientHeight)+'px';
+  }
+
+  function fitAnswers(){
+    if(fields[0].getClientRects().length)fields.forEach(fitAnswer);
+  }
+
+  var answerLayout=new ResizeObserver(function(entries){
+    var width=entries[0].contentRect.width;
+    if(width===answerLayoutWidth)return;
+    answerLayoutWidth=width;
+    fitAnswers();
+  });
+  var answerLayoutWidth;
+  answerLayout.observe(workspace);
+
+  function clearFeedback(){
+    status.textContent='';
+    fallback.hidden=true;
+  }
+
+  category.addEventListener('change',function(){
+    availableReports.clear();
+    problem.replaceChildren(new Option('Choose a problem',''));
+    problemField.hidden=!category.value;
+    workspace.hidden=true;
+    clearFeedback();
+    if(!category.value)return;
+    db.reports.filter(function(report){return matchesCategory(report,category.value);}).forEach(function(report){
+      var key=problemKey(report);
+      availableReports.set(key,report);
+      problem.add(new Option(report.t,key));
+    });
+  });
+
+  problem.addEventListener('change',function(){
+    workspace.hidden=!problem.value;
+    clearFeedback();
+    if(!problem.value)return;
+    suggest.hidden=suggestNote.hidden=false;
+    heading.textContent=problem.selectedOptions[0].textContent;
+    var draft=drafts.get(problem.value)||[];
+    fields.forEach(function(field,index){field.value=draft[index]||'';});
+    fitAnswers();
+  });
+
+  workspace.addEventListener('input',function(event){
+    if(!fields.includes(event.target))return;
+    fitAnswer(event.target);
+    drafts.set(problem.value,fields.map(function(field){return field.value;}));
+    clearFeedback();
+  });
+
+  suggest.addEventListener('click',function(){
+    var report=availableReports.get(problem.value);
+    if(!report)return;
+    var answers=buildSuggestions(report);
+    clearFeedback();
+    var added=false;
+    fields.forEach(function(field,index){
+      if(field.value.trim())return;
+      field.value=answers[index];
+      added=true;
+    });
+    drafts.set(problem.value,fields.map(function(field){return field.value;}));
+    fitAnswers();
+    status.textContent=added?'Suggestions added to empty fields.':'All fields already have answers.';
+  });
+
+  document.getElementById('idea-copy').addEventListener('click',async function(){
+    clearFeedback();
+    var answers=fields.map(function(field){return field.value.trim();});
+    var missing=answers.indexOf('');
+    if(missing!==-1){
+      status.textContent='Answer all six questions to copy your plan.';
+      fields[missing].focus();
+      return;
+    }
+    var labels=fields.map(function(field){return field.closest('label').firstChild.textContent.trim();});
+    var plan=['Workshop','Category: '+category.value,'Problem: '+heading.textContent].concat(answers.map(function(answer,index){
+      return labels[index]+'\n'+answer;
+    })).join('\n\n');
+    try{
+      await navigator.clipboard.writeText(plan);
+      status.textContent='Plan copied.';
+    }catch(error){
+      fallback.value=plan;
+      fallback.hidden=false;
+      fallback.focus();
+      fallback.select();
+      status.textContent='Your plan is selected. Copy it using your device’s copy command.';
+    }
+  });
+})();
+
 render();
 go(location.hash.slice(1));
 </script>
