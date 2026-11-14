@@ -1,0 +1,3991 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Top 12 Problem Carousel</title><style>*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:system-ui,sans-serif;--white:#fff}.dot-title svg{display:block;width:100%;height:auto}
+.dot-ink{fill:var(--white)}
+.dot-accent{fill:#c6baff}
+#v-carousel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100svh;overflow:clip;background:transparent;padding:28px 0 38px;--cw:min(74vw,350px,calc((100vw - 24px) * .59));--ch:calc(var(--cw) * 1.34)}
+#featured-title{position:relative;z-index:1}
+#featured-title.dot-title{margin-bottom:clamp(56px,9vw,96px)}
+.c3d-stage{position:relative;width:100%;height:calc(var(--ch) * 1.39);user-select:none;touch-action:pan-y;cursor:grab;isolation:isolate}
+.c3d-card{position:absolute;left:50%;top:50%;width:var(--cw);height:var(--ch);margin:calc(var(--ch) * -.49) 0 0 calc(var(--cw) * -.5);transform-origin:50% 50%;will-change:transform;touch-action:none}
+.c3d-stage.grabbing{cursor:grabbing}
+.c3d-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.c3d-face{position:absolute;inset:0;border-radius:7.5%;overflow:hidden;container-type:inline-size;background:var(--paper);color:var(--card-ink);box-shadow:0 2px 5px #0004}
+.c3d-ui{position:absolute;inset:0;padding:7.5% 5%;font-family:Arial,sans-serif}
+.c3d-badge{display:inline-block;font-size:5cqw;border-radius:9px;padding:1.6cqw 5cqw;background:#f8f9fa;color:#171717}
+.c3d-title{margin:12cqw 0 0;font-size:clamp(18px,11.4cqw,44px);font-weight:400;line-height:1;letter-spacing:-.055em;overflow-wrap:anywhere}
+.c3d-title.long{font-size:9.1cqw}
+.c3d-cue{display:flex;align-items:center;gap:5px;color:#fff;font:400 19px Arial,sans-serif}
+.c3d-cue button{width:44px;height:44px;border:0;background:none;color:inherit;font:inherit;font-size:28px;cursor:pointer}</style><body><section id="v-carousel" data-views="problems" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="dot-title" aria-label="Top 12 Problems"><svg viewBox="0 0 58 17" aria-hidden="true" focusable="false"><g class="dot-ink"><circle cx="13.5" cy="0.5" r=".36"/><circle cx="14.5" cy="0.5" r=".36"/><circle cx="15.5" cy="0.5" r=".36"/><circle cx="16.5" cy="0.5" r=".36"/><circle cx="17.5" cy="0.5" r=".36"/><circle cx="15.5" cy="1.5" r=".36"/><circle cx="15.5" cy="2.5" r=".36"/><circle cx="15.5" cy="3.5" r=".36"/><circle cx="15.5" cy="4.5" r=".36"/><circle cx="15.5" cy="5.5" r=".36"/><circle cx="15.5" cy="6.5" r=".36"/><circle cx="20.5" cy="0.5" r=".36"/><circle cx="21.5" cy="0.5" r=".36"/><circle cx="22.5" cy="0.5" r=".36"/><circle cx="19.5" cy="1.5" r=".36"/><circle cx="23.5" cy="1.5" r=".36"/><circle cx="19.5" cy="2.5" r=".36"/><circle cx="23.5" cy="2.5" r=".36"/><circle cx="19.5" cy="3.5" r=".36"/><circle cx="23.5" cy="3.5" r=".36"/><circle cx="19.5" cy="4.5" r=".36"/><circle cx="23.5" cy="4.5" r=".36"/><circle cx="19.5" cy="5.5" r=".36"/><circle cx="23.5" cy="5.5" r=".36"/><circle cx="20.5" cy="6.5" r=".36"/><circle cx="21.5" cy="6.5" r=".36"/><circle cx="22.5" cy="6.5" r=".36"/><circle cx="25.5" cy="0.5" r=".36"/><circle cx="26.5" cy="0.5" r=".36"/><circle cx="27.5" cy="0.5" r=".36"/><circle cx="28.5" cy="0.5" r=".36"/><circle cx="25.5" cy="1.5" r=".36"/><circle cx="29.5" cy="1.5" r=".36"/><circle cx="25.5" cy="2.5" r=".36"/><circle cx="29.5" cy="2.5" r=".36"/><circle cx="25.5" cy="3.5" r=".36"/><circle cx="26.5" cy="3.5" r=".36"/><circle cx="27.5" cy="3.5" r=".36"/><circle cx="28.5" cy="3.5" r=".36"/><circle cx="25.5" cy="4.5" r=".36"/><circle cx="25.5" cy="5.5" r=".36"/><circle cx="25.5" cy="6.5" r=".36"/><circle cx="36.5" cy="0.5" r=".36"/><circle cx="35.5" cy="1.5" r=".36"/><circle cx="36.5" cy="1.5" r=".36"/><circle cx="36.5" cy="2.5" r=".36"/><circle cx="36.5" cy="3.5" r=".36"/><circle cx="36.5" cy="4.5" r=".36"/><circle cx="36.5" cy="5.5" r=".36"/><circle cx="35.5" cy="6.5" r=".36"/><circle cx="36.5" cy="6.5" r=".36"/><circle cx="37.5" cy="6.5" r=".36"/><circle cx="41.5" cy="0.5" r=".36"/><circle cx="42.5" cy="0.5" r=".36"/><circle cx="43.5" cy="0.5" r=".36"/><circle cx="40.5" cy="1.5" r=".36"/><circle cx="44.5" cy="1.5" r=".36"/><circle cx="44.5" cy="2.5" r=".36"/><circle cx="42.5" cy="3.5" r=".36"/><circle cx="43.5" cy="3.5" r=".36"/><circle cx="41.5" cy="4.5" r=".36"/><circle cx="40.5" cy="5.5" r=".36"/><circle cx="40.5" cy="6.5" r=".36"/><circle cx="41.5" cy="6.5" r=".36"/><circle cx="42.5" cy="6.5" r=".36"/><circle cx="43.5" cy="6.5" r=".36"/><circle cx="44.5" cy="6.5" r=".36"/></g><g class="dot-accent"><circle cx="6" cy="10.5" r=".36"/><circle cx="7" cy="10.5" r=".36"/><circle cx="8" cy="10.5" r=".36"/><circle cx="9" cy="10.5" r=".36"/><circle cx="6" cy="11.5" r=".36"/><circle cx="10" cy="11.5" r=".36"/><circle cx="6" cy="12.5" r=".36"/><circle cx="10" cy="12.5" r=".36"/><circle cx="6" cy="13.5" r=".36"/><circle cx="7" cy="13.5" r=".36"/><circle cx="8" cy="13.5" r=".36"/><circle cx="9" cy="13.5" r=".36"/><circle cx="6" cy="14.5" r=".36"/><circle cx="6" cy="15.5" r=".36"/><circle cx="6" cy="16.5" r=".36"/><circle cx="12" cy="10.5" r=".36"/><circle cx="13" cy="10.5" r=".36"/><circle cx="14" cy="10.5" r=".36"/><circle cx="15" cy="10.5" r=".36"/><circle cx="12" cy="11.5" r=".36"/><circle cx="16" cy="11.5" r=".36"/><circle cx="12" cy="12.5" r=".36"/><circle cx="16" cy="12.5" r=".36"/><circle cx="12" cy="13.5" r=".36"/><circle cx="13" cy="13.5" r=".36"/><circle cx="14" cy="13.5" r=".36"/><circle cx="15" cy="13.5" r=".36"/><circle cx="12" cy="14.5" r=".36"/><circle cx="14" cy="14.5" r=".36"/><circle cx="12" cy="15.5" r=".36"/><circle cx="15" cy="15.5" r=".36"/><circle cx="12" cy="16.5" r=".36"/><circle cx="16" cy="16.5" r=".36"/><circle cx="19" cy="10.5" r=".36"/><circle cx="20" cy="10.5" r=".36"/><circle cx="21" cy="10.5" r=".36"/><circle cx="18" cy="11.5" r=".36"/><circle cx="22" cy="11.5" r=".36"/><circle cx="18" cy="12.5" r=".36"/><circle cx="22" cy="12.5" r=".36"/><circle cx="18" cy="13.5" r=".36"/><circle cx="22" cy="13.5" r=".36"/><circle cx="18" cy="14.5" r=".36"/><circle cx="22" cy="14.5" r=".36"/><circle cx="18" cy="15.5" r=".36"/><circle cx="22" cy="15.5" r=".36"/><circle cx="19" cy="16.5" r=".36"/><circle cx="20" cy="16.5" r=".36"/><circle cx="21" cy="16.5" r=".36"/><circle cx="24" cy="10.5" r=".36"/><circle cx="25" cy="10.5" r=".36"/><circle cx="26" cy="10.5" r=".36"/><circle cx="27" cy="10.5" r=".36"/><circle cx="24" cy="11.5" r=".36"/><circle cx="28" cy="11.5" r=".36"/><circle cx="24" cy="12.5" r=".36"/><circle cx="28" cy="12.5" r=".36"/><circle cx="24" cy="13.5" r=".36"/><circle cx="25" cy="13.5" r=".36"/><circle cx="26" cy="13.5" r=".36"/><circle cx="27" cy="13.5" r=".36"/><circle cx="24" cy="14.5" r=".36"/><circle cx="28" cy="14.5" r=".36"/><circle cx="24" cy="15.5" r=".36"/><circle cx="28" cy="15.5" r=".36"/><circle cx="24" cy="16.5" r=".36"/><circle cx="25" cy="16.5" r=".36"/><circle cx="26" cy="16.5" r=".36"/><circle cx="27" cy="16.5" r=".36"/><circle cx="30" cy="10.5" r=".36"/><circle cx="30" cy="11.5" r=".36"/><circle cx="30" cy="12.5" r=".36"/><circle cx="30" cy="13.5" r=".36"/><circle cx="30" cy="14.5" r=".36"/><circle cx="30" cy="15.5" r=".36"/><circle cx="30" cy="16.5" r=".36"/><circle cx="31" cy="16.5" r=".36"/><circle cx="32" cy="16.5" r=".36"/><circle cx="33" cy="16.5" r=".36"/><circle cx="34" cy="16.5" r=".36"/><circle cx="36" cy="10.5" r=".36"/><circle cx="37" cy="10.5" r=".36"/><circle cx="38" cy="10.5" r=".36"/><circle cx="39" cy="10.5" r=".36"/><circle cx="40" cy="10.5" r=".36"/><circle cx="36" cy="11.5" r=".36"/><circle cx="36" cy="12.5" r=".36"/><circle cx="36" cy="13.5" r=".36"/><circle cx="37" cy="13.5" r=".36"/><circle cx="38" cy="13.5" r=".36"/><circle cx="39" cy="13.5" r=".36"/><circle cx="36" cy="14.5" r=".36"/><circle cx="36" cy="15.5" r=".36"/><circle cx="36" cy="16.5" r=".36"/><circle cx="37" cy="16.5" r=".36"/><circle cx="38" cy="16.5" r=".36"/><circle cx="39" cy="16.5" r=".36"/><circle cx="40" cy="16.5" r=".36"/><circle cx="42" cy="10.5" r=".36"/><circle cx="46" cy="10.5" r=".36"/><circle cx="42" cy="11.5" r=".36"/><circle cx="43" cy="11.5" r=".36"/><circle cx="45" cy="11.5" r=".36"/><circle cx="46" cy="11.5" r=".36"/><circle cx="42" cy="12.5" r=".36"/><circle cx="44" cy="12.5" r=".36"/><circle cx="46" cy="12.5" r=".36"/><circle cx="42" cy="13.5" r=".36"/><circle cx="44" cy="13.5" r=".36"/><circle cx="46" cy="13.5" r=".36"/><circle cx="42" cy="14.5" r=".36"/><circle cx="46" cy="14.5" r=".36"/><circle cx="42" cy="15.5" r=".36"/><circle cx="46" cy="15.5" r=".36"/><circle cx="42" cy="16.5" r=".36"/><circle cx="46" cy="16.5" r=".36"/><circle cx="49" cy="10.5" r=".36"/><circle cx="50" cy="10.5" r=".36"/><circle cx="51" cy="10.5" r=".36"/><circle cx="52" cy="10.5" r=".36"/><circle cx="48" cy="11.5" r=".36"/><circle cx="48" cy="12.5" r=".36"/><circle cx="49" cy="13.5" r=".36"/><circle cx="50" cy="13.5" r=".36"/><circle cx="51" cy="13.5" r=".36"/><circle cx="52" cy="14.5" r=".36"/><circle cx="52" cy="15.5" r=".36"/><circle cx="48" cy="16.5" r=".36"/><circle cx="49" cy="16.5" r=".36"/><circle cx="50" cy="16.5" r=".36"/><circle cx="51" cy="16.5" r=".36"/></g></svg></h2>
+      <div class="c3d-stage" id="c3d" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Problem carousel"></div>
+      <div class="c3d-cue"><button type="button" id="card-prev" aria-label="Previous problem">‹</button><span>Swipe</span><button type="button" id="card-next" aria-label="Next problem">›</button></div>
+    </section><script>var selectedQuestions=[
+  {"id": "agriculture-local-1", "t": "How can farmers compare what they’ll actually take home from selling at different markets?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id": "agriculture-local-2", "t": "How can farmers find a shared farm machine that is free during their short harvest window?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id": "agriculture-local-3", "t": "How can growers keep track of produce sent to a buyer and check that the final payment matches?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id": "agriculture-local-4", "t": "How can small growers check whether borrowed cold-storage space will be available when their crop is ready?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id": "agriculture-local-5", "t": "How can growers keep a buyer’s quality requirements straight when preparing several produce orders?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id": "agriculture-local-6", "t": "How can farmers share an irrigation pump without losing track of whose turn it is?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id": "agriculture-local-7", "t": "How can farm workers and growers check the days worked and payments still due?", "c": "Agriculture", "up": 0, "priority": true},
+  {"id":"daily-b2b-1","t":"How can small suppliers tell whether they can cover wages and materials while waiting for a large buyer to pay?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-2","t":"How can an exporter with a signed order but little collateral pay suppliers before production starts?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-3","t":"How can a small manufacturer find procurement teams that already buy the kinds of components it makes?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-4","t":"How can a factory fill an extra production shift with workers who can operate its machines safely?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-6","t":"How can manufacturers tell which customer orders will miss their delivery dates when a truck fails to arrive?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-7","t":"How can a small business compare what two suppliers will actually charge once freight, taxes, and payment terms are included?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-8","t":"How can a business track a GST filing issue that needs a tax officer’s intervention before the deadline passes?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-11","t":"How can a factory identify a machine fault remotely so the technician arrives with the right spare parts?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-16","t":"How can a small accounts team tell which invoices a single bank transfer covers when the customer sends no payment breakdown?","c":"B2B Services","up":0,"priority":true},
+  {"id":"daily-b2b-20","t":"How can a manufacturer give a buyer a quote that stays workable if material prices change before the order is confirmed?","c":"B2B Services","up":0,"priority":true},
+  {"id":"beauty-2","t":"How can shoppers tell whether branded cosmetics are genuine before buying them?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-3","t":"How can shoppers check whether a batch of cosmetics has been flagged for failing quality standards?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-4","t":"How can customers check a hair dye’s ingredients, safety warnings, and patch-test instructions before using it?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-5","t":"How can shoppers tell which skincare and personal care claims are backed by evidence?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-6","t":"How can salons assess a beauty worker’s practical skills before hiring them?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-7","t":"How can people find a qualified dermatologist when few are available nearby?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-8","t":"How can shoppers choose the right foundation shade online when swatches look different across screens and lighting?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-10","t":"How can customers see the full cost of a salon service, including hair-length charges and add-ons, before booking?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-11","t":"How can customers check whether a salon disinfects reusable tools between appointments?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"beauty-12","t":"How can small salons reduce last-minute cancellations and fill open slots?","c":"Beauty & Personal Care","up":0,"priority":true},
+  {"id":"final-3.01","t":"Why do customers need government escalation channels to recover fees from non-travel service agencies?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.02","t":"Why do service-booking apps use guilt-based wording to pressure customers into optional paid protection?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.03","t":"How can customers prevent unwanted subscription renewals and find a clear cancellation process for services?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.04","t":"How can households verify that the LPG cylinder delivered to them contains the correct quantity of gas?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.05","t":"How can consumers understand fine-print eligibility and exclusions in non-travel service promotions before paying?","c":"Consumer Services","up":0,"priority":false},
+  {"id":"final-3.06","t":"How can customers challenge a manufacturer’s refusal to honor an appliance warranty or issue a refund?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.07","t":"How can ordinary consumers prepare evidence and file complaints against businesses without needing legal expertise?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-3.08","t":"How do parents find trustworthy evening childcare for short hours?","c":"Consumer Services","up":0,"priority":true},
+  {"id":"final-4.02","t":"How can shoppers recover payment when online orders are marked delivered but never reach the buyer?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.03","t":"Why do e-commerce platforms deny returns or exchanges despite published eligibility rules?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.04","t":"How can customers prevent repeated cancellation of scheduled defective-product return pickups?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.05","t":"How can online buyers request refunds or alternatives when committed delivery dates keep slipping after purchase?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.06","t":"How can buyers document damage to an e-commerce product at unboxing so sellers cannot dismiss valid complaints?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.07","t":"How can customers track refunds that remain pending after an accepted e-commerce return?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.08","t":"Why do shoppers receive counterfeit products?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.09","t":"Why are unexpected handling fees added specifically to cash-on-delivery orders?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.10","t":"How can shoppers detect tax-inclusive price claims that change into extra mandatory checkout charges?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.11","t":"Why are fake and disguised reviews so common on shopping platforms?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.12","t":"How can online buyers assess a seller’s delivery reliability before placing a high-value order?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-4.13","t":"How can customers verify that an electronic product is compatible with their existing devices before purchasing it?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.14","t":"How can online grocery customers verify missing or substituted items without filming each order?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.15","t":"How can buyers confirm that the delivered large appliance has the exact model and specifications they ordered?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.16","t":"How can shoppers detect and reject preselected paid extras, insurance, or donations at e-commerce checkout?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.17","t":"How can shoppers distinguish genuine limited-stock offers from misleading urgency tactics?","c":"E-commerce","up":0,"priority":false},
+  {"id":"final-4.23","t":"Why do online marketplaces accept rural delivery pin codes without ensuring doorstep fulfillment is available?","c":"E-commerce","up":0,"priority":true},
+  {"id":"final-5.01","t":"Why do coaching institutes refuse enrolment fee refunds even when students followed the terms?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.02","t":"How can prospective students verify coaching institutes’ selection-rate and placement-guarantee claims?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.03","t":"Why are people pushed into paid workshops with false urgency and then denied a seat and a refund?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.04","t":"Why do students lose hostel fees when the coaching service itself was deficient?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.05","t":"How can students detect when multiple coaching institutes claim credit for the same exam topper?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.06","t":"Why do institutes not clearly say whether a course is recognised by UGC or AICTE?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.07","t":"How can students verify coaching faculty credentials and advertised refund rules before enrollment?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.08","t":"Why are students pushed to sign agreements upfront before they can judge the course?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.09","t":"How can students in schools without reliable internet access benefit from high-quality digital education?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.10","t":"How can schools provide practical computer-based learning when they have limited devices and infrastructure?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.11","t":"How can primary schools identify reading and foundational mathematics gaps early and personalize interventions?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.12","t":"How can schools identify students at risk of dropping out and intervene before they discontinue their education?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.13","t":"How can students and families receive better guidance when transitioning from middle school to secondary school?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.14","t":"How can students with physical disabilities independently identify and access schools with suitable infrastructure?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-5.15","t":"How can schools with limited libraries provide affordable, engaging reading materials to students?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.16","t":"How can teenagers gain practical vocational skills while continuing their regular school education?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.17","t":"Why do fresh graduates lack practical coding skills despite strong academic performance?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.18","t":"Why are college choices influenced by referral fees instead of student aptitude?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.20","t":"Why don't global learning platforms support high-quality regional language instruction?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.22","t":"Why are mock tests and analytics inaccessible to low-income exam candidates?","c":"EdTech","up":0,"priority":false},
+  {"id":"final-5.23","t":"Why is scholarship information fragmented and inaccessible to low-income and rural students?","c":"EdTech","up":0,"priority":true},
+  {"id":"final-6.01","t":"Why do people pay insurance premiums for policies that are never issued?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.02","t":"How can insurance policyholders spot exclusions and challenge incorrect premium charges or rejected policy refunds?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.03","t":"Why do digital lending apps hide or misstate loan terms?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.04","t":"How can banks identify account takeovers and suspicious transfers before a compromised account loses funds?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.05","t":"How can bank customers find one clear owner and escalation path for disputes involving loans or credit cards?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.06","t":"Why must customers wait 30 days for a bank to respond before they can approach the RBI Ombudsman?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.07","t":"Why can't customers easily tell whether a lending app is legal?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.08","t":"Why do new credit card users not understand charges, interest and repayment cycles?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.09","t":"Why do pensioners struggle to get their pension problems solved by banks?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.10","t":"Why do rural customers file far fewer banking complaints than people in metro cities?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.11","t":"How can borrowers independently verify that lenders are charging the correct interest, penalties, and loan-servicing fees?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.12","t":"How can credit-card users automatically identify incorrect charges and resolve billing disputes?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.13","t":"How can people identify and resolve unexpected restrictions, charges, or problems associated with their bank accounts?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.14","t":"How can ATM users efficiently recover money when their accounts are debited but cash is not dispensed?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-6.15","t":"How can borrowers detect incorrect information in their credit reports and get it corrected without navigating complicated procedures?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.16","t":"How can families discover and claim forgotten bank deposits and financial assets belonging to deceased relatives?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.17","t":"How can first-time insurance buyers compare coverage and exclusions in understandable language before purchase?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.19","t":"Why do migrant workers lose money on remittances?","c":"FinTech","up":0,"priority":false},
+  {"id":"final-6.23","t":"How can international card users compare exchange-rate markups and foreign-transaction fees before paying?","c":"FinTech","up":0,"priority":true},
+  {"id":"final-7.01","t":"Why can't customers check a restaurant's hygiene before ordering on delivery apps?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.02","t":"Why do food delivery orders arrive with wrong or reduced items?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.03","t":"Why do quick-commerce dark stores stock expired products?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.04","t":"How can restaurant diners identify dishes containing undisclosed ingredient substitutes sold as the original food?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.05","t":"Why do customers not know how to report unhygienic food at a restaurant?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.06","t":"How can packaged-food buyers check misleading ingredient claims such as “natural,” “rich in milk solids,” or “premium chocolate” against the actual label?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.07","t":"How can consumers identify unverified disease-treatment claims made on packaged beverages?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.08","t":"How can households verify the quality and purity of milk and dairy products before consuming them?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.09","t":"How can small food manufacturers detect contaminated or substandard products before distributing them to customers?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.10","t":"How can street-food vendors learn and maintain proper food-hygiene practices without expensive training programs?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.11","t":"How can small food vendors understand and complete food-safety registration and compliance procedures without relying on costly intermediaries?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.12","t":"How can small fruit sellers limit spoilage while storing unsold produce without affordable cold rooms?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.13","t":"How can vegetable vendors predict demand and prevent unsold produce from spoiling?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.14","t":"How can small fish vendors preserve safe freshness during short-distance handling and retail display without costly refrigeration?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.15","t":"How can egg distributors reduce breakage and spoilage during transportation from farms to retail stores?","c":"Food & Beverage","up":0,"priority":true},
+  {"id":"final-7.16","t":"How can low-income households identify affordable, nutritious meals that help them meet their dietary requirements?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.19","t":"How can buyers verify alcohol authenticity before purchase?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.22","t":"How can buyers assess adulteration and freshness risks in pre-ground spice powders?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-7.23","t":"How can consumers verify water purification in delivery cans?","c":"Food & Beverage","up":0,"priority":false},
+  {"id":"final-8.01","t":"How can home-service gig workers access benefits despite fragmented registration and fluctuating earnings?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.02","t":"How can cleaners, electricians, and other home-service platform workers contest sudden account deactivation?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.03","t":"Why do a few customer ratings determine how often home-service workers appear in booking results?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.04","t":"How can home-service platform workers resolve withheld earnings or unfair penalties without expensive disputes?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.05","t":"Why do home-service marketplaces restrict independent follow-up work with previous customers?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.06","t":"How can households prevent emergency plumbers from raising callout quotes after arriving at the property?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.07","t":"Why can't customers cancel or get refunds when an assigned technician doesn't respond?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.08","t":"How can homeowners verify a repair technician's skills and previous work before allowing them into their homes?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.09","t":"How can households estimate a fair market price for planned plumbing, electrical, and carpentry tasks before booking?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.10","t":"How can homeowners verify whether appliance replacement parts were needed, genuine, and fairly priced?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.11","t":"How can households maintain tamper-resistant appliance repair records, replaced-parts histories, and warranty proof?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.12","t":"How can households identify whether an electrical, plumbing or structural problem requires urgent professional attention?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.13","t":"How can independent carpenters, masons and other skilled workers find consistent local work without paying large commissions to intermediaries?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.14","t":"How can homeowners track whether construction and renovation contractors are using the agreed quantities and quality of materials?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.15","t":"How can homeowners enforce the workmanship warranty when a previously repaired appliance fails again?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.16","t":"How can homeowners compare renovation bids that use inconsistent labor, material, and quantity descriptions?","c":"Home Services","up":0,"priority":true},
+  {"id":"final-8.20","t":"Why are pest control treatments ineffective within months?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.21","t":"How do customers find water tank cleaning services?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-8.22","t":"How do customers book electricians for small jobs?","c":"Home Services","up":0,"priority":false},
+  {"id":"final-9.01","t":"How can courier companies identify and resolve delayed parcels before a promised delivery window expires?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.02","t":"How can couriers locate and resolve parcels that never reach their intended recipient?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.03","t":"Why do courier agents refuse delivery to a valid door address within an advertised coverage area?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.04","t":"How can shippers establish courier accountability for parcels found damaged on arrival?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.05","t":"Why do hundreds of courier grievances stay pending?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.06","t":"How can small transporters access up-to-date lane-wise road freight-rate benchmarks?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.07","t":"Why is there a shortage of truck drivers that leaves trucks idle?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.08","t":"How can small transport operators reduce the number of trucks returning empty after completing deliveries?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.09","t":"How can businesses track shipments across multiple transport companies without manually calling different operators?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.10","t":"How can small exporters predict unexpected logistics expenses before accepting international orders?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.11","t":"How can farmers find affordable transportation for small quantities of agricultural produce without booking an entire truck?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.12","t":"How can shippers log temperature excursions and prove cold-chain compliance during transport of sensitive goods?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.13","t":"How can small warehouses prevent inventory discrepancies when goods are received, moved or dispatched?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-9.14","t":"How can logistics companies identify repeated loading and unloading delays at warehouses and distribution centers?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.15","t":"How can businesses compare end-to-end road, rail, and multimodal freight costs and reliability?","c":"Logistics","up":0,"priority":true},
+  {"id":"final-9.20","t":"How can logistics operators use impact sensors and chain-of-custody records to prevent mishandling of fragile freight?","c":"Logistics","up":0,"priority":false},
+  {"id":"final-10.01","t":"How can UPI users recognize fake QR codes, fraudulent collect requests, and cashback scams before authorizing payment?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.02","t":"Why are so many UPI fraud cases never reported officially?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.03","t":"Why do money-mule accounts make stolen money so hard to recover?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.04","t":"Why must victims act within the first hour to freeze stolen money?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.05","t":"How can a payer quickly trace and reverse a digital payment debited from their account but not credited to the merchant?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.06","t":"Why is there no chargeback for high-value digital payments when fraud occurs?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.07","t":"How can merchants understand when UPI acceptance fees or payment-processing charges apply to a transaction?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-10.08","t":"Why do merchants face chargebacks and settlement delays?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.09","t":"How can small shops confirm incoming UPI payments securely even when connectivity is unreliable or screenshots are fake?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.10","t":"How can street vendors maintain a consolidated daily sales ledger across several UPI apps?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.11","t":"How can merchants match identical-amount incoming payments to the correct customer order?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.12","t":"How can merchants detect and refund two payments made for the same order?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.13","t":"How can businesses match payment-gateway records against bank settlement batches and identify missing payouts?","c":"Payment Issues","up":0,"priority":true},
+  {"id":"final-10.14","t":"How can recurring-payment systems support temporary mandate pauses without terminating a subscription?","c":"Payment Issues","up":0,"priority":false},
+  {"id":"final-11.01","t":"How can apartment associations coordinate preventive maintenance of shared lifts, water pumps, and electrical systems?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.02","t":"How can apartment residents check line-item charges on recurring society maintenance bills?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.03","t":"Why do builders delay possession for years?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.04","t":"Why must buyers keep paying EMIs on stalled projects?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.05","t":"Why do builders and housing boards refuse refunds even after years of delay?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.06","t":"Why do state RERA authorities fail to enforce the law properly?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.07","t":"Why does buyers' certainty vanish when a builder goes into insolvency?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.08","t":"Why must buyers choose between RERA, NCLT and consumer forums, each with different costs?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.09","t":"Why do stalled but viable projects stay stuck for lack of funds?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.10","t":"How can homebuyers independently verify whether a housing project is legally registered and its approvals are valid before paying a booking amount?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.11","t":"How can property buyers assess a builder’s historical delays and current construction progress against promised completion dates?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.12","t":"How can property buyers calculate the full upfront and recurring cost of a home, including taxes, registration, brokerage, and maintenance fees?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.13","t":"How can property buyers verify the legal ownership history of a property without depending entirely on brokers?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.14","t":"How can prospective tenants verify unresolved repairs and basic-utility problems before signing a lease?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.15","t":"How can homebuyers identify discrepancies between promised apartment amenities and facilities actually delivered?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.16","t":"How can owners remotely track daily progress, material use, and budget changes in a self-managed house construction project?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.17","t":"How can homebuyers organize construction records, payment receipts and communications when filing complaints through RERA?","c":"Real Estate","up":0,"priority":true},
+  {"id":"final-11.21","t":"Why are half of rental listings fake broker clickbait?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.22","t":"How do buyers discover dampness after moving into homes?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-11.23","t":"How can residents diagnose concealed dampness and moisture ingress discovered after occupying a home?","c":"Real Estate","up":0,"priority":false},
+  {"id":"final-12.01","t":"Why must startups report one breach to two regulators on two different clocks?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.02","t":"Why do standard SaaS vendor contracts fall short of data processor requirements under the DPDP rules?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.03","t":"Why can't many companies say where a customer's data physically lives, making erasure impossible?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.04","t":"Why do small startups struggle with the cost of DPDP compliance?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.05","t":"Why can missing a security safeguard cost up to ₹250 crore?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.06","t":"Why does consent risk becoming a click-through ritual instead of an auditable record?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.07","t":"Why do SaaS startups often lack testing evidence to defend themselves after a breach?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.08","t":"Why can't startups rely on consent managers yet?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.09","t":"How can businesses flag abnormal employee activity and unauthorized access to customer records across their software apps?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.10","t":"How can businesses automatically revoke access to SaaS tools when employees leave or change roles?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.12","t":"How can small enterprises maintain secure backups of business-critical documents without employing full-time IT professionals?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.13","t":"How can companies monitor important changes to shared documents when multiple employees edit the same files?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.14","t":"How can small businesses manage customer consent and personal-data deletion requests across different software tools?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.15","t":"How can organizations identify suspicious files and phishing links received through business email and messaging platforms?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.16","t":"How can small businesses automatically generate clear security incident reports from technical logs without specialist knowledge?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.17","t":"How can organizations check whether their third-party software providers meet basic data-protection and cybersecurity requirements before sharing business information?","c":"SaaS","up":0,"priority":true},
+  {"id":"final-12.20","t":"How can data flow seamlessly between Excel, CRM, and invoicing systems?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.22","t":"How do small teams struggle with manual payroll calculations?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-12.23","t":"How can kirana stores predict restocking needs using past sales data?","c":"SaaS","up":0,"priority":false},
+  {"id":"final-13.01","t":"How can vehicle owners verify workshop diagnoses before paying for potentially unnecessary car repairs?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.04","t":"Why do factory workers lack affordable first-mile transport to factory jobs?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.05","t":"How can local authorities prioritize dangerous road segments for practical crash-reduction improvements?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.06","t":"How can road-safety teams find recurring overspeeding hotspots before serious collisions happen?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.07","t":"How can hit-and-run victims and responders preserve vehicle-identification evidence quickly after a crash?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.08","t":"How can accident responders confirm eligibility and admission procedures for cashless emergency treatment?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.09","t":"How can planners reconcile inconsistent road-accident datasets from different public agencies?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.10","t":"Why are FASTag users charged by mistake, even when their vehicle wasn't at the toll plaza?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.11","t":"Why do cab drivers cancel rides after asking for the destination?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.12","t":"Why can app-based fares rise up to two times the base fare at peak hours?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.13","t":"How can daily commuters identify safer routes that avoid dangerous intersections and frequently reported road hazards?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.14","t":"How can people living far from metro or railway stations find affordable and reliable last-mile transportation?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.15","t":"How can public-bus riders see reliable live arrival estimates at stops where tracking is currently unavailable?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.16","t":"How can commuters compare the actual total cost of traveling through multiple public-transport systems?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.17","t":"How can bus passengers submit verifiable incident reports about reckless driving or unsafe conditions?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.18","t":"How can electric-vehicle drivers identify working, compatible charging stations before reaching them?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.19","t":"How can elderly passengers and people with mobility disabilities determine which public-transport routes and stations are accessible?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-13.20","t":"How can fleet operators detect risky driving from vehicle telemetry before a collision occurs?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.21","t":"How can daily commuters predict transport disruptions and choose alternative routes without checking multiple unrelated applications?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.22","t":"How can parents receive school-bus delay alerts and child pickup or drop-off confirmations?","c":"Transportation","up":0,"priority":false},
+  {"id":"final-13.24","t":"How can women find safer late-night commute options with verified drivers and emergency support?","c":"Transportation","up":0,"priority":true},
+  {"id":"final-14.01","t":"How can travelers obtain timely refunds from cancelled hotel, bus, or tour-package bookings?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.02","t":"How can flight passengers identify booking-platform cancellation charges that exceed the airline’s own fees?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.03","t":"How can travelers see all compulsory booking-platform fees before reaching the final payment screen?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.04","t":"How can railway passengers receive refunds when promised confirmed accommodation cannot be provided?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.05","t":"How can air passengers receive early warning and rebooking support during large-scale airline disruptions?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.06","t":"How can passengers track and accelerate overdue refunds after airlines cancel flights?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.07","t":"How can flight passengers insist on the eligible cash refund instead of unwanted travel credits?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.08","t":"How can flyers verify unexplained deductions from airline cancellation refunds?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.09","t":"How can passengers check whether airline cancellation fees are valid for bookings cancelled soon after purchase?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.10","t":"How can passengers collect the evidence required to escalate unresolved airline grievances through AirSewa?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.11","t":"Why are baggage problems a recurring passenger complaint?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.12","t":"Why do flight delays affect lakhs of passengers every month?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.13","t":"How can tourists verify whether local guides are authorized and trustworthy before hiring them?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.14","t":"How can travelers budget total destination expenses, including attraction charges, permits, and local trips?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.15","t":"How can tourists find accurate information about accessibility facilities at historical monuments and tourist attractions?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.16","t":"How can travelers identify official ticket-booking channels for monuments and popular attractions instead of fraudulent websites?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.17","t":"How can tourists verify fair taxi and auto fares for individual local trips in unfamiliar cities?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.18","t":"How can travelers identify medical facilities and emergency assistance while visiting remote tourist destinations?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.19","t":"How can tourists receive reliable updates about temporary closures, restricted entry and permit requirements at attractions?","c":"Travel","up":0,"priority":true},
+  {"id":"final-14.20","t":"How can travelers find safe and suitable accommodation when visiting smaller Indian towns with limited verified online information?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.21","t":"How can tourists obtain trustworthy local safety information in their preferred language when visiting unfamiliar regions?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.22","t":"How can travelers plan realistic multi-destination trips that account for local transport availability, sightseeing duration and seasonal restrictions?","c":"Travel","up":0,"priority":false},
+  {"id":"final-14.24","t":"How can solo women travelers find women-focused trip-planning, lodging, and community safety resources?","c":"Travel","up":0,"priority":true},
+  {"id":"final-15.01","t":"How can patients audit itemized hospital bills for unsupported, duplicated, or excessive charges after treatment?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.02","t":"Why do patients get unnecessary diagnostic tests and procedures?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.03","t":"How can patients obtain a comparable estimate of total hospital treatment costs before admission?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.04","t":"Why are medicines sold above the government's ceiling prices?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.05","t":"How can patients verify health-insurance eligibility and required documents before submitting a claim?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.06","t":"How can patients challenge cashless health claims provisionally approved at admission but denied at discharge?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.07","t":"How can policyholders track delayed or partially settled health-insurance claims and escalate them?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.08","t":"How can rural patients check availability of a specific diagnostic test at nearby centers before travel?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.09","t":"How can patients easily obtain and organize medical records from different hospitals and diagnostic laboratories?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.10","t":"How can patients and community health workers coordinate reminders and missed follow-ups for chronic tests, antenatal checkups, and vaccinations?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.11","t":"How can rural patients identify the nearest currently available specialist consultation, separate from diagnostic testing?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.12","t":"How can hospitals automatically identify missing patient information before scheduled medical consultations?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.13","t":"How can patients verify whether medicines purchased from pharmacies belong to batches identified in official drug-quality alerts?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.14","t":"How can small clinics monitor the availability of essential medicines and medical supplies before stocks run out?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.15","t":"How can discharged patients receive clear, language-appropriate instructions about medicines, recovery and when to seek urgent medical attention?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.16","t":"Why do medicine prices vary wildly across pharmacy chains?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.17","t":"Why do patients lack tools to compare conflicting diagnoses confidently?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.18","t":"Why do emergency rooms lack systems to prioritize critical patients instantly?","c":"Healthtech","up":0,"priority":true},
+  {"id":"final-15.19","t":"Why are diagnostic services not designed for women's privacy and mobility needs?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-15.20","t":"Why do branded drugs dominate prescriptions despite equivalent, cheaper generic alternatives?","c":"Healthtech","up":0,"priority":false},
+  {"id":"final-16.01","t":"How can residents find verified animal-rescue responders during urgent incidents involving stray or injured animals?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.02","t":"How can qualified job applicants diagnose and improve résumé compatibility with applicant-tracking systems?","c":"Jobs & Employment","up":0,"priority":false},
+  {"id":"final-16.03","t":"How can citizens route a government-service grievance to the correct authority with complete evidence at first submission?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.04","t":"How can citizens monitor overdue state-government grievances and escalate cases with no resolution update?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.05","t":"How can phone users block repeat unsolicited marketing calls and texts without missing legitimate service alerts?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.06","t":"How can regulators identify unregistered telemarketers and connect repeat spam reports to their operators?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.07","t":"How can consumers report spam calls with minimal manual entry from their call logs?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.08","t":"How can rural households independently check whether their drinking-water source meets safety standards?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.09","t":"How can village residents know when waste-collection vehicles will actually reach their neighborhoods?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.10","t":"How can communities file geotagged reports of overflowing drains and track repair completion?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.11","t":"How can households locate authorized disposal points for e-waste, batteries, household hazards, construction debris, and bulky waste?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.12","t":"How can small villages coordinate the collection of recyclable materials when they generate insufficient quantities for regular commercial pickups?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.13","t":"How can residents identify and report broken streetlights with accurate location information?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.14","t":"How can local communities track recurring water-supply interruptions and document how long each interruption lasts?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.15","t":"How can village councils monitor whether community waste-processing and water-treatment facilities are functioning consistently?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.16","t":"Why can't citizens verify whether segregated waste is actually recycled?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.17","t":"Why don't smart water systems detect underground leaks automatically?","c":"Common Problems","up":0,"priority":true},
+  {"id":"final-16.18","t":"How can residents report hazardous trees on public land and request urgent inspection or removal?","c":"Common Problems","up":0,"priority":false},
+  {"id":"final-16.19","t":"How can housing societies plan preventive drain clearing and waterlogging mitigation before monsoon rains?","c":"Real Estate","up":0,"priority":true},
+  {"id":"daily-b2b-5","t":"How can sports-equipment makers find a lab that runs every test their buyer requires before the shipment deadline?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-9","t":"How can a supplier turn electricity bills and fuel records into the emissions data a major buyer asks for?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-10","t":"How can a manufacturer work out how many orders it needs to break even after a marketplace’s fees and returns?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-12","t":"How can a business take over an unfinished freelance project when the files and accounts are controlled by the contractor?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-13","t":"How can a business check whether a successful prototype can be reproduced consistently across a small production run?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-14","t":"How can several neighbourhood restaurants share a bulk ingredient order when they need different quantities on different days?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-15","t":"How can a retailer tell whether buying directly from a brand will tie up too much cash in slow-selling stock?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-17","t":"How can a retailer avoid promising a delivery date before its supplier has reserved the stock?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-18","t":"How can a small supplier check whether its certificates and past contracts meet a tender’s requirements before preparing a bid?","c":"B2B Services","up":0,"priority":false},
+  {"id":"daily-b2b-19","t":"How can a factory estimate whether an equipment upgrade will cut its electricity bill enough to pay for itself?","c":"B2B Services","up":0,"priority":false},
+  {"id":"beauty-1","t":"How can customers check whether an injectable beauty treatment offered by a salon or clinic is legally permitted?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-9","t":"How can people with fragrance sensitivities find suitable beauty products without buying full-size products to try them?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-13","t":"How can independent beauty professionals build a steady base of repeat customers beyond referrals?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-22","t":"How can older adults and people with limited mobility book affordable at-home grooming services?","c":"Beauty & Personal Care","up":0,"priority":false},
+  {"id":"beauty-23","t":"How can salon customers reduce hair damage from colouring or bleaching?","c":"Beauty & Personal Care","up":0,"priority":false}
+];
+var problemDetails={
+  "agriculture-local-1":[["A higher price at a market farther away can look attractive until the farmer pays for transport, loading, and other charges. The price may also be for a different grade or quantity.", "A useful comparison needs to show what the farmer expects to receive after costs, and when each buyer expects to pay. That makes it easier to see which trip is worth making."], [7.4, 7.5, 6.8, 7.6]],
+  "agriculture-local-2":[["A machine owner may be nearby and still be booked through the days a crop is ready. Finding out by phone can take time, especially when the harvest date shifts.", "Farmers need to know when the machine can actually arrive, what jobs it can handle, and whether the quoted price includes an operator and travel."], [8, 7.4, 7.1, 6.9]],
+  "agriculture-local-3":[["A grower may send several loads to the same buyer, with each load weighed and graded separately. The buyer may then pay for several deliveries together.", "When weights, deductions, and payments are written in separate places, it becomes hard to tell whether a load was left out. Growers need a record they can check against what reached their account."], [7.7, 7.2, 6.8, 7.4]],
+  "agriculture-local-4":[["A grower can know where the nearest cold room is and still have no idea whether it has room on harvest day. The facility may also have storage conditions that suit one crop better than another.", "Before arranging a trip, growers need to confirm what the facility accepts, how much space is free, and what the full stay will cost. Otherwise, freshly harvested produce can sit waiting while they look elsewhere."], [8, 7.1, 7.2, 6.5]],
+  "agriculture-local-5":[["Two buyers can ask for the same crop but expect different sizes, packaging, or delivery times. Those details often arrive in calls or messages while the grower is also arranging harvest and packing.", "If a change is missed, an otherwise usable load can be rejected or paid at a lower rate. Keeping the latest requirements with each order makes it easier to check what should be packed and where it should go."], [7.3, 6.8, 6.7, 6.8]],
+  "agriculture-local-6":[["Several farmers can depend on the same pump. Rain, outages, or a longer-than-expected watering turn can throw off the plan, and the next person might not hear about the change.", "A clear schedule needs to show both the planned turn and whether the pump is actually free. This helps farmers adjust work around the slot and keep a record of how the equipment was shared."], [7.6, 6.6, 6.8, 7]],
+  "agriculture-local-7":[["A grower may hire people for different jobs across several days, with some paid daily and others paid after the work is finished. Notes taken in the field can be hard to reconcile later.", "Workers and growers need a shared record of the dates, agreed pay, and payments already made. That gives both sides something to check if their totals differ."], [8, 7.1, 6.6, 7.4]],
+  "daily-b2b-2": [
+    [
+      "A signed purchase order confirms future demand, but it does not put cash in the exporter’s account. Suppliers may require a deposit before production, while lenders may ask for assets the exporter cannot pledge.",
+      "The exporter has to pay for materials or production before a finished shipment can generate an invoice. Even if the order is profitable, the business may lack the cash needed to fulfill it. Taking on another order can widen that gap instead of easing it.",
+      "The financing decision depends on more than the order value. The business needs to know what it must pay at each stage, whether the buyer can change or cancel the order, and how long it may take to collect after shipment. Those details determine whether funding can last through the full production and payment cycle."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "daily-b2b-3": [
+    [
+      "Small manufacturers know what their machines can produce, but buyer directories rarely reveal which procurement teams are sourcing those components. Sales teams spend time approaching firms whose tolerances, volumes, or materials do not match their capabilities.",
+      "A buyer in the right industry is not necessarily a fit. Its team might need a different material, precision level, or order volume. A broad contact list leaves the manufacturer to uncover those differences one conversation at a time.",
+      "The key missing information is what a buyer is sourcing now or expects to source soon, and who handles that purchase. Without that context, a capable manufacturer can overlook a good match or spend weeks on leads that never turn into requests for quotes."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "daily-b2b-4": [
+    [
+      "An extra shift is useful only if enough operators are qualified for the machines on that line. Availability, training records, and shift schedules may sit in separate places, making it hard to confirm safe staffing in time.",
+      "Being available for a shift is different from being trained for a specific machine or task. A supervisor may find enough people on paper and still lack the combination of operators the production line needs.",
+      "The staffing decision requires a reliable view of qualifications, availability, and the work scheduled on that line. If those records are checked separately, the gap may only become clear at shift handover, when the supervisor has less time to move work or find qualified coverage.",
+      "A supervisor trying to cover a late shift may have to check several rosters before finding someone trained on the right line. Staffing the shift also depends on which tasks must run together, because a gap at one station can hold up the rest."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "daily-b2b-6": [
+    [
+      "A missed truck pickup can affect several orders with different deadlines. Without linking the truck’s load to those orders, dispatchers cannot quickly tell which customers need a revised delivery date or which goods should be moved first.",
+      "One truck may carry products for several customers, and those orders may not all have the same delivery deadline. If the truck fails to show, knowing the total load is delayed does not reveal which commitments will actually be missed.",
+      "Dispatch needs to connect the assigned cargo to customer orders and compare the remaining time with realistic alternatives. That tells the team which orders can wait, which need another vehicle, and which customers need an updated delivery estimate."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "daily-b2b-7": [
+    [
+      "Two suppliers can quote similar unit prices while charging very different amounts for freight, taxes, and minimum quantities. Comparing the quotes also means considering when cash leaves the business under each payment schedule.",
+      "A lower unit price can become the more expensive deal once shipment size, delivery charges, or taxes are accounted for. Quotes may also use different assumptions about what is included or when an order qualifies for a discount.",
+      "The buyer needs to compare the same quantity delivered to the same location. It also matters when deposits or final payments come due. The full cost and the timing of those payments tell different parts of the story, especially for a business with limited cash on hand."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "daily-b2b-8": [
+    [
+      "A filing issue that requires an officer can sit outside the business’s normal filing workflow. The business needs to know who has the case, whether more documents are needed, and how close it is to missing the deadline.",
+      "Some filing issues cannot be completed by the business alone because the next step sits with an officer. An acknowledgement may confirm that the issue was reported without showing when it will move or whether the business needs to provide anything else.",
+      "The business needs to connect the filing deadline with its case reference, prior communications, and outstanding documents. Without a clear timeline, staff can spend time repeatedly checking the case while remaining unsure what they can do to avoid a missed filing."
+    ],
+    [
+      7.1,
+      5.5,
+      6.4,
+      4.2
+    ]
+  ],
+  "daily-b2b-11": [
+    [
+      "A technician called to a stopped machine may receive only a brief description of the fault. Without the machine model, error history, and operating conditions, the technician may arrive without the right tools or parts, extending downtime.",
+      "A stopped machine is often reported as a symptom, such as an error message or a failed restart. The same symptom can have several causes, and the person reporting it may not know which earlier changes or readings matter.",
+      "Before leaving, the technician needs enough context to narrow down likely faults and prepare for the visit. A clear record of the model, conditions when the fault appeared, and recent maintenance makes the first trip more useful and reduces avoidable trips for parts."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "daily-b2b-16": [
+    [
+      "A bank transfer can settle several invoices at once. Without a remittance breakdown, an accounts team has to compare amounts and references manually, and a wrong match can leave the ledger showing bills that were already paid.",
+      "The amount in the bank account may cover several invoices, part of an invoice, or a lower total after deductions. More than one combination can match the same transfer amount, so a correct-looking total does not prove the match.",
+      "The accounts team needs evidence that connects the payment to specific invoices, such as a buyer reference or payment advice. Until it has that detail, normal follow-ups can go wrong: the business might chase an invoice that was paid while overlooking one that is still due."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "daily-b2b-20": [
+    [
+      "A quote can remain open while the cost of a key material changes. Suppliers need to distinguish costs already locked in from those that may rise before the buyer confirms, so they can see whether the quoted margin still holds.",
+      "A buyer may take time to confirm a quote after the manufacturer has priced materials at today’s rates. If a material cost increases before the order is accepted, the supplier can face a choice between honoring a thin margin and reopening negotiations.",
+      "The key is knowing which inputs are already secured, which could change, and how much those changes would affect the order. A quote is easier to stand behind when its assumptions and validity period are clear before the buyer commits."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "beauty-2": [
+    [
+      "Counterfeit cosmetics may copy the packaging and listing photos of genuine stock. Shoppers need a way to connect the item and batch in hand to a trustworthy supply channel.",
+      "Shoppers can judge a listing by photos and reviews, but those signals may tell them little about the specific item they receive. A familiar logo or sealed box is easy to recognize and may still be insufficient to establish where the product came from.",
+      "Useful checks connect the seller, the package, and the product’s identifying details. When that information is missing or hard to verify, shoppers have to decide whether to trust the item using clues that may be easy for a counterfeit seller to imitate."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "beauty-3": [
+    [
+      "A quality alert usually identifies specific batches rather than every product sold under a brand. Shoppers need to read a batch number on the package and match it to the relevant notice before using the item.",
+      "Two packages of the same product can come from different manufacturing batches. A notice about one batch may therefore apply to one package while a nearly identical package is outside the notice.",
+      "The shopper needs the exact batch identifier and a trustworthy notice that lists the affected batch. The search becomes harder when the code is faint, the alert uses a different product name, or the shopper cannot tell whether an old notice applies to their package."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      5.0
+    ]
+  ],
+  "beauty-4": [
+    [
+      "The information needed before using a hair dye may be split across packaging, inserts, and seller listings.",
+      "Missing or unreadable directions make it harder to check ingredients and follow the manufacturer’s safety instructions."
+    ],
+    [
+      7.8,
+      6.0,
+      4.5,
+      6.3
+    ]
+  ],
+  "beauty-5": [
+    [
+      "Skincare labels often use broad phrases such as clinically tested without saying what was tested.",
+      "Shoppers need to see whether the evidence addresses the advertised result, the ingredient, and the concentration in that product."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "beauty-6": [
+    [
+      "A candidate’s résumé or portfolio may show finished work without showing how they performed it.",
+      "Salons need a consistent way to assess technique, hygiene, and handling of client requests before assigning appointments."
+    ],
+    [
+      6.5,
+      4.8,
+      5.8,
+      6.3
+    ]
+  ],
+  "beauty-7": [
+    [
+      "A directory listing can show a dermatologist’s name without showing whether they are taking appointments.",
+      "People in areas with few specialists may spend time contacting clinics or travelling before discovering they cannot be seen."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "beauty-8": [
+    [
+      "Foundation swatches change with camera settings, lighting, and screen color.",
+      "A shopper also needs to compare undertones, since products with similar lightness can look quite different on the skin."
+    ],
+    [
+      4.5,
+      7.2,
+      6.3,
+      7.0
+    ]
+  ],
+  "beauty-10": [
+    [
+      "An advertised salon price may cover only the basic service.",
+      "Hair length, product use, or add-ons can change the final charge, leaving clients unable to compare offers before booking."
+    ],
+    [
+      5.3,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "beauty-11": [
+    [
+      "A client can see that a tool looks clean without knowing how it was cleaned between appointments.",
+      "Clear, consistent reporting of hygiene practices would make it easier to compare salons before visiting."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "beauty-12": [
+    [
+      "A cancellation close to the appointment can leave a worker idle even when other clients want that slot.",
+      "The salon needs an accurate schedule and a quick way to match the opening with clients who can arrive in time."
+    ],
+    [
+      5.8,
+      6.8,
+      5.1,
+      7.3
+    ]
+  ],
+  "final-3.01": [
+    [
+      "When an agency keeps a fee after a service dispute, its own support team may be unable to resolve the disagreement.",
+      "Customers need a clear record of what was promised, what was delivered, and where to raise an unresolved complaint."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      5.0
+    ]
+  ],
+  "final-3.02": [
+    [
+      "A protection add-on can appear optional while the decline button suggests the customer is being careless.",
+      "This framing makes it harder to judge the value of the add-on on its own terms."
+    ],
+    [
+      4.2,
+      6.5,
+      5.5,
+      6.7
+    ]
+  ],
+  "final-3.03": [
+    [
+      "Customers can sign up in a few taps but struggle to find the cancellation setting later.",
+      "A missed renewal notice or unclear cancellation deadline can lead to charges for a service they no longer use."
+    ],
+    [
+      6.5,
+      7.5,
+      7.3,
+      9.0
+    ]
+  ],
+  "final-3.04": [
+    [
+      "A sealed cylinder looks the same whether or not it contains the expected quantity of gas.",
+      "A customer needs a practical way to compare its measured weight with the empty-cylinder weight and the stated fill quantity."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-3.06": [
+    [
+      "A warranty dispute often turns on the purchase date, the fault, and the reason given for refusing repair.",
+      "If those records are scattered across receipts and support messages, the customer may struggle to show their case clearly."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-3.07": [
+    [
+      "Filing a consumer complaint is harder when evidence is spread across invoices, chats, and screenshots.",
+      "Customers need to organize a timeline and identify the remedy they are asking for without knowing formal complaint language."
+    ],
+    [
+      6.5,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-3.08": [
+    [
+      "Parents who need care for a short evening shift may find providers offering only full-day or long-term arrangements.",
+      "A trustworthy match must cover the exact hours, location, supervision needs, and availability."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-4.02": [
+    [
+      "A delivery scan may close an order even though the buyer never received it.",
+      "The buyer needs a clear way to dispute the scan and connect their claim to handoff records or delivery proof."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-4.03": [
+    [
+      "A product can look eligible under the published return policy until support rejects it.",
+      "Customers need to understand which policy applied at checkout and what reason the platform used to deny the return."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-4.05": [
+    [
+      "Moving an estimated delivery date can leave customers waiting past when the item is useful.",
+      "They need a clear point at which they can choose to cancel, receive a refund, or accept an alternative."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-4.07": [
+    [
+      "The shop can accept a return days before the money reaches the customer’s account.",
+      "Customers need to see who has the refund now. Is the seller still approving it, has the shopping site sent it, or is the payment provider still processing it?"
+    ],
+    [
+      7.2,
+      7.8,
+      6.4,
+      7.1
+    ]
+  ],
+  "final-4.08": [
+    [
+      "Listings can use genuine photos while the item delivered comes from an unverified seller.",
+      "Buyers may have difficulty authenticating the item or proving it differs from what was advertised."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-4.09": [
+    [
+      "A cash-on-delivery fee can appear only after customers choose the payment method.",
+      "Without seeing the full totals earlier, shoppers cannot compare methods fairly or budget for the last charge."
+    ],
+    [
+      3.5,
+      6.2,
+      4.8,
+      6.5
+    ]
+  ],
+  "final-4.10": [
+    [
+      "An advertised price may include tax but omit other compulsory charges.",
+      "When those charges appear late, shoppers cannot compare the real prices of competing products or sellers."
+    ],
+    [
+      5.3,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-4.11": [
+    [
+      "Reviews can be incentivized, copied, or attached to a different version of the product.",
+      "Buyers trying to judge quality need signals that connect feedback to genuine use of the item being sold."
+    ],
+    [
+      6.5,
+      7.5,
+      7.3,
+      9.0
+    ]
+  ],
+  "final-4.12": [
+    [
+      "A seller’s star rating may say more about the product than the reliability of delivery.",
+      "People placing an expensive order need evidence on dispatch, handoff, and how the seller resolves delivery failures."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-4.23": [
+    [
+      "A pin-code check may indicate that a parcel can reach the area even if the carrier cannot deliver to the address.",
+      "The customer may discover after purchase that collection from a distant point is required."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-5.01": [
+    [
+      "Students may meet a refund condition but be asked for proof that is difficult to retrieve later.",
+      "The process depends on having a clear copy of the terms and a record of requests and deadlines."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-5.02": [
+    [
+      "Selection and placement claims can use different groups of students as their denominator.",
+      "Prospective students need to see which intake was counted, how outcomes were checked, and what any guarantee actually covers."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-5.06": [
+    [
+      "Institutes may use broad recognition language even though approval depends on the institution, course, and program details.",
+      "Students need to check the specific qualification they would receive before paying."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-5.07": [
+    [
+      "Faculty profiles and refund promises can be scattered across counselor messages and advertisements.",
+      "Students need to verify who will teach their batch and get the actual refund terms before committing."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-5.09": [
+    [
+      "Lessons that depend on streaming or repeated logins become hard to use when school connectivity fails.",
+      "Schools need material that can be kept available locally while still letting teachers track and guide learning."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-5.11": [
+    [
+      "A class can progress through its syllabus while some pupils still struggle with basic reading or number skills.",
+      "Teachers need to see which skill is missing early enough to give targeted practice."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-5.12": [
+    [
+      "Dropout risk may build gradually across absences, missed work, and family difficulties.",
+      "Those signals can be visible to different staff members without anyone seeing the pattern early enough to intervene."
+    ],
+    [
+      9.1,
+      7.2,
+      8.0,
+      6.0
+    ]
+  ],
+  "final-5.13": [
+    [
+      "Moving to secondary school can bring new subject choices, fees, and travel arrangements.",
+      "Families need clear information before deadlines so they can choose a school and prepare for the transition."
+    ],
+    [
+      6.5,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-5.14": [
+    [
+      "A school may advertise accessibility without explaining whether classrooms, toilets, and transport can be used independently.",
+      "Students need details about the full daily route through the school."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-5.23": [
+    [
+      "Scholarship details live on many portals and often use different eligibility rules and deadlines.",
+      "Students can miss support simply because they cannot tell which awards they qualify for in time."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-6.01": [
+    [
+      "A paid premium does not prove the insurer issued and activated the policy.",
+      "Customers need a clear way to track issuance and resolve a payment that remains tied to an incomplete application."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      5.0
+    ]
+  ],
+  "final-6.02": [
+    [
+      "Exclusions and refund terms may be written differently from the sales summary.",
+      "Customers need the terms that applied to their policy alongside the billing or refund decision to understand what can be disputed."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-6.06": [
+    [
+      "A bank complaint and a later escalation are separate stages.",
+      "People need to know when the bank received the complaint, whether it responded, and which documents to carry forward if it remains unresolved."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-6.07": [
+    [
+      "A lending app can display a familiar logo without clearly identifying who actually lends the money.",
+      "Borrowers need a reliable way to establish the lender’s identity and compare it with official records before sharing data."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-6.09": [
+    [
+      "A missing or incorrect pension payment can involve both the bank and the authority that authorized payment.",
+      "Pensioners may be sent between them without a clear account of which party needs to correct the record."
+    ],
+    [
+      9.3,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-6.11": [
+    [
+      "A loan statement can combine interest, penalties, and service fees in ways that make an unexpected increase hard to trace.",
+      "Borrowers need enough detail to compare each charge with their loan terms and payment history."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-6.12": [
+    [
+      "An unfamiliar card statement entry may use a billing name different from the shop’s name.",
+      "Customers need to identify genuine purchases, recognize actual errors, and keep evidence and status updates together if they dispute a charge."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-6.14": [
+    [
+      "A failed ATM withdrawal may leave a debit even though no cash came out.",
+      "The customer needs the ATM location, reference, and debit status to follow the case across the bank and ATM operator."
+    ],
+    [
+      6.7,
+      6.3,
+      5.5,
+      4.2
+    ]
+  ],
+  "final-6.23": [
+    [
+      "International card costs can include both a conversion markup and a separate transaction fee.",
+      "Shoppers need to see how those charges affect the amount posted to their card before choosing how to pay."
+    ],
+    [
+      5.3,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-7.01": [
+    [
+      "Food-delivery listings show menus and ratings, but those ratings do not necessarily reflect kitchen hygiene. Customers need current information that identifies the kitchen preparing the order.",
+      "A delivery app may show one restaurant name even when food is prepared at different locations. A hygiene record is useful only if it refers to the kitchen handling that order."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-7.03": [
+    [
+      "Fast pick-and-pack workflows can overlook expiry dates when older stock remains on shelves.",
+      "A product can be listed as available even if the specific item picked is no longer suitable to send."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-7.04": [
+    [
+      "The menu name can suggest one ingredient while the dish uses a lower-cost substitute.",
+      "Diners need ingredient information before ordering, particularly when the change affects dietary restrictions."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-7.05": [
+    [
+      "A diner may know the restaurant name but be unsure how to report a hygiene issue or what evidence matters.",
+      "If receipts and observations are lost, the report becomes harder to investigate."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-7.07": [
+    [
+      "A packaged beverage may use language that sounds like a treatment promise without pointing to evidence.",
+      "Buyers need to distinguish a general wellness claim from a specific, substantiated health claim."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-7.11": [
+    [
+      "Small vendors can struggle to identify which registration applies to their operation and what records they must supply.",
+      "Several forms and renewals can become hard to manage without help."
+    ],
+    [
+      6.5,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-7.12": [
+    [
+      "Fruit sellers often buy stock before knowing daily demand.",
+      "Without affordable cool storage or good visibility into remaining shelf life, they must discount quickly or lose unsold produce to spoilage."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-7.14": [
+    [
+      "Fish can spend time unrefrigerated during handling and display, even on a short route.",
+      "Vendors need to manage the temperature and time throughout that chain while keeping costs within small margins."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-7.15": [
+    [
+      "Egg distributors lose stock when trays shift, shells crack, or shipments sit too long before reaching stores.",
+      "They need to identify where damage occurs so changes to packing or handling can reduce avoidable losses."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-8.01": [
+    [
+      "Workers may earn through several platforms and have no steady employer to administer benefits.",
+      "Changing income and separate registration systems make it hard to know what coverage they qualify for or how to keep it active."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-8.02": [
+    [
+      "Losing access to a platform can cut off new work immediately.",
+      "A worker needs to see the reason for the decision, the evidence it relies on, and how to appeal while preserving records of past jobs."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-8.03": [
+    [
+      "A worker with few bookings can see their ranking move sharply after one review.",
+      "Lower visibility can then make it harder to get enough new bookings to build a more representative record."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-8.04": [
+    [
+      "When a platform withholds pay, workers need a record of the job, agreed rate, deductions, and the reason for the hold.",
+      "Resolving small disputes can take more time and money than workers can afford."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-8.06": [
+    [
+      "During a leak, households have little time to compare providers.",
+      "If the initial quote leaves out callout fees, parts, or after-hours charges, the price can rise after the plumber arrives."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-8.08": [
+    [
+      "A listing can describe a technician as experienced without showing their skills for the specific repair.",
+      "A household needs evidence of relevant work and a way to confirm who will actually arrive."
+    ],
+    [
+      7.8,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-8.09": [
+    [
+      "Trade jobs can be priced by visit, hour, or scope, and materials may be included or charged separately.",
+      "Households need comparable quotes for the same work to judge whether an offer is reasonable."
+    ],
+    [
+      5.3,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-8.10": [
+    [
+      "Homeowners may have little visibility into why a part was replaced or where the replacement came from.",
+      "A repair record needs to connect the diagnosis, the part fitted, its price, and any warranty."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-8.11": [
+    [
+      "Appliance receipts, service records, and parts warranties can end up scattered across paper and messages.",
+      "Missing records make repeat faults harder to diagnose and earlier work harder to verify."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-8.12": [
+    [
+      "Similar-looking household faults can differ in urgency.",
+      "People need to communicate what they can observe and get routed to an appropriate professional without having to diagnose the underlying fault themselves."
+    ],
+    [
+      8.7,
+      7.0,
+      6.9,
+      4.8
+    ]
+  ],
+  "final-8.13": [
+    [
+      "Independent tradespeople often hear about nearby work through intermediaries or word of mouth.",
+      "Uncertain job flow makes it hard to plan a schedule, and commission can reduce the earnings from each job."
+    ],
+    [
+      6.5,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-8.16": [
+    [
+      "Renovation quotes may group tasks differently or leave materials and quantities unspecified.",
+      "Owners need to compare the same scope and see which costs could still change after work starts."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-9.01": [
+    [
+      "Parcel tracking can reveal a missed scan without showing whether there is still time to recover the delivery.",
+      "Couriers need to identify the stalled handoff and prioritize shipments closest to their promised deadline."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-9.02": [
+    [
+      "A missing parcel can sit between a sorting facility, driver, and delivery partner.",
+      "Finding it depends on reconstructing the last confirmed handoff and assigning someone to investigate."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-9.04": [
+    [
+      "Damage may be discovered only after a package is opened.",
+      "Without records at pickup and at later handoffs, it is difficult to separate packing issues from damage during transport or delivery."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-9.06": [
+    [
+      "A freight rate depends on the route, vehicle type, load, and current capacity.",
+      "Small operators with few recent quotes can struggle to judge whether a price reflects comparable trips."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-9.08": [
+    [
+      "A truck may finish a delivery where the operator has few customers.",
+      "Finding a return load depends on matching the truck’s availability, route, and capacity with a shipper’s pickup window."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-9.09": [
+    [
+      "Transport companies can use different order references and status terms.",
+      "Businesses with many carriers need a common shipment record to see which deliveries are on schedule and which need attention."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-9.10": [
+    [
+      "An export price can look profitable until handling, storage, or destination charges appear.",
+      "Small exporters need to understand which charges are included and which depend on what happens in transit."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-9.11": [
+    [
+      "Small harvests may not fill a truck, yet a dedicated trip can cost too much per crate.",
+      "Sharing transport requires compatible routes and pickup times, plus enough predictability to get produce to market while it is still saleable."
+    ],
+    [
+      7.7,
+      6.6,
+      7.5,
+      7.0
+    ]
+  ],
+  "final-9.12": [
+    [
+      "A delivery can look fine when it arrives even if it got too warm or too cold on the way.",
+      "The shipper needs temperature readings that show when the change happened and who had the shipment at the time."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-9.14": [
+    [
+      "Waiting to load or unload reduces the number of trips a vehicle can complete.",
+      "Consistent arrival, dock, and departure timestamps are needed to separate repeat bottlenecks from isolated delays."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-9.15": [
+    [
+      "A lower line-haul rate can be offset by transfers, terminal fees, or longer transit.",
+      "Shippers need to compare complete routes using the same shipment assumptions and service requirements."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-10.01": [
+    [
+      "A payment prompt can look legitimate while sending money to someone other than the intended recipient.",
+      "Users need to be able to verify who receives the money and what the approval screen will authorize before confirming."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-10.02": [
+    [
+      "Someone who discovers payment fraud may spend time trying to work out where to report it or which transaction details are needed.",
+      "A fragmented process can leave incidents unreported and make patterns harder to detect."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-10.04": [
+    [
+      "After a fraudulent transfer, funds may move quickly through multiple accounts.",
+      "Prompt reporting gives the institutions involved a better chance to trace the transfer and investigate whether the money can still be recovered."
+    ],
+    [
+      9.4,
+      7.1,
+      7.6,
+      4.4
+    ]
+  ],
+  "final-10.05": [
+    [
+      "A debit on one side and a missing credit on the other can leave both parties unsure what happened.",
+      "Resolving it requires a shared reference and a status that distinguishes a pending transfer from a failed one."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-10.08": [
+    [
+      "A merchant can complete a sale but receive the money later than expected or see it reversed after a dispute.",
+      "Unclear settlement and dispute records make it difficult to reconcile sales and plan cash flow."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-10.09": [
+    [
+      "A screenshot can resemble proof of payment even when no money arrived.",
+      "Weak connectivity makes it harder for a shop to verify the credit from its own account or payment provider at checkout."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-10.10": [
+    [
+      "A vendor accepting payments across several apps may have to check each history separately.",
+      "Without a combined record, it is harder to total sales for the day and identify missing or duplicate records."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-10.11": [
+    [
+      "Several customers can send the same amount within minutes.",
+      "A merchant needs an order reference or other reliable identifier to avoid assigning a valid payment to the wrong sale."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-10.12": [
+    [
+      "When a customer retries a payment, both attempts can eventually succeed.",
+      "A merchant needs to link the two credits to one order before reversing the extra payment."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-10.13": [
+    [
+      "A bank deposit can bundle many gateway transactions after fees or adjustments.",
+      "Businesses need to connect each sale and deduction to the settlement batch to identify a real payout gap."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-11.01": [
+    [
+      "Maintenance schedules for shared equipment can live with different technicians or committee members.",
+      "Associations need one clear record of what has been serviced, what is due, and who is responsible."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-11.03": [
+    [
+      "A possession date can slip while buyers receive only broad construction updates.",
+      "Families need to understand which milestones are incomplete and how the delay affects move-in and housing costs."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-11.10": [
+    [
+      "A brochure can mention project registration without showing that the approval matches the building and phase on offer.",
+      "Buyers need to connect the advertised unit to official records before committing money."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-11.11": [
+    [
+      "A builder’s advertised completion date provides little context about past delivery or current progress.",
+      "Buyers need comparable milestone records and clear dates to judge whether the schedule looks credible."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-11.12": [
+    [
+      "The listed price omits some one-time and recurring costs.",
+      "Buyers need the timing and amounts of charges such as registration, brokerage, and maintenance to understand whether the purchase fits their budget."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-11.13": [
+    [
+      "A property may have passed through several owners or have competing claims.",
+      "Buyers need to trace records behind the seller’s ownership instead of relying only on a broker’s summary."
+    ],
+    [
+      9.2,
+      7.5,
+      7.1,
+      5.2
+    ]
+  ],
+  "final-11.14": [
+    [
+      "A flat can look ready during a viewing while having recurring leaks, water shortages, or repairs that have been promised but not completed.",
+      "Tenants need a record of these issues before signing."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-11.15": [
+    [
+      "Amenities shown in sales material may be changed, delayed, or delivered with restricted access.",
+      "Buyers need to compare the commitments made for their project with what residents can actually use."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-11.16": [
+    [
+      "An owner managing a build remotely may get photos, bills, and daily updates through separate messages.",
+      "Connecting those records helps the owner see whether materials, work completed, and spending agree."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-11.17": [
+    [
+      "Details needed for a housing complaint can be scattered across payment receipts, construction updates, and correspondence.",
+      "A dated record makes it easier to explain what was promised and what happened."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-12.09": [
+    [
+      "Access records can be split across several software tools.",
+      "A business needs to see unusual access in context, including whether it matches the person’s role or recent changes in responsibilities."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-12.10": [
+    [
+      "When an employee leaves or changes roles, accounts and shared permissions may remain active in tools the business has overlooked.",
+      "A complete inventory helps teams track which access needs to be removed."
+    ],
+    [
+      8.6,
+      7.0,
+      6.0,
+      6.5
+    ]
+  ],
+  "final-12.12": [
+    [
+      "A backup can appear configured even if some documents are missing or cannot be restored.",
+      "Small teams need visibility into what is covered and whether recovery has been checked."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-12.14": [
+    [
+      "Customer information can be copied across sales, billing, and support tools.",
+      "A business handling a request needs to know where the customer’s data exists and which steps are still pending."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-12.15": [
+    [
+      "Suspicious files and links arrive through multiple workplace channels.",
+      "Teams need a consistent way to identify and report them so the same issue does not get handled separately by each employee."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-12.16": [
+    [
+      "Incident evidence may be spread across logs written for different tools.",
+      "A small team needs a readable timeline of what happened, what data or systems were affected, and what remains uncertain."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-12.17": [
+    [
+      "A vendor may advertise security features without explaining how it stores or shares customer information. Buyers need comparable evidence about the provider’s practices before granting access.",
+      "A feature list rarely answers who can see uploaded records or what happens when an account is closed. Those details help buyers judge whether the service fits the kind of data they intend to share."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-13.01": [
+    [
+      "A driver may receive a repair recommendation without seeing the evidence behind it.",
+      "It is hard to compare quotes if workshops describe the same symptoms and proposed work in different terms."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-13.04": [
+    [
+      "A shift may start before affordable transport runs between workers’ neighborhoods and factory sites.",
+      "The journey becomes harder when several operators cover different parts of the commute and do not connect reliably."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-13.05": [
+    [
+      "Local authorities may have crash reports, resident complaints, and traffic counts in separate systems. Combining them can help reveal which segments need practical safety changes first.",
+      "A road with many crashes may carry far more traffic than a nearby road with fewer reports. Comparing the type of crashes, their locations, and how people use each road gives planners a clearer picture."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-13.10": [
+    [
+      "A driver can see a toll debit without enough information to tell whether it belongs to their trip.",
+      "Details such as time, plaza, and vehicle association are needed to resolve a mistaken charge."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-13.13": [
+    [
+      "A route can be fast while having crossings or stretches where people repeatedly report hazards.",
+      "Commuters need recent route-level information if they want to weigh safety alongside travel time."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-13.14": [
+    [
+      "A reliable rail or metro trip can still be inconvenient if the connection between the station and home is costly or infrequent.",
+      "Passengers need options that fit the station’s hours and their budget."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-13.15": [
+    [
+      "A printed bus timetable becomes less useful when vehicles are delayed or service changes.",
+      "Riders need a current arrival estimate at their stop to decide whether to wait or take another route."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-13.18": [
+    [
+      "A charger shown on a map may be occupied, broken, or incompatible with the vehicle. Drivers need current status and connector details before taking a detour.",
+      "A driver who arrives at an unusable charger may have to make another stop with less battery remaining. Knowing whether the station is working and whether it supports the car can prevent that detour."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-13.19": [
+    [
+      "An accessible station does not guarantee an accessible trip if lifts are out of service or transfers are difficult.",
+      "Riders need to check the whole path from street level to the destination."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-13.24": [
+    [
+      "Finding a late-night ride involves more than checking availability. Riders need dependable information about driver identity, pickup arrangements, and ways to get assistance during the trip.",
+      "A ride shown as available can still leave someone waiting at a poorly lit pickup point. Riders need to know who is coming, where they should meet, and how they can contact support if plans change."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-14.01": [
+    [
+      "A booking can be cancelled by a provider or a platform, leaving the traveler unsure who handles payment.",
+      "Tracking each handoff helps identify whether the refund has been approved, sent, or held."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-14.03": [
+    [
+      "A low headline rate can increase after platform or property fees appear at checkout. Travelers need the total mandatory cost before comparing similar bookings.",
+      "When required fees appear late, a traveler may spend time comparing offers that are more expensive than they first looked. Showing the full cost early makes comparisons meaningful."
+    ],
+    [
+      6.5,
+      7.5,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-14.05": [
+    [
+      "When many flights are disrupted, updates can arrive after viable alternatives have filled.",
+      "Passengers need information about their specific trip and the options available under their booking."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-14.06": [
+    [
+      "An airline may acknowledge cancellation before a refund is processed by the seller or payment provider.",
+      "Passengers need a reference number they can keep using to track where the refund stands."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-14.10": [
+    [
+      "Airline complaints may depend on booking records, boarding passes, and previous replies. Passengers need to gather the information into one clear timeline before escalating a case.",
+      "A passenger may remember the disruption but have trouble finding the original notice, the amount charged, or the airline’s latest response. A dated account helps separate what happened from what remains unresolved."
+    ],
+    [
+      6.5,
+      6.0,
+      5.8,
+      5.0
+    ]
+  ],
+  "final-14.15": [
+    [
+      "Attractions may describe their sites as accessible without listing steps, slopes, facilities, or assistance. Visitors need those details to judge whether they can complete the visit.",
+      "An accessible entrance alone may say little about whether someone can reach the main rooms, use a restroom, or get back to the exit. Visitors need information about the whole route through the site."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-14.16": [
+    [
+      "Unofficial ticket sites can resemble an attraction’s own booking page.",
+      "Travelers need an easy way to trace where the official seller is listed and who receives their payment."
+    ],
+    [
+      7.8,
+      7.5,
+      5.8,
+      6.3
+    ]
+  ],
+  "final-14.18": [
+    [
+      "Being far from a familiar town makes it hard to judge which facility is open or reachable.",
+      "Visitors need local contact and location information before an emergency occurs."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      5.0
+    ]
+  ],
+  "final-14.19": [
+    [
+      "An attraction may close temporarily or require a permit even if older listings show normal hours.",
+      "Travelers need updates that apply to their date and planned entrance."
+    ],
+    [
+      5.7,
+      6.1,
+      6.4,
+      5.3
+    ]
+  ],
+  "final-14.24": [
+    [
+      "General travel listings rarely describe the details solo travelers use to assess a trip, such as late arrival arrangements and host availability.",
+      "More specific information makes it easier to plan lodging and transport together."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-15.01": [
+    [
+      "Hospital invoices can combine many charges whose names differ from the services patients remember receiving.",
+      "Itemized records help patients compare what was billed with what the hospital says was provided."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-15.03": [
+    [
+      "Two hospitals can quote different packages with different inclusions.",
+      "Patients need to see what is covered and what could be billed separately to compare likely total costs before admission."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-15.06": [
+    [
+      "An approval at admission may be provisional, while the final claim is evaluated against discharge records.",
+      "Patients need a clear explanation of any change and the documents behind it."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-15.08": [
+    [
+      "A center can list a test without offering it on the day a patient plans to visit.",
+      "Rural patients need current availability and appointment information before making a long trip."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-15.09": [
+    [
+      "Different providers may release reports in different formats or portals.",
+      "Missing documents can make it hard for patients to share a complete history with a new care team."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-15.10": [
+    [
+      "Follow-up schedules can be split across clinics, family members, and community workers.",
+      "When a visit is missed, the people coordinating care need to know what happened and which appointment requires follow-up."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-15.11": [
+    [
+      "A diagnostic center may be nearby even when the specialist the patient needs is not available.",
+      "Patients need separate information about consultation locations, schedules, and booking requirements."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-15.13": [
+    [
+      "Drug-quality alerts can apply to a particular batch.",
+      "Patients need to match the identifier on their packaging to an official alert without confusing products with similar names."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      5.0
+    ]
+  ],
+  "final-15.15": [
+    [
+      "Discharge instructions can use unfamiliar terms or a language the patient does not read comfortably.",
+      "Patients and caregivers need to understand the care instructions and how to contact the care team with concerns."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-15.18": [
+    [
+      "Emergency departments need to assess people with different levels of urgency as they arrive.",
+      "When information is incomplete or the department is crowded, care teams need a way to share changes in patient status promptly."
+    ],
+    [
+      9.5,
+      7.2,
+      7.8,
+      6.8
+    ]
+  ],
+  "final-16.01": [
+    [
+      "Residents who find an injured animal may know several numbers without knowing which responder has coverage in their area.",
+      "Verifying availability and the exact location can reduce time lost during handoffs."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      5.0
+    ]
+  ],
+  "final-16.03": [
+    [
+      "The office that receives a complaint may lack authority to act on it.",
+      "Citizens need to know where to submit the issue and what evidence will help the responsible office investigate it."
+    ],
+    [
+      6.5,
+      7.5,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-16.04": [
+    [
+      "After a complaint is filed, a case number may be the only update a resident receives.",
+      "A clear timeline helps them distinguish a case still within its response window from one that needs follow-up."
+    ],
+    [
+      6.5,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-16.05": [
+    [
+      "Unwanted messages can come from changing numbers or sender IDs.",
+      "Aggressive filtering can also hide genuine alerts, so users need more reliable signs of what to block."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      9.0
+    ]
+  ],
+  "final-16.08": [
+    [
+      "People may rely on a shared water source without recent information about its quality.",
+      "A clear test record needs to identify the source, date, and what was actually checked."
+    ],
+    [
+      9.3,
+      7.4,
+      8.0,
+      7.1
+    ]
+  ],
+  "final-16.09": [
+    [
+      "A collection route can vary from day to day.",
+      "Residents need reliable arrival updates to place waste out in time without leaving it outside for long periods."
+    ],
+    [
+      6.5,
+      6.0,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-16.10": [
+    [
+      "Flooded or overflowing drains can be reported by many residents under different location descriptions.",
+      "A precise location and repair status can help authorities consolidate reports and communicate progress."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-16.11": [
+    [
+      "Different kinds of household waste may require different facilities. People need to know which authorized sites accept the item and when they can drop it off.",
+      "A resident may take batteries or old electronics to a collection point only to discover it accepts a different kind of waste. Accepted materials, hours, and quantity limits matter before making the trip."
+    ],
+    [
+      6.5,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-16.14": [
+    [
+      "Individual outages may look isolated until residents document their times and locations.",
+      "A shared record can show how often the water supply stops and which areas are affected."
+    ],
+    [
+      7.8,
+      7.5,
+      7.3,
+      7.5
+    ]
+  ],
+  "final-16.17": [
+    [
+      "A leak can go unnoticed below ground while water continues to leave the system.",
+      "Monitoring needs to distinguish normal demand changes from unusual losses and help narrow down where to inspect."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "final-16.02": [
+    [
+      "An application can be screened before a recruiter reads the résumé.",
+      "Candidates need to know whether relevant qualifications were read correctly and whether document formatting hid important information."
+    ],
+    [
+      7.8,
+      6.0,
+      7.3,
+      6.3
+    ]
+  ],
+  "daily-b2b-1": [
+    [
+      "Small suppliers often have to pay wages and buy materials before their customers pay for finished orders. If a buyer is slow to approve an invoice or asks a question about a delivery, the money may arrive after those bills are due.",
+      "The owner needs to know what will actually be in the bank on payday. That means checking cash on hand, the bills coming up, and which customers are likely to pay in time.",
+      "Those dates can live in different places, like a spreadsheet, a bill, and an email from the buyer. If one date changes and the other records stay the same, the owner may only spot the gap when it’s too late to plan around it."
+    ],
+    [
+      8.5,
+      7.5,
+      6.5,
+      8.0
+    ]
+  ],
+  "final-3.05": [
+    [
+      "Promotions can advertise savings prominently while hiding eligibility rules in separate terms. Customers need to know whether their booking qualifies before they commit.",
+      "A discount might apply only to certain services, customers, or booking times. If the buyer learns those limits after paying, it is too late to compare the actual cost with other offers."
+    ],
+    [
+      4.8,
+      6.4,
+      5.6,
+      6.8
+    ]
+  ],
+  "final-4.04": [
+    [
+      "A return can be approved while the courier pickup is repeatedly missed or cancelled.",
+      "Customers need visibility into who controls rescheduling and how missed pickups affect the return deadline."
+    ],
+    [
+      6.4,
+      7.0,
+      6.7,
+      6.3
+    ]
+  ],
+  "final-4.06": [
+    [
+      "Damage discovered immediately after opening a package is difficult to distinguish from damage that happened later.",
+      "Buyers need a simple evidence record tied to the order and delivery time."
+    ],
+    [
+      6.7,
+      6.8,
+      6.1,
+      5.7
+    ]
+  ],
+  "final-4.13": [
+    [
+      "Products with similar names can support different ports, standards, or software versions. Compatibility depends on the exact existing device and product variant, details listings may omit.",
+      "A plug may look like it fits while the device still lacks the required software support. Shoppers need the exact supported models and versions before they can tell whether an accessory will work."
+    ],
+    [
+      5.7,
+      7.5,
+      6.2,
+      6.6
+    ]
+  ],
+  "final-4.14": [
+    [
+      "Online grocery receipts may show what was charged without making substitutions and missing items obvious.",
+      "Customers need an easy way to compare orders with what arrived and flag discrepancies."
+    ],
+    [
+      5.2,
+      7.1,
+      6.0,
+      6.6
+    ]
+  ],
+  "final-4.15": [
+    [
+      "Large appliances can look identical across variants with different capacity or features.",
+      "Buyers need to compare the model identifier on the delivered unit with the one confirmed in the order."
+    ],
+    [
+      6.7,
+      6.7,
+      5.6,
+      4.9
+    ]
+  ],
+  "final-4.16": [
+    [
+      "A preselected add-on can silently increase the price at checkout.",
+      "Shoppers need a clear way to see which charges are optional and confirm what they actually agreed to pay."
+    ],
+    [
+      4.7,
+      7.8,
+      5.5,
+      7.1
+    ]
+  ],
+  "final-4.17": [
+    [
+      "A countdown or low-stock label can pressure a buyer even when the offer continues.",
+      "Consumers need reliable context to distinguish a genuine availability constraint from a sales tactic."
+    ],
+    [
+      4.3,
+      7.4,
+      6.1,
+      7.2
+    ]
+  ],
+  "final-5.03": [
+    [
+      "A rushed workshop sale can leave buyers paying before they know whether a seat is available.",
+      "Clear confirmation and refund terms matter when payment and enrollment are handled separately."
+    ],
+    [
+      6.1,
+      5.7,
+      6.2,
+      5.4
+    ]
+  ],
+  "final-5.04": [
+    [
+      "Tuition and lodging may be sold together with separate refund rules.",
+      "Students may struggle to resolve the lodging charge when they leave over a teaching or service dispute."
+    ],
+    [
+      6.5,
+      5.2,
+      6.1,
+      4.8
+    ]
+  ],
+  "final-5.05": [
+    [
+      "A single high-scoring student may have taken several programs.",
+      "Promotional claims need to distinguish full enrollment, short courses, and test participation so families can compare them fairly."
+    ],
+    [
+      5.8,
+      6.3,
+      6.9,
+      5.9
+    ]
+  ],
+  "final-5.08": [
+    [
+      "Students may be asked to accept binding terms before they can judge teaching quality or workload.",
+      "Up-front access to the agreement and course structure helps them understand the commitment."
+    ],
+    [
+      6.4,
+      6.5,
+      5.9,
+      6.2
+    ]
+  ],
+  "final-5.10": [
+    [
+      "A school with few devices may teach computing in theory while students seldom practice.",
+      "Timetables, shared equipment, and offline tools determine how much hands-on time each student gets."
+    ],
+    [
+      8.1,
+      7.4,
+      7.3,
+      7.2
+    ]
+  ],
+  "final-5.15": [
+    [
+      "Schools with small libraries may lack books matched to readers’ interests and reading levels.",
+      "Affordable access also depends on having ways to circulate, replace, and replenish the books."
+    ],
+    [
+      7.0,
+      6.8,
+      6.8,
+      6.9
+    ]
+  ],
+  "final-5.16": [
+    [
+      "Practical training can clash with school hours or require transport to another site. Students need ways to build hands-on skills without missing academic classes.",
+      "Even when a program is available, the travel time or class timetable can make regular participation difficult. A workable option has to fit the school day as well as provide time to practice."
+    ],
+    [
+      7.2,
+      7.4,
+      7.0,
+      6.4
+    ]
+  ],
+  "final-5.17": [
+    [
+      "Exams can reward recalling concepts while workplace coding requires debugging, collaboration, and delivering working software. Graduates need practice applying what they studied to open-ended tasks.",
+      "A graduate may understand a programming concept in isolation and still struggle to make changes in an unfamiliar project. Working through unclear requirements and responding to feedback takes a kind of practice that timed exams may miss."
+    ],
+    [
+      7.6,
+      7.8,
+      6.5,
+      7.4
+    ]
+  ],
+  "final-5.18": [
+    [
+      "Some advisers have financial ties to the colleges they recommend. Students need visibility into those incentives and comparable information about programs that fit their interests.",
+      "Families can mistake a counselor’s confidence for evidence that a course is a good fit. Knowing whether the advisor is paid for referrals helps them weigh the recommendation alongside fees, skills taught, and student outcomes."
+    ],
+    [
+      7.1,
+      6.8,
+      7.2,
+      6.2
+    ]
+  ],
+  "final-5.20": [
+    [
+      "Translating a lesson does not automatically make it suitable for a regional audience.",
+      "Good instruction also requires accurate terminology, relevant examples, and readable materials in the learner’s language."
+    ],
+    [
+      7.0,
+      7.3,
+      7.4,
+      7.0
+    ]
+  ],
+  "final-5.22": [
+    [
+      "Exam candidates may find practice questions for free but lack timed tests or feedback on weak areas.",
+      "The cost of regular practice and analysis can make preparation less accessible."
+    ],
+    [
+      7.0,
+      7.2,
+      6.9,
+      6.8
+    ]
+  ],
+  "final-6.03": [
+    [
+      "A borrower can see a headline rate without seeing the full cost, repayment schedule, or deductions.",
+      "Terms need to be legible before acceptance and match what appears in later statements."
+    ],
+    [
+      8.7,
+      7.8,
+      7.1,
+      7.0
+    ]
+  ],
+  "final-6.04": [
+    [
+      "An account takeover may be noticed only after a transfer has gone through.",
+      "Banks need to recognize unusual account or payment activity fast enough to verify it while allowing ordinary transactions."
+    ],
+    [
+      9.3,
+      8.1,
+      6.7,
+      6.2
+    ]
+  ],
+  "final-6.05": [
+    [
+      "A loan or card dispute may move between teams without one person accountable for a resolution.",
+      "Customers need an owner, a case history, and a clear next step when a response is overdue."
+    ],
+    [
+      7.2,
+      7.6,
+      6.8,
+      6.8
+    ]
+  ],
+  "final-6.08": [
+    [
+      "New cardholders may confuse the statement balance, minimum payment, and due date.",
+      "That confusion can lead to charges they did not expect or balances that grow over time."
+    ],
+    [
+      7.2,
+      8.0,
+      6.0,
+      7.6
+    ]
+  ],
+  "final-6.10": [
+    [
+      "Customers far from a branch may face language, connectivity, and travel barriers when trying to complain.",
+      "Low complaint counts can miss problems that customers were unable to report."
+    ],
+    [
+      7.5,
+      6.9,
+      7.3,
+      6.8
+    ]
+  ],
+  "final-6.13": [
+    [
+      "An account restriction or unexpected fee may appear without a clear reason in the app.",
+      "Customers need to identify what triggered it and what evidence or action is required to resolve it."
+    ],
+    [
+      7.8,
+      8.0,
+      6.7,
+      6.8
+    ]
+  ],
+  "final-6.15": [
+    [
+      "An incorrect account or late-payment entry can affect access to credit.",
+      "Borrowers need to locate the disputed record, identify who supplied it, and track the correction through both organizations."
+    ],
+    [
+      8.1,
+      7.4,
+      7.0,
+      6.1
+    ]
+  ],
+  "final-6.16": [
+    [
+      "Family members may not know which institutions hold a relative’s assets. Finding accounts and claiming them are separate tasks, each requiring reliable records and clear documentation.",
+      "A family might know a relative used a bank without knowing which branch, account, or product to ask about. Finding a record is only the starting point because each institution still needs to establish who may claim it."
+    ],
+    [
+      8.0,
+      6.6,
+      7.4,
+      4.8
+    ]
+  ],
+  "final-6.17": [
+    [
+      "Policies can use different wording for similar benefits and exclusions. First-time buyers need comparisons that identify what would actually be covered in situations they care about.",
+      "Two plans with similar prices can differ in waiting periods and what they exclude. A buyer needs to see those differences before deciding whether the cheaper plan covers the circumstances they care about."
+    ],
+    [
+      8.0,
+      8.1,
+      6.6,
+      6.9
+    ]
+  ],
+  "final-6.19": [
+    [
+      "Two transfer services can quote similar fees while using different exchange rates. Workers need to compare the amount their family will receive after all deductions.",
+      "A service advertising a lower transfer fee can still send less to the recipient if its exchange rate is worse. Comparing the final amount received makes the total cost easier to see."
+    ],
+    [
+      7.8,
+      7.5,
+      6.4,
+      7.5
+    ]
+  ],
+  "final-7.02": [
+    [
+      "Restaurant item counts and substitutions can get lost between order acceptance and packing. A clear packing record helps customers identify what was omitted.",
+      "A customer may see the original order in the app while the restaurant sent a substitute or packed one item fewer. Clear item-level records make that difference easier to explain when the customer reports it."
+    ],
+    [
+      5.4,
+      8.0,
+      5.8,
+      7.5
+    ]
+  ],
+  "final-7.06": [
+    [
+      "Front labels can highlight premium ingredients without revealing their share of the recipe. Buyers need to compare those claims with the ingredient list.",
+      "A prominent ingredient name on the front can create an impression the list on the back does not support. Comparing the claim with the ingredient breakdown helps buyers see what is actually in the product."
+    ],
+    [
+      5.7,
+      8.0,
+      6.6,
+      7.3
+    ]
+  ],
+  "final-7.08": [
+    [
+      "Packaging and appearance tell households little about dairy quality. Reliable batch and supplier information can help them distinguish verified products from unsubstantiated claims.",
+      "A package can look normal while giving little information about the conditions in which the dairy product was produced or stored. Traceable batch information helps people identify which quality records apply to the item they bought."
+    ],
+    [
+      8.5,
+      8.0,
+      7.0,
+      6.6
+    ]
+  ],
+  "final-7.09": [
+    [
+      "A small producer may lack testing capacity and discover a quality issue only after a batch ships.",
+      "Batch records and appropriate quality checks are needed before dispatch."
+    ],
+    [
+      9.0,
+      7.4,
+      7.0,
+      6.1
+    ]
+  ],
+  "final-7.10": [
+    [
+      "Training time and cost can make formal instruction difficult for street vendors. Material should fit the equipment, water supply, and preparation conditions vendors actually work with.",
+      "Instructions designed for a fully equipped kitchen may be difficult to apply at a small stall. Training needs to explain the relevant practices in terms of the space, supplies, and time vendors actually have."
+    ],
+    [
+      8.5,
+      7.2,
+      7.1,
+      7.0
+    ]
+  ],
+  "final-7.13": [
+    [
+      "Demand for fresh vegetables changes by day and neighborhood. Vendors must buy ahead and absorb losses when sales are lower than expected.",
+      "The buying decision comes before the vendor knows how much will sell. Ordering too little means missed sales, while ordering too much leaves stock whose quality and value can fall before the next selling day."
+    ],
+    [
+      6.9,
+      7.6,
+      6.6,
+      8.0
+    ]
+  ],
+  "final-7.16": [
+    [
+      "Prices, cooking time, and local availability limit which meals a household can prepare. Nutrition information is more useful when it fits those constraints.",
+      "A meal plan can look nutritious on paper but be impractical when ingredients are expensive or cooking facilities are limited. The useful choice is one the household can realistically buy and prepare regularly."
+    ],
+    [
+      9.0,
+      8.0,
+      7.4,
+      8.0
+    ]
+  ],
+  "final-7.19": [
+    [
+      "Counterfeit bottles can resemble legitimate stock. Buyers need a way to verify the seller and product provenance before purchase.",
+      "A listing or seal alone may not establish where the bottle came from. The buyer needs enough traceable information to tell who supplied it and whether that source can be checked."
+    ],
+    [
+      8.5,
+      6.4,
+      7.1,
+      5.0
+    ]
+  ],
+  "final-7.22": [
+    [
+      "Ground spices hide visual cues present in whole ingredients. Shoppers need reliable sourcing and batch information to assess purity and freshness.",
+      "Once spices are ground, a buyer has fewer clues about what went into the pack. A usable sourcing record should identify the producer and link any quality checks to the batch actually sold."
+    ],
+    [
+      7.9,
+      7.8,
+      7.0,
+      6.8
+    ]
+  ],
+  "final-7.23": [
+    [
+      "A delivered water can provides little visible evidence of where it was filled or how it was treated.",
+      "Customers need recent quality records tied to the supplier and batch."
+    ],
+    [
+      9.0,
+      7.6,
+      7.3,
+      6.8
+    ]
+  ],
+  "final-8.05": [
+    [
+      "Marketplace rules can restrict a customer and worker from arranging a follow-up directly.",
+      "Those restrictions affect the cost of repeat work and the worker’s ability to build a client base."
+    ],
+    [
+      6.3,
+      6.9,
+      6.6,
+      6.4
+    ]
+  ],
+  "final-8.07": [
+    [
+      "An assigned technician can stop responding while the booking remains open. Customers need a clear deadline and a way to request reassignment or recover payment.",
+      "While a booking remains open, the customer may not know whether someone is still coming or whether it is safe to book another provider. A clear status and resolution deadline would help them decide what to do next."
+    ],
+    [
+      6.1,
+      7.1,
+      6.0,
+      6.4
+    ]
+  ],
+  "final-8.14": [
+    [
+      "Materials ordered, delivered, and installed are often recorded separately. Owners need records tied to the agreed specification to spot substitutions or quantity differences.",
+      "If the contractor replaces a specified material, the change may be hard to see once it is installed. Being able to match delivered quantities and product details to the agreed scope gives owners a basis for asking about discrepancies."
+    ],
+    [
+      7.8,
+      7.2,
+      6.9,
+      6.6
+    ]
+  ],
+  "final-8.15": [
+    [
+      "When a repaired appliance fails again, the customer needs to show what the original work covered and whether the same fault returned.",
+      "Without that record a provider may treat it as a new job."
+    ],
+    [
+      6.8,
+      7.0,
+      6.4,
+      6.2
+    ]
+  ],
+  "final-8.20": [
+    [
+      "Pests can recur if entry points or breeding conditions remain. Customers need to understand what the treatment covers and how the provider handles recurrence.",
+      "A treatment can remove visible pests while leaving the underlying source unchanged. If the pests return, the household needs to understand whether another visit is covered and what conditions still need attention."
+    ],
+    [
+      6.9,
+      7.1,
+      6.2,
+      6.6
+    ]
+  ],
+  "final-8.21": [
+    [
+      "A tank cleaning listing may omit the equipment, method, and tank types a provider serves. Households need enough information to book someone suited to their installation.",
+      "An overhead tank and an underground tank can require different access arrangements. A customer needs to confirm what the provider can reach and what is included before scheduling the work."
+    ],
+    [
+      6.2,
+      6.4,
+      5.9,
+      5.1
+    ]
+  ],
+  "final-8.22": [
+    [
+      "A small electrical job may not justify travel for a provider.",
+      "Customers need to find someone qualified who accepts short jobs and gives the minimum visit cost upfront."
+    ],
+    [
+      6.5,
+      7.0,
+      6.2,
+      6.3
+    ]
+  ],
+  "final-9.03": [
+    [
+      "Coverage for an area does not always translate to an agent serving every address.",
+      "Dispatchers need to tell customers which handoff is possible before promising door delivery."
+    ],
+    [
+      6.0,
+      7.2,
+      6.6,
+      6.4
+    ]
+  ],
+  "final-9.05": [
+    [
+      "A courier complaint can stall when several companies handle the same package and each has only part of the record.",
+      "The customer needs to know who is dealing with the complaint, what they’ve done so far, and when to expect an update."
+    ],
+    [
+      6.6,
+      7.3,
+      6.7,
+      6.8
+    ]
+  ],
+  "final-9.07": [
+    [
+      "A truck can be ready while no appropriately qualified driver is available for the route or shift.",
+      "Operators need a better view of availability and scheduling constraints."
+    ],
+    [
+      8.0,
+      7.5,
+      7.0,
+      7.0
+    ]
+  ],
+  "final-9.13": [
+    [
+      "Inventory counts drift when movements are recorded late or against the wrong location.",
+      "Small warehouses need each receipt, transfer, and dispatch reflected in the same stock record."
+    ],
+    [
+      7.5,
+      7.5,
+      6.6,
+      7.5
+    ]
+  ],
+  "final-9.20": [
+    [
+      "Fragile goods may pass through several operators before damage is detected. Time-stamped handling records can help identify the stage that needs investigation.",
+      "When a box is opened only at its destination, its final condition gives little clue about which handoff caused the damage. A record that links impacts to the shipment and time can help narrow the investigation."
+    ],
+    [
+      7.3,
+      6.9,
+      6.8,
+      5.9
+    ]
+  ],
+  "final-10.03": [
+    [
+      "Stolen funds may pass through several accounts before investigators can follow them. Disconnected records and delayed reporting complicate attempts to trace the money.",
+      "Each organization may see only part of the transaction history. Investigators need reliable references and timestamps to connect those partial records before they can establish where the funds went."
+    ],
+    [
+      9.3,
+      7.5,
+      7.3,
+      5.7
+    ]
+  ],
+  "final-10.06": [
+    [
+      "Users may assume all payment methods have the same dispute process.",
+      "After a fraudulent high-value transfer, they need clarity on the recovery options available for that payment type."
+    ],
+    [
+      9.2,
+      7.4,
+      7.1,
+      5.1
+    ]
+  ],
+  "final-10.07": [
+    [
+      "Merchants can face different fees depending on the provider and payment arrangement. A clear charge breakdown helps them understand the amount they will receive.",
+      "A merchant may see a sale recorded at one amount and a payout arrive at another. An itemized settlement lets them see whether the difference is due to applicable processing charges or something that needs checking."
+    ],
+    [
+      6.3,
+      7.7,
+      6.4,
+      7.0
+    ]
+  ],
+  "final-10.14": [
+    [
+      "People may want to pause billing for a short period while keeping their subscription.",
+      "If the payment mandate only supports cancellation, pausing can require a new authorization later."
+    ],
+    [
+      4.9,
+      7.4,
+      6.6,
+      6.2
+    ]
+  ],
+  "final-11.02": [
+    [
+      "A single maintenance amount can combine repairs, operating costs, and reserves. Residents need itemized records to understand what changed and ask informed questions.",
+      "A higher bill is difficult to understand if residents cannot distinguish a one-time repair from a permanent increase. A breakdown lets them compare the charge with the approved budget and previous periods."
+    ],
+    [
+      5.9,
+      7.0,
+      6.3,
+      7.0
+    ]
+  ],
+  "final-11.04": [
+    [
+      "Construction progress and a buyer’s financing obligations can follow separate schedules. Buyers can face ongoing payments while still paying for somewhere else to live.",
+      "A household budgeting for a move can instead end up paying for both the delayed property and current housing. Construction updates do not automatically explain how long this overlap will last."
+    ],
+    [
+      9.0,
+      7.4,
+      7.3,
+      6.4
+    ]
+  ],
+  "final-11.05": [
+    [
+      "A delayed project can leave a household seeking a refund from an organization that controls both funds and progress updates.",
+      "Buyers need a clear record of payment, promises, and the response to their request."
+    ],
+    [
+      9.0,
+      7.2,
+      7.1,
+      6.1
+    ]
+  ],
+  "final-11.06": [
+    [
+      "A housing complaint can receive a decision without corresponding progress on the ground. Buyers need visibility into follow-up, deadlines, and responsibility for implementing the decision.",
+      "A purchaser can receive a written outcome and still have no date for the promised action. They need a way to track implementation and see when the responsible party last provided an update."
+    ],
+    [
+      8.6,
+      7.1,
+      7.5,
+      6.2
+    ]
+  ],
+  "final-11.07": [
+    [
+      "Developer insolvency can leave buyers uncertain about construction, possession, and money already paid. Progress and case updates may arrive through several channels with different timelines.",
+      "Buyers may receive updates about the legal case without learning whether work on their building can resume. They need to distinguish confirmed decisions from proposals that still depend on funding or approval."
+    ],
+    [
+      9.3,
+      6.9,
+      7.8,
+      5.1
+    ]
+  ],
+  "final-11.08": [
+    [
+      "Housing disputes can involve different forums depending on the issue and remedy sought.",
+      "Buyers need guidance about what information to collect and where to seek qualified help."
+    ],
+    [
+      8.2,
+      7.2,
+      7.1,
+      5.9
+    ]
+  ],
+  "final-11.09": [
+    [
+      "A project can have buyer demand and still lack cash to complete the next phase.",
+      "A viable restart depends on assessing remaining costs, funding, and the commitments already made."
+    ],
+    [
+      9.0,
+      7.5,
+      7.8,
+      6.1
+    ]
+  ],
+  "final-11.21": [
+    [
+      "A listing may stay visible after a rental is gone or use photos from a different property.",
+      "Renters need to confirm actual availability and the person authorized to show it."
+    ],
+    [
+      6.6,
+      8.0,
+      6.9,
+      7.7
+    ]
+  ],
+  "final-11.22": [
+    [
+      "New paint can conceal moisture during a brief viewing.",
+      "Buyers need access to the property’s repair history and an opportunity to check areas likely to be affected."
+    ],
+    [
+      7.8,
+      7.1,
+      7.0,
+      6.0
+    ]
+  ],
+  "final-11.23": [
+    [
+      "Moisture can travel from a roof, wall, or pipe before becoming visible. Residents need an inspection that identifies the likely source so repairs address the cause.",
+      "Repainting a damp patch may improve how it looks without stopping the moisture from returning. The difficult part is tracing the source, particularly when the most visible mark is far from where water is getting in."
+    ],
+    [
+      8.0,
+      7.2,
+      7.1,
+      6.4
+    ]
+  ],
+  "final-12.01": [
+    [
+      "Teams handling a breach need to track which notifications apply and when each becomes due. Separate timelines can create duplicate work and inconsistent records.",
+      "The same incident can create several notification tasks, each with its own owner and evidence requirements. A single timeline helps the team track what has been sent and what still needs action."
+    ],
+    [
+      8.7,
+      6.5,
+      7.0,
+      4.8
+    ]
+  ],
+  "final-12.02": [
+    [
+      "A standard vendor contract may leave responsibilities for deletion, subprocessors, or incident support unclear. Buyers need to identify those gaps before sharing customer data.",
+      "Even when a vendor’s product meets technical needs, its contract may leave unclear who must act when a customer asks for deletion or an incident occurs. The business needs those responsibilities spelled out before relying on the service."
+    ],
+    [
+      8.0,
+      7.2,
+      6.8,
+      6.4
+    ]
+  ],
+  "final-12.03": [
+    [
+      "Customer records can be copied into backups, exports, and vendor systems. A deletion request is difficult to complete when the team cannot trace those copies.",
+      "A person’s contact details may be removed from one tool while copies remain in a report or another service. The team needs to know where copies live so it can determine what is still outstanding."
+    ],
+    [
+      8.5,
+      7.6,
+      7.1,
+      6.5
+    ]
+  ],
+  "final-12.04": [
+    [
+      "Small teams may have limited budget for mapping data, updating processes, and documenting their work.",
+      "The burden grows when the same information must be maintained in several tools."
+    ],
+    [
+      7.7,
+      7.5,
+      6.8,
+      7.0
+    ]
+  ],
+  "final-12.05": [
+    [
+      "A missed data safeguard can expose customers and create substantial consequences for a company.",
+      "Teams need to know which safeguards apply and whether they work in practice."
+    ],
+    [
+      9.0,
+      7.4,
+      6.8,
+      5.6
+    ]
+  ],
+  "final-12.06": [
+    [
+      "A click alone may not show what notice a customer saw or which uses they agreed to.",
+      "An auditable record connects the choice to the notice and later changes."
+    ],
+    [
+      7.9,
+      7.6,
+      6.7,
+      7.1
+    ]
+  ],
+  "final-12.07": [
+    [
+      "After an incident, a team may need to show what was tested, when, and whether problems were fixed.",
+      "Evidence is harder to reconstruct if earlier checks were only informal."
+    ],
+    [
+      8.3,
+      7.1,
+      6.6,
+      5.7
+    ]
+  ],
+  "final-12.08": [
+    [
+      "Consent tools need to exchange records with the services that actually use customer data.",
+      "A startup must understand where integration or coverage still requires its own work."
+    ],
+    [
+      7.2,
+      6.8,
+      6.9,
+      6.0
+    ]
+  ],
+  "final-12.13": [
+    [
+      "Version histories can contain many edits that obscure consequential changes. Teams need to know which sections changed and who should review them.",
+      "A reviewer may need to see a changed deadline or approval while many small formatting edits happen around it. A useful update identifies what changed and gives the reviewer enough context to decide whether it matters."
+    ],
+    [
+      5.8,
+      7.7,
+      5.9,
+      7.4
+    ]
+  ],
+  "final-12.20": [
+    [
+      "Separate spreadsheets, customer systems, and invoices often use different identifiers. Copying data between them can create stale records and duplicate entries.",
+      "A customer name can be updated in a spreadsheet while the CRM and invoice still use the old details. Teams need to know which record to trust and how to recognize the same customer across systems."
+    ],
+    [
+      7.3,
+      8.2,
+      6.3,
+      8.0
+    ]
+  ],
+  "final-12.22": [
+    [
+      "Payroll becomes difficult when attendance, deductions, and adjustments sit in separate records. Manual reconciliation increases the chance of delayed or incorrect pay.",
+      "A missed shift or correction to overtime may affect one employee while leaving the rest of the payroll unchanged. Finding that difference before pay is issued requires the source records to agree."
+    ],
+    [
+      8.1,
+      7.8,
+      6.1,
+      7.2
+    ]
+  ],
+  "final-12.23": [
+    [
+      "Small stores must reorder before shelves empty without tying up too much cash. Past sales can help if records distinguish seasonal demand and stockouts.",
+      "A zero sales day can indicate low demand or simply mean the item was out of stock. Stores need to distinguish those cases before using past sales to decide how much to order."
+    ],
+    [
+      7.4,
+      7.8,
+      6.7,
+      7.8
+    ]
+  ],
+  "final-13.06": [
+    [
+      "Teams need speed measurements tied to place, time, and traffic conditions to find recurring risks. Isolated complaints offer less guidance on where to intervene first.",
+      "Reports of speeding are easier to act on when they show whether the issue repeats at the same time or location. Those patterns can help teams choose where to investigate before deciding on an intervention."
+    ],
+    [
+      9.0,
+      6.9,
+      7.2,
+      6.5
+    ]
+  ],
+  "final-13.07": [
+    [
+      "Useful details can disappear after vehicles leave and witnesses disperse. Responders need a way to record observations and keep the original evidence associated with the incident.",
+      "Witnesses may recall different details, and a photo can become separated from its time or place. Keeping original observations together makes it easier for investigators to understand what can be verified."
+    ],
+    [
+      9.3,
+      6.9,
+      7.2,
+      5.2
+    ]
+  ],
+  "final-13.08": [
+    [
+      "During a crash response, uncertainty about admission and payment procedures can delay coordination. Responders need reliable information for the receiving facility and the particular case.",
+      "The uncertainty is greatest when the injured person cannot explain their situation and the receiving facility needs details quickly. Responders need a clear source for case requirements and a way to communicate with the facility."
+    ],
+    [
+      9.5,
+      7.0,
+      7.5,
+      5.3
+    ]
+  ],
+  "final-13.09": [
+    [
+      "Police, hospitals, and road agencies can record the same crash differently. Planners need to match records and reconcile inconsistent definitions before drawing conclusions.",
+      "Two agencies may use different location descriptions or record an incident under different dates. Without checking which records refer to the same event, planners risk missing recurring hazards or counting them twice."
+    ],
+    [
+      8.5,
+      6.6,
+      7.6,
+      6.0
+    ]
+  ],
+  "final-13.11": [
+    [
+      "A cancellation after destination disclosure wastes time and leaves the passenger looking again.",
+      "Riders need a reliable indication that a driver can complete the trip before waiting."
+    ],
+    [
+      6.0,
+      8.0,
+      6.1,
+      7.5
+    ]
+  ],
+  "final-13.12": [
+    [
+      "Peak pricing can change while a rider compares routes. A clear fare estimate helps passengers judge whether to wait, use another mode, or accept the price.",
+      "A rider can see a price rise between checking availability and choosing a car. Knowing the current total and whether it may change helps them weigh the trip against waiting or taking another route."
+    ],
+    [
+      5.5,
+      8.0,
+      5.4,
+      7.5
+    ]
+  ],
+  "final-13.16": [
+    [
+      "A trip across operators may require separate fares and transfers. Travelers need the combined cost and time for the complete route.",
+      "The cheapest fare for a single leg may produce a more costly trip after transfers and the trip to or from the station are included. Riders need to compare complete journeys before choosing."
+    ],
+    [
+      5.4,
+      7.6,
+      6.4,
+      7.4
+    ]
+  ],
+  "final-13.17": [
+    [
+      "A safety complaint is harder to investigate without the vehicle, route, time, and a clear description.",
+      "Passengers need an easy way to connect reports to the trip."
+    ],
+    [
+      8.7,
+      7.2,
+      7.1,
+      6.2
+    ]
+  ],
+  "final-13.20": [
+    [
+      "Vehicle data can show harsh braking or speeding, but those events need route context. Fleet teams need to distinguish repeated patterns from isolated maneuvers.",
+      "The same braking event can reflect an unsafe driving pattern or a necessary response to traffic. Reviewing events in context helps fleet teams decide where follow-up is appropriate."
+    ],
+    [
+      9.0,
+      7.5,
+      6.5,
+      6.8
+    ]
+  ],
+  "final-13.21": [
+    [
+      "A disruption on one leg can affect a whole commute. Riders need updates across operators and alternatives that account for the remaining route.",
+      "Knowing that one service is delayed does not show whether the next connection is still reachable. Riders need alternatives based on the remaining journey, including transfer time and the availability of other services."
+    ],
+    [
+      6.8,
+      8.1,
+      6.7,
+      7.8
+    ]
+  ],
+  "final-13.22": [
+    [
+      "Parents and schools need to know whether a delay is routine and whether a pickup or drop-off took place. Messages must reliably reach the right caregiver.",
+      "A delay notice tells a parent when to expect a bus but does not confirm that a child boarded. The system has to distinguish schedule updates from checks that a specific handoff happened."
+    ],
+    [
+      8.2,
+      7.4,
+      6.5,
+      7.1
+    ]
+  ],
+  "final-14.02": [
+    [
+      "A platform fee and an airline fee can appear as one deduction. Travelers need an itemized breakdown to see which terms apply to their booking.",
+      "If the booking platform presents both charges together, the passenger may assume the airline set the whole amount. A breakdown helps them see the platform fee separately and compare it with the terms they accepted."
+    ],
+    [
+      6.4,
+      7.2,
+      6.2,
+      6.3
+    ]
+  ],
+  "final-14.04": [
+    [
+      "A passenger expecting confirmed accommodation needs to know what was actually assigned and how a shortfall affects the refund.",
+      "The booking record and trip outcome must be easy to connect."
+    ],
+    [
+      7.0,
+      7.4,
+      6.5,
+      5.8
+    ]
+  ],
+  "final-14.07": [
+    [
+      "Travel credits can have restrictions or expiry dates that make them less useful than cash. Passengers need to see what options apply before accepting a credit.",
+      "Someone who cannot travel again soon may find a credit difficult to use. The choices need to be clear before accepting an option with limits on dates, routes, or use."
+    ],
+    [
+      6.6,
+      7.3,
+      6.0,
+      6.0
+    ]
+  ],
+  "final-14.08": [
+    [
+      "A refund may be smaller than the ticket price without an explanation of taxes, fees, or fare deductions.",
+      "Flyers need a calculation they can compare with the original terms."
+    ],
+    [
+      6.4,
+      7.1,
+      6.3,
+      6.5
+    ]
+  ],
+  "final-14.09": [
+    [
+      "A passenger cancelling soon after purchase may face different terms depending on the booking and timing.",
+      "They need access to the policy that applied when they paid."
+    ],
+    [
+      6.2,
+      7.0,
+      6.1,
+      5.7
+    ]
+  ],
+  "final-14.11": [
+    [
+      "A missing or damaged bag may pass through several airports and handlers.",
+      "Passengers need a report tied to the baggage tag and timely updates on who is handling it."
+    ],
+    [
+      7.5,
+      7.8,
+      6.7,
+      6.9
+    ]
+  ],
+  "final-14.12": [
+    [
+      "Delays can leave passengers with missed connections or extra costs. Up-to-date explanations and rebooking information help travelers decide what to do next.",
+      "A revised departure time is only part of the information passengers need. They may also have to decide whether a connection is still possible or whether another booking will be needed."
+    ],
+    [
+      7.4,
+      8.0,
+      6.4,
+      7.4
+    ]
+  ],
+  "final-14.13": [
+    [
+      "Guide listings may omit credentials, permitted activities, and who handles disputes. Travelers need reliable information about the guide before booking.",
+      "Price and ratings do not answer whether a guide is permitted to operate at a specific attraction or can deliver the itinerary offered. Unclear credentials make it harder to compare offers fairly."
+    ],
+    [
+      6.4,
+      6.8,
+      6.5,
+      5.9
+    ]
+  ],
+  "final-14.14": [
+    [
+      "Travel budgets can miss local fares, permits, and attraction fees that are rarely listed together. A realistic estimate needs to cover the whole planned visit.",
+      "The advertised hotel rate and main ticket rarely account for every local expense. A traveler planning a budget needs to include smaller charges that accumulate over the whole visit."
+    ],
+    [
+      5.1,
+      7.4,
+      5.8,
+      6.8
+    ]
+  ],
+  "final-14.17": [
+    [
+      "A visitor may not know the local fare range or which fees apply.",
+      "Comparing estimates for the same pickup, destination, timing, and vehicle helps reveal surprising charges."
+    ],
+    [
+      5.8,
+      7.5,
+      6.3,
+      7.0
+    ]
+  ],
+  "final-14.20": [
+    [
+      "Smaller destinations may have few recent reviews or accurate listings. Guests need to verify availability, location, and basic facilities before arriving.",
+      "A photo or old review may not confirm whether a room still exists, is open on the planned date, or is reachable in the evening. Verifying basic details in advance matters more where alternatives are limited."
+    ],
+    [
+      7.0,
+      6.9,
+      7.2,
+      6.2
+    ]
+  ],
+  "final-14.21": [
+    [
+      "Local safety updates can be difficult to find or interpret in an unfamiliar language. Visitors need timely information with a reliable source and a clear location.",
+      "A translated message is only useful if readers can tell when it was issued and which area it covers. Otherwise, tourists may confuse a local update with a restriction that applies to their own trip."
+    ],
+    [
+      8.2,
+      7.1,
+      7.0,
+      6.6
+    ]
+  ],
+  "final-14.22": [
+    [
+      "A route that looks short on a map may not fit opening hours, transport schedules, or seasonal restrictions. A usable itinerary accounts for delays and connections.",
+      "A plan can look reasonable until it includes a transfer after the last local service or arrives just before closing. Building in travel and waiting time helps show whether the stops fit into one day."
+    ],
+    [
+      5.9,
+      7.3,
+      6.4,
+      6.8
+    ]
+  ],
+  "final-15.02": [
+    [
+      "Patients may not know why a test was recommended or how the result would affect care.",
+      "Clear explanations and usable records help them discuss the recommendation with a qualified clinician."
+    ],
+    [
+      9.0,
+      8.1,
+      7.2,
+      6.5
+    ]
+  ],
+  "final-15.04": [
+    [
+      "Patients can struggle to compare the amount charged with the applicable price for the exact medicine and pack.",
+      "They need a trustworthy source and a record of what they paid."
+    ],
+    [
+      8.3,
+      7.8,
+      6.7,
+      6.6
+    ]
+  ],
+  "final-15.05": [
+    [
+      "Coverage and documentation requirements can differ across policies and procedures. Patients need to check both before submitting to avoid missing records and delays.",
+      "A patient may learn that something is missing only after sending a claim. Seeing the documents and coverage conditions for their specific policy and procedure helps them understand what the insurer will need to review it."
+    ],
+    [
+      8.1,
+      7.9,
+      6.8,
+      7.0
+    ]
+  ],
+  "final-15.07": [
+    [
+      "A claim can be acknowledged without showing which items were approved, reduced, or held. Policyholders need a clear breakdown and a record of communications.",
+      "A partial payment can leave a policyholder unsure which costs are final and which are still being reviewed. Clear decisions for each item help them identify where a document or response is missing."
+    ],
+    [
+      8.5,
+      7.8,
+      7.0,
+      6.9
+    ]
+  ],
+  "final-15.12": [
+    [
+      "Missing referrals, prior results, or medication records can delay a consultation. Clinics need to identify gaps before the appointment and tell patients what is needed.",
+      "A patient can arrive on time and still be unable to complete an appointment if the clinician needs a record from elsewhere. Early notice gives the patient time to retrieve it before making the trip."
+    ],
+    [
+      8.0,
+      7.8,
+      6.8,
+      7.2
+    ]
+  ],
+  "final-15.14": [
+    [
+      "A clinic may discover that an essential item is unavailable only when it is needed.",
+      "Stock counts, usage patterns, and restocking lead times need to be visible together."
+    ],
+    [
+      8.8,
+      7.5,
+      6.9,
+      7.1
+    ]
+  ],
+  "final-15.16": [
+    [
+      "Prices can differ for the same product and pack across stores. Buyers need to compare like-for-like listings and confirm that the product is actually in stock.",
+      "A low price may be for a different pack size or an item that is unavailable at that branch. Useful comparisons tie the price to the exact product, quantity, and current location."
+    ],
+    [
+      7.2,
+      8.2,
+      6.4,
+      7.6
+    ]
+  ],
+  "final-15.17": [
+    [
+      "Patients may receive different assessments without knowing whether the clinicians reviewed the same information. A complete record helps a qualified clinician explain where the opinions differ.",
+      "Two assessments can appear to contradict each other when each clinician has seen a different set of results. Patients need to understand what information was considered and which questions remain open."
+    ],
+    [
+      9.0,
+      7.6,
+      7.4,
+      6.0
+    ]
+  ],
+  "final-15.19": [
+    [
+      "Some appointments require facilities or scheduling that protect privacy and accommodate mobility needs. Patients need to know what is available before making a trip.",
+      "A center may list the right test without explaining how patients enter the building, change privately, or arrange help. Knowing those details in advance can determine whether someone can attend the appointment."
+    ],
+    [
+      8.6,
+      7.5,
+      7.6,
+      6.7
+    ]
+  ],
+  "final-15.20": [
+    [
+      "Patients may hear several names for medicines with similar ingredients and be unsure how they differ.",
+      "Clear product information helps them discuss cost and suitability with a clinician or pharmacist."
+    ],
+    [
+      7.8,
+      8.1,
+      6.9,
+      7.5
+    ]
+  ],
+  "final-16.06": [
+    [
+      "Repeat complaints may refer to changing numbers that are hard to connect. Regulators need reliable records that link reports to the responsible operator.",
+      "Reports can include similar messages sent from different numbers or incomplete information about the sender. Linking those reports to a responsible operator requires evidence that connects the messages rather than relying on a single number."
+    ],
+    [
+      6.8,
+      7.4,
+      7.1,
+      7.8
+    ]
+  ],
+  "final-16.07": [
+    [
+      "A spam complaint often asks for details already visible in a call log. Reducing duplicate entry can make reporting practical while the information is fresh.",
+      "Typing numbers, timestamps, and message details by hand makes reporting harder after a brief interruption. Letting someone review information already on their device can make the report easier to complete accurately."
+    ],
+    [
+      4.8,
+      7.5,
+      6.2,
+      7.7
+    ]
+  ],
+  "final-16.12": [
+    [
+      "Small villages may produce too little recyclable material for a regular individual pickup. Coordinating collection times and storage can make a shared route practical.",
+      "A collector serving one small village may travel a long distance for a light load. Combining pickups can help, but communities still need somewhere to store material and an agreed schedule."
+    ],
+    [
+      6.8,
+      6.5,
+      7.2,
+      6.6
+    ]
+  ],
+  "final-16.13": [
+    [
+      "A broken streetlight can be difficult to identify from a street name alone. Precise location and a visible repair status help keep the same report from being sent twice or to the wrong team.",
+      "Several lamps can be on the same road and only one may be broken. A nearby landmark or pole identifier can help the crew find the correct light on its first visit."
+    ],
+    [
+      7.0,
+      6.8,
+      6.6,
+      6.7
+    ]
+  ],
+  "final-16.15": [
+    [
+      "A community facility may be listed as operating without a current record of outages or inspections. Councils need to identify recurring faults and assign follow-up.",
+      "A council may know a pump was installed without knowing how often it stops working. A dated record of interruptions and repairs helps show where maintenance or follow-up is needed."
+    ],
+    [
+      8.6,
+      6.7,
+      7.5,
+      6.5
+    ]
+  ],
+  "final-16.16": [
+    [
+      "Sorting waste at home does not show what happened after collection. Communities need records connecting collection, processing, and final disposal.",
+      "Even if waste leaves homes in separate containers, residents may never learn whether it was later mixed, rejected, or sent to a recycling facility. The gap is in tracking the material after pickup."
+    ],
+    [
+      7.0,
+      7.1,
+      7.4,
+      7.0
+    ]
+  ],
+  "final-16.18": [
+    [
+      "A resident may notice a damaged tree without knowing who manages the land.",
+      "Clear routing and location information can get an inspection request to the proper team."
+    ],
+    [
+      8.0,
+      6.3,
+      6.8,
+      5.2
+    ]
+  ],
+  "daily-b2b-5": [
+    [
+      "A sports-equipment buyer may require several tests with different lab capabilities and turnaround times. Manufacturers need to confirm coverage and available dates before sending samples.",
+      "A lab that performs one required check may refer the remaining checks elsewhere. The manufacturer has to account for both schedules and the time needed for reports before promising a shipping date."
+    ],
+    [
+      7.2,
+      5.9,
+      6.8,
+      5.8
+    ]
+  ],
+  "daily-b2b-9": [
+    [
+      "Electricity and fuel records may use different periods and units than a buyer’s reporting request.",
+      "Suppliers need to collect consistent records and document how each figure was calculated."
+    ],
+    [
+      7.4,
+      7.4,
+      6.8,
+      6.5
+    ]
+  ],
+  "daily-b2b-10": [
+    [
+      "Revenue can exceed production cost while fees, shipping, and returns erase the margin. A manufacturer needs to estimate contribution per order before setting a sales target.",
+      "Selling more units does not automatically improve profit if every additional parcel brings fees, shipping costs, and returns. The manufacturer needs to see what remains from each sale before relying on a volume forecast."
+    ],
+    [
+      7.2,
+      7.6,
+      6.4,
+      7.4
+    ]
+  ],
+  "daily-b2b-12": [
+    [
+      "When a freelancer leaves, working files and account access may stay with them.",
+      "A business needs the current source materials and authorized access to continue the project."
+    ],
+    [
+      7.6,
+      7.2,
+      6.6,
+      6.0
+    ]
+  ],
+  "daily-b2b-13": [
+    [
+      "A prototype can work even when small production runs vary. Recording tolerances, materials, and test results helps a producer establish which variation matters.",
+      "A successful prototype shows that one unit can meet the requirement. A supplier also needs to know whether the same material and process can produce several units consistently enough to pass the agreed checks."
+    ],
+    [
+      7.8,
+      7.0,
+      6.9,
+      6.1
+    ]
+  ],
+  "daily-b2b-14": [
+    [
+      "A shared order can reach a wholesaler’s minimum while each restaurant only needs part of it. The challenge is coordinating order timing, allocation, and payment.",
+      "The restaurants may reach the minimum order collectively while needing ingredients on different days. They have to agree how to divide deliveries and who pays if one participant changes their order."
+    ],
+    [
+      6.0,
+      6.7,
+      6.6,
+      7.3
+    ]
+  ],
+  "daily-b2b-15": [
+    [
+      "Buying direct may reduce unit cost but require a larger order.",
+      "Retailers need to weigh savings against how long inventory will sit and how much cash it absorbs."
+    ],
+    [
+      7.0,
+      7.5,
+      6.2,
+      7.1
+    ]
+  ],
+  "daily-b2b-17": [
+    [
+      "A supplier can show stock as available before it is reserved for a particular order. Retailers need confirmation before making a delivery promise to customers.",
+      "A product marked in stock can be sold to another buyer before the retailer’s order is accepted. The seller needs to distinguish a live quantity from units that are genuinely held for a customer."
+    ],
+    [
+      7.1,
+      7.7,
+      6.6,
+      7.6
+    ]
+  ],
+  "daily-b2b-18": [
+    [
+      "Tender eligibility may depend on exact dates, certificates, and project sizes. Checking evidence against each requirement early helps suppliers avoid preparing bids they cannot submit.",
+      "A business can have the right experience and still lack a current document in the exact form the buyer requests. Checking those details early helps it decide whether a particular tender is feasible."
+    ],
+    [
+      6.8,
+      6.8,
+      6.7,
+      6.2
+    ]
+  ],
+  "daily-b2b-19": [
+    [
+      "Quoted energy savings may assume a different operating schedule from the factory’s.",
+      "Owners need expected savings under their own usage and tariffs to compare against upfront costs."
+    ],
+    [
+      7.2,
+      7.4,
+      6.4,
+      6.1
+    ]
+  ],
+  "beauty-1": [
+    [
+      "Customers may struggle to distinguish a cosmetic service from a procedure requiring medical oversight.",
+      "They need accurate information about the provider’s qualifications and the treatment being offered."
+    ],
+    [
+      9.0,
+      6.7,
+      7.1,
+      5.7
+    ]
+  ],
+  "beauty-9": [
+    [
+      "Fragrance information can be hard to interpret, and there may be no affordable sample.",
+      "Customers need clear product information and a way to try products without committing to a full size."
+    ],
+    [
+      6.7,
+      6.7,
+      6.4,
+      6.4
+    ]
+  ],
+  "beauty-13": [
+    [
+      "Independent professionals can depend heavily on new referrals even when clients would book again. They need to manage follow-ups and availability without relying on one platform.",
+      "A returning client may want the same service but have trouble finding the professional’s latest hours or contact details. Keeping booking and follow-up information together can make repeat business easier to manage."
+    ],
+    [
+      6.2,
+      7.1,
+      6.0,
+      7.4
+    ]
+  ],
+  "beauty-22": [
+    [
+      "Getting to a salon can be difficult for people with limited mobility. At-home services need to give clear prices, coverage, and information about assistance needs.",
+      "A provider may say they offer home visits without describing what equipment they bring or what access they need. That information helps a customer decide if the service will work in their home."
+    ],
+    [
+      6.9,
+      6.8,
+      6.9,
+      6.5
+    ]
+  ],
+  "beauty-23": [
+    [
+      "Hair condition and previous treatments can affect how it responds to coloring or bleach.",
+      "Customers need a clear consultation about what they have had done and what the salon plans to use."
+    ],
+    [
+      6.8,
+      7.0,
+      6.0,
+      6.6
+    ]
+  ],
+  "final-16.19": [
+    [
+      "Housing communities may discover blocked drains only when heavy rain causes flooding.",
+      "A record of recurring trouble spots, previous clearing work, and upcoming inspections helps residents coordinate preventive maintenance."
+    ],
+    [
+      8.1,
+      7,
+      6.8,
+      6.4
+    ]
+  ]
+};
+function dailyFeaturedProblems(reports, date){
+  var bestByCategory=new Map();
+  reports.forEach(function(report){
+    if(!Object.hasOwn(problemDetails,report.id))return;
+    var ratings=problemDetails[report.id][1];
+    var score=ratings.reduce(function(sum,value){return sum+value;},0)/ratings.length;
+    var name=reportCategory(report);
+    var best=bestByCategory.get(name);
+    if(!best||score>best.score)bestByCategory.set(name,{report:report,score:score});
+  });
+  var day=Date.UTC(date.getFullYear(),date.getMonth(),date.getDate())/86400000;
+  var choices=Array.from(bestByCategory.keys()).sort();
+  for(var i=choices.length-1;i>0;i--){
+    day=(Math.imul(day,1664525)+1013904223)>>>0;
+    var j=Math.floor(day/4294967296*(i+1));
+    [choices[i],choices[j]]=[choices[j],choices[i]];
+  }
+  return choices.slice(0,12).map(function(name){return bestByCategory.get(name).report;});
+}
+
+function reportCategory(report){return report.c;}
+var topProblems=dailyFeaturedProblems(selectedQuestions,new Date());
+
+/* Flat fanned deck: full-size cards share one center. Rotation is limited
+   to a 108-degree fan; there is no circular positioning or perspective. */
+(function(){
+  var problems=topProblems;
+  var stage=document.getElementById('c3d'), P=problems.length;
+  if(!stage||!P)return;
+  var paperColors=['#f4f4f4','#434343','#1045ed'];
+  var els=[], active=0, buried=-1, width=1, animation=0, busy=false;
+  var poses=[], drag=null, suppressClick=false;
+  var reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  function mod(a,n){return ((a%n)+n)%n;}
+  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+  problems.forEach(function(problem,index){
+    var el=document.createElement('div');
+    el.className='c3d-card';
+    el.setAttribute('role','group');
+    el.setAttribute('aria-roledescription','slide');
+    el.setAttribute('aria-label',(index+1)+' of '+P);
+    el.innerHTML='<div class="c3d-face"><div class="c3d-ui"><span class="c3d-badge"></span><h3 class="c3d-title"></h3></div></div>';
+    el.style.setProperty('--paper',paperColors[index%3]);
+    el.style.setProperty('--card-ink',index%3===0?'#171717':'#fff');
+    el.querySelector('.c3d-badge').textContent=reportCategory(problem);
+    var title=el.querySelector('.c3d-title');
+    title.textContent=problem.t;
+    title.classList.toggle('long',problem.t.length>105);
+    stage.appendChild(el);els.push(el);
+  });
+  var status=document.createElement('span');
+  status.className='c3d-status';
+  status.setAttribute('aria-live','polite');
+  status.setAttribute('aria-atomic','true');
+  stage.appendChild(status);
+
+  function resting(front){
+    return els.map(function(el,index){
+      var slot=mod(index-front,P);
+      var angle=-slot*Math.min(12,108/Math.max(1,P-1));
+      return {x:angle/108*width*.01,y:slot?-width*.07:0,a:angle};
+    });
+  }
+  function mix(a,b,t){return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,a:a.a+(b.a-a.a)*t};}
+  function paint(next,outgoing,behind){
+    els.forEach(function(el,index){
+      var p=poses[index],slot=mod(index-active,P);
+      var z=index===active?200:(index===buried?1:100-slot);
+      if(index===next)z=199;
+      if(index===outgoing)z=behind?0:201;
+      el.style.transform='translate('+p.x.toFixed(2)+'px,'+p.y.toFixed(2)+'px) rotate('+p.a.toFixed(2)+'deg)';
+      el.style.zIndex=String(z);
+      el.classList.toggle('is-front',index===active);
+      el.setAttribute('aria-hidden',index===active?'false':'true');
+    });
+  }
+  function announce(){status.textContent='Problem '+(active+1)+' of '+P+': '+problems[active].t;}
+  function settle(){busy=false;animation=0;poses=resting(active);paint();announce();}
+  function animate(duration,frame,done){
+    var start=performance.now();
+    function tick(now){
+      var t=Math.min((now-start)/duration,1),ease=1-Math.pow(1-t,3);
+      frame(ease);
+      if(t<1)animation=requestAnimationFrame(tick);else{animation=0;done();}
+    }
+    animation=requestAnimationFrame(tick);
+  }
+  function returnToRest(){
+    busy=true;
+    var from=poses.slice(),to=resting(active);
+    if(reduceMotion.matches){settle();return;}
+    animate(220,function(t){poses=from.map(function(p,i){return mix(p,to[i],t);});paint();},settle);
+  }
+  function commit(direction,swipe){
+    busy=true;
+    var outgoing=active,next=mod(active+direction,P),from=poses.slice(),to=resting(next);
+    if(reduceMotion.matches){buried=outgoing;active=next;settle();return;}
+    // Leave the visible stack before changing draw order, then return behind
+    // it. Only transforms animate; the heading and controls never move.
+    var far=Math.max(width*1.55,stage.clientWidth/2+width*.6);
+    var exit={x:-direction*far,y:-width*.32,a:-direction*9};
+    if(swipe){
+      var distance=Math.hypot(swipe.x,swipe.y);
+      var section=stage.parentElement;
+      var cardHeight=els[outgoing].offsetHeight;
+      var travel=Math.max(distance+width*.3,Math.hypot(section.clientWidth,section.clientHeight)/2+cardHeight);
+      exit={x:swipe.x/distance*travel,y:swipe.y/distance*travel,a:from[outgoing].a};
+    }
+    animate(180,function(t){
+      poses=from.map(function(p,i){return mix(p,i===outgoing?exit:to[i],t);});
+      paint(next,outgoing,false);
+    },function(){
+      active=next;buried=outgoing;
+      animate(220,function(t){
+        poses=to.slice();poses[outgoing]=mix(exit,to[outgoing],t);
+        paint(next,outgoing,true);
+      },settle);
+    });
+  }
+  function step(direction){if(!drag&&!busy&&P>1)commit(direction);}
+  function resize(){
+    width=els[0].offsetWidth;
+    if(!busy&&!drag){poses=resting(active);paint();}
+  }
+  stage.addEventListener('pointerdown',function(ev){
+    if(drag||busy||P<2||!ev.isPrimary||(ev.pointerType==='mouse'&&ev.button!==0))return;
+    if(!ev.target.closest('.c3d-card'))return;
+    suppressClick=false;
+    drag={id:ev.pointerId,x:ev.clientX,y:ev.clientY,moved:false};
+    try{stage.setPointerCapture(ev.pointerId);}catch(err){}
+  });
+  stage.addEventListener('pointermove',function(ev){
+    if(!drag||ev.pointerId!==drag.id)return;
+    var dx=ev.clientX-drag.x,dy=ev.clientY-drag.y;
+    var distance=Math.hypot(dx,dy);
+    if(!drag.moved&&distance<=6)return;
+    drag.moved=true;
+    stage.classList.add('grabbing');
+    var next=mod(active+1,P);
+    var from=resting(active),to=resting(next),progress=Math.min(distance/width,.65);
+    poses=from.map(function(p,i){return mix(p,to[i],progress);});
+    poses[active]={x:dx,y:dy,a:clamp(dx/width*7,-10,10)};
+    paint(next,active,false);
+  });
+  function release(ev){
+    if(!drag||ev.pointerId!==drag.id)return;
+    var ended=drag;drag=null;
+    stage.classList.remove('grabbing');
+    if(stage.hasPointerCapture(ev.pointerId))stage.releasePointerCapture(ev.pointerId);
+    suppressClick=ended.moved;
+    var swipe={x:ev.clientX-ended.x,y:ev.clientY-ended.y};
+    if(ev.type==='pointerup'&&ended.moved&&Math.hypot(swipe.x,swipe.y)>=width*.22)commit(1,swipe);
+    else returnToRest();
+  }
+  stage.addEventListener('pointerup',release);
+  stage.addEventListener('pointercancel',release);
+  stage.addEventListener('lostpointercapture',release);
+  stage.addEventListener('click',function(ev){if(suppressClick){ev.preventDefault();ev.stopPropagation();suppressClick=false;}},true);
+  stage.addEventListener('dragstart',function(ev){ev.preventDefault();});
+  stage.addEventListener('keydown',function(ev){
+    if(ev.key!=='ArrowLeft'&&ev.key!=='ArrowRight')return;
+    ev.preventDefault();step(ev.key==='ArrowLeft'?-1:1);
+  });
+  document.getElementById('card-prev').onclick=function(){step(-1);};
+  document.getElementById('card-next').onclick=function(){step(1);};
+  new ResizeObserver(resize).observe(stage);
+  resize();announce();
+})();
+
+</script></body></html>
