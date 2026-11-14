@@ -267,6 +267,7 @@ footer a:hover{color:var(--white)}
 #dialog button{color:var(--ink);background:var(--button);border:1px solid var(--rule);padding:.5em .75em;border-radius:6px;cursor:pointer}
 #featured-title.dot-title{margin-bottom:24px}
 
+.featured-source a{display:inline-block;max-width:100%;box-sizing:border-box;padding:.45em .7em;border-radius:.35em;background:#ffe39a;color:#302410;font-weight:700;text-decoration:underline;text-underline-offset:.15em;overflow-wrap:anywhere}
 .explore-cards{margin:0 0 24px;padding-left:2.5rem}
 .explore-row::marker{color:var(--light);font-weight:700}
 .explore-row{padding:16px 0 16px 8px;border-bottom:1px solid var(--card2);overflow-wrap:anywhere}
@@ -410,7 +411,7 @@ body:has(.problem-detail:not([hidden])){
  color-scheme:light;--white:#20271d;--soft:#3e4836;color:#20271d;
  background:radial-gradient(ellipse at 93% 2%,#d5dec4,transparent 46%),radial-gradient(ellipse at 8% 15%,#ddcfe6b3,transparent 46%),radial-gradient(ellipse at 94% 57%,#c7dbe0b3,transparent 44%),radial-gradient(ellipse at 13% 92%,#e8ced2c4,transparent 51%),#eee8d7;
 }
-body:has(.problem-detail:not([hidden])) .nav[data-views="problem-detail"]{background:#f5f2e6}
+.nav[data-views="problem-detail"]{display:none}
 .problem-detail h1,.problem-detail .before-build h2{font-family:Georgia,serif;color:#20271d}
 .problem-detail .before-build{background:#fffdf4;border-color:#c9cbb6;padding:clamp(16px,4vw,28px)}
 .problem-detail .before-build dt{background:#e5ead8;color:#242e1e}
@@ -495,7 +496,7 @@ body:has(.problem-detail:not([hidden])) .nav[data-views="problem-detail"]{backgr
         <h2 class="sec-h">Browse by category</h2>
         <div class="ex-chips" id="exchips"></div>
       </div>
-      <div class="list-head" id="explore-problems" tabindex="-1"><h2 class="sec-h" id="lh" tabindex="-1">Top 12 problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button>
+      <div class="list-head" id="explore-problems" tabindex="-1"><h2 class="sec-h" id="lh" tabindex="-1">10 random problems</h2><button class="btn-outline" id="fclear" type="button" hidden></button>
         <div class="category-sort" id="category-sort-control">
           <label for="category-sort">Show</label>
           <select id="category-sort">
@@ -506,7 +507,7 @@ body:has(.problem-detail:not([hidden])) .nav[data-views="problem-detail"]{backgr
           <details class="sort-info">
             <summary aria-label="How problem sorting works" title="How problem sorting works">ⓘ</summary>
             <div class="sort-info-copy">
-              <p>Use the filters to choose how to start. Try sample data to test a small demo, or talk to someone who has faced the problem. In Explore, the filters apply to today’s Top 12.</p>
+              <p>Use the filters to choose how to start. Try sample data to test a small demo, or talk to someone who has faced the problem. In Explore, the filters apply to the 10 randomly selected problems.</p>
             </div>
           </details>
         </div>
@@ -585,7 +586,7 @@ body:has(.problem-detail:not([hidden])) .nav[data-views="problem-detail"]{backgr
       <div class="faq">
         <details open><summary>How do I submit a problem?</summary><p>Open Submit a problem, add a title, pick a category and describe what is going wrong.</p></details>
         <details><summary>How do I find a problem?</summary><p>Tap Explore to see the top 12 problems, or browse by category to find more.</p></details>
-        <details><summary>How is the Top 12 decided?</summary><p>Each day, we shuffle the categories and choose up to 12. Each selected category contributes the problem with the highest overall editorial score.</p></details>
+        <details><summary>How is the Top 12 decided?</summary><p>Switch the Glitch selected these 12 questions using data published by Indian government ministries, agencies, and public institutions. Each entry links to the publication and explains what it found.</p></details>
         <details><summary>Where is my data saved?</summary><p>This browser saves the problems you submit. Other visitors can’t see them. Clearing your site data removes them.</p></details>
       </div>
       <div class="card pad helpcta"><h3>Can’t find your problem?</h3><p>Submit it so it appears in the list.</p><a class="btn" href="#submit">Submit a problem</a></div>
@@ -2031,7 +2032,117 @@ function matchesCategory(report,category){
   return reportCategory(report)===category;
 }
 var priorityById=new Map(selectedQuestions.map(function(report){return [report.id,report.priority];}));
-var topProblems;
+var topProblems=[
+  {
+    "id": "research-1",
+    "c": "Agriculture",
+    "t": "How can growers reserve cold storage before a perishable crop is ready to harvest?",
+    "d": "Growers have to decide where harvested produce will go while it is still fresh. A nearby cold room may be full on harvest day or unsuitable for that crop.\n\nWithout a confirmed space, growers may arrange a truck for a trip they cannot complete or leave produce waiting while they look for another facility.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2202875&lang=1&reg=3",
+    "sourceLabel": "Ministry of Food Processing Industries · Post-harvest loss study",
+    "evidence": "The ministry-commissioned study estimated that 7.36 million tonnes of fruit and 11.97 million tonnes of vegetables were lost after harvest, using 2020–22 as the reference period."
+  },
+  {
+    "id": "research-2",
+    "c": "Delivery",
+    "t": "How can produce handlers record where a refrigerated shipment warmed up between collection and delivery?",
+    "d": "A refrigerated shipment can pass through several hands before it reaches the buyer. A reading taken on arrival shows the temperature at that moment and leaves earlier parts of the trip uncertain.\n\nIf goods arrive warm, the buyer and carrier need to work out when the change happened and who had the shipment. That information matters when they decide whether to accept the goods or investigate a delay.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298435&lang=2&reg=48",
+    "sourceLabel": "PIB · Post-harvest infrastructure",
+    "evidence": "The August 2026 government release reports that 1,256 post-harvest infrastructure and processing projects were completed or operational as of June 2026. That total covers several kinds of projects, including facilities beyond the cold chain."
+  },
+  {
+    "id": "research-3",
+    "c": "Education",
+    "t": "How can Grade 3 teachers spot which pupils need help understanding a short story?",
+    "d": "A Grade 3 pupil can read the words in a short story aloud and still struggle to explain what happened. Teachers need to see whether the pupil understood the characters, events, and main idea.\n\nA quick classroom check could help teachers decide who needs more practice understanding a passage. The cited national figure measures language proficiency overall.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219936&lang=1&reg=1",
+    "sourceLabel": "Economic Survey 2025–26 · PARAKH Grade 3 language results",
+    "evidence": "The Economic Survey cites PARAKH 2024 results showing that 57% of Grade 3 pupils were proficient in language. This figure covers overall language proficiency."
+  },
+  {
+    "id": "research-4",
+    "c": "Education",
+    "t": "How can teachers identify which arithmetic skill each pupil needs to practice next?",
+    "d": "Two pupils may get the same sum wrong for different reasons. One may misunderstand place value, while another may understand the numbers but make a mistake during subtraction.\n\nA final answer alone gives the teacher little information about which skill to revisit. The cited national result covers mathematics as a whole.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219936&lang=1&reg=1",
+    "sourceLabel": "Economic Survey 2025–26 · PARAKH Grade 3 mathematics results",
+    "evidence": "The Economic Survey cites PARAKH 2024 results showing that 65% of Grade 3 pupils were proficient in mathematics. This figure covers overall mathematics proficiency."
+  },
+  {
+    "id": "research-5",
+    "c": "Small Business",
+    "t": "How can small suppliers prepare the records they need to challenge an overdue invoice?",
+    "d": "When an invoice goes overdue, a small supplier may need to reconstruct what was ordered, delivered, and accepted. The records can be spread across invoices, delivery receipts, and messages.\n\nA supplier preparing a dispute needs to identify which documents are missing and which dates and amounts the buyer agrees on.",
+    "source": "https://sansad.in/getFile/annex/270/AU4084_SBPhjA.pdf?source=pqars#page=1",
+    "sourceLabel": "Rajya Sabha · MSME payment disputes, 30 March 2026",
+    "evidence": "The Ministry of MSME reported that small enterprises had filed 14,814 cases on its online dispute resolution portal as of 10 March 2026."
+  },
+  {
+    "id": "research-6",
+    "c": "Small Business",
+    "t": "How can small suppliers spot which late invoices could leave them short of payroll cash?",
+    "d": "Small suppliers may owe wages and material bills before a buyer pays for an order. A late invoice can leave them short even when they have enough sales on paper.\n\nTo plan the next payroll, a supplier needs to distinguish confirmed incoming payments from invoices that might slip again.",
+    "source": "https://sansad.in/getFile/annex/270/AU4084_SBPhjA.pdf?source=pqars#page=1",
+    "sourceLabel": "Rajya Sabha · Payments to MSMEs, 30 March 2026",
+    "evidence": "The ministry reported ₹2,406.46 crore in pending dues owed to MSMEs by central public-sector enterprises at the end of February 2026."
+  },
+  {
+    "id": "research-7",
+    "c": "Fraud and Scams",
+    "t": "How can someone gather transaction details quickly after realising they sent money to a scammer?",
+    "d": "After noticing a scam payment, a victim may need to find the amount, timestamp, and transaction reference while deciding where to report it.\n\nThe government describes an immediate reporting system. The question asks whether helping people gather the details they already have could make filing a report easier.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2301973&lang=2&reg=48",
+    "sourceLabel": "PIB · Reporting financial cyber fraud",
+    "evidence": "The government briefing advises victims to contact the 1930 helpline and report the incident through the national cybercrime portal promptly."
+  },
+  {
+    "id": "research-8",
+    "c": "Fraud and Scams",
+    "t": "How can users keep track of which suspicious payments they already reported to their bank and the cybercrime portal?",
+    "d": "A person may contact their bank and file a cybercrime complaint about the same payment. Each channel may issue its own reference, which the person needs to keep with the transaction details.\n\nThe official release documents the national reporting system. Tracking the same transaction across channels is the specific workflow this question asks builders to investigate.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2301973&lang=2&reg=48",
+    "sourceLabel": "PIB · Bank and national fraud reporting channels",
+    "evidence": "The government briefing advises victims to contact their bank through its official helpline and report the incident through the National Cyber Crime Reporting Portal. It does not measure how victims track the same case across those channels."
+  },
+  {
+    "id": "research-9",
+    "c": "Insurance",
+    "t": "How can policyholders find out which document is holding up an insurance claim?",
+    "d": "A policyholder waiting on a claim may know it is pending without knowing whether the insurer, hospital, or policyholder needs to take the next step.\n\nWhen paperwork is involved, the policyholder needs to learn what is missing, who can provide it, and whether it has already been sent. The RBI figures establish that settlement delays generate complaints.",
+    "source": "https://www.rbi.org.in/Scripts/PublicationReportDetails.aspx?ID=1326&UrlPage=",
+    "sourceLabel": "Reserve Bank of India · Financial Stability Report, chapter 3, table 3.5",
+    "evidence": "Table 3.5 reports 822 complaints to Insurance Ombudsmen about delayed claim settlements in 2025–26, using data from IRDAI."
+  },
+  {
+    "id": "research-10",
+    "c": "Energy",
+    "t": "How can rural clinics track recurring power cuts that interrupt essential equipment?",
+    "d": "A power cut can interrupt equipment a clinic depends on. Staff need to know which equipment was affected and how long the outage lasted when deciding where backup power is needed.\n\nThe national briefing identifies healthcare as affected by outages. A clinic would need its own records to establish how often its services are interrupted.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291649&lang=2&reg=48",
+    "sourceLabel": "PIB · Rural power supply, FY 2025–26",
+    "evidence": "The government reported an average of 22.6 hours of electricity supply per day in rural areas in FY 2025–26. This is a rural average across users. Clinic outages need to be measured separately."
+  },
+  {
+    "id": "research-11",
+    "c": "Waste",
+    "t": "How can households find a registered recycler that accepts their specific type of broken electronics?",
+    "d": "A household trying to discard a broken screen or appliance needs to find a registered recycler and confirm that it accepts that particular device.\n\nNational collection figures show the scale of e-waste. They leave the practical question of finding a suitable drop-off point for a specific item to investigate locally.",
+    "source": "https://sansad.in/getFile/loksabhaquestions/annex/187/AU3779_WfiORw.pdf?source=pqals#page=1",
+    "sourceLabel": "Lok Sabha · CPCB e-waste estimates, 16 March 2026",
+    "evidence": "CPCB estimated about 1.41 million tonnes generated and 0.98 million tonnes recycled in FY 2025–26 up to the date of the March reply. These are partial-year figures."
+  },
+  {
+    "id": "research-12",
+    "c": "Waste",
+    "t": "How can small repair shops document where batches of unusable electronics were sent for recycling?",
+    "d": "A repair shop may set aside unusable devices and parts from many jobs before sending them out together. Once a batch leaves, it can be difficult to trace it without retaining a pickup or acceptance record.\n\nThe official source documents registered recyclers and refurbishers. The question asks how a shop could record what it handed over and where it was accepted.",
+    "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2268795&lang=1&reg=3",
+    "sourceLabel": "Environment Ministry · Registered e-waste recyclers",
+    "evidence": "The Environment Ministry reported 386 registered e-waste recyclers as of March 2026."
+  }
+];
+var exploreProblems=[];
 var previousCategory='';
 var categorySorts=new Map();
 var categorySort=document.getElementById('category-sort');
@@ -5803,8 +5914,10 @@ function renderProblemContent(report, description, metrics){
   description.replaceChildren();
   metrics.replaceChildren();
   metrics.hidden=true;
-  var paragraphs=detail?detail[0]:[report.d||report.t];
+  var paragraphs=detail?detail[0]:(report.d||report.t).split('\n\n');
   paragraphs.forEach(function(paragraph){description.appendChild(el('p','',paragraph));});
+  if(report.source)description.append(renderFeaturedSource(report));
+  if(topProblems.includes(report))return;
   var guide=el('section','before-build');
   guide.append(el('h2','','Before you build'));
   var checklist=el('dl');
@@ -5859,7 +5972,7 @@ function render(){
   var categoryReports=filterCat?db.reports.filter(function(report){return matchesCategory(report,filterCat);}):[];
   var sort=categorySorts.get(filterCat)||'featured';
   categorySort.value=sort;
-  categorySort.replaceChildren(new Option(filterCat?'Featured':'Top 12','featured'));
+  categorySort.replaceChildren(new Option(filterCat?'Featured':'Random 10','featured'));
   categorySort.add(new Option('Can test with sample data','sample'));
   categorySort.add(new Option('Talk to someone first','talk'));
   if(sort!=='sample'&&sort!=='talk')sort='featured';
@@ -5874,7 +5987,7 @@ function render(){
   });
   var n=pl.children.length;
   var f=!!filterCat;
-  document.getElementById('lh').textContent=f?n+' matching problem'+(n===1?'':'s'):'Top 12 problems';
+  document.getElementById('lh').textContent=f?n+' matching problem'+(n===1?'':'s'):'10 random problems';
   document.getElementById('nomatch').hidden=!f||n>0;
   var fc=document.getElementById('fclear');fc.hidden=!filterCat;fc.textContent=filterCat?filterCat+' ✕':'';
   document.querySelectorAll('.chip').forEach(function(c){var on=c.textContent===filterCat;c.classList.toggle('active',on);c.setAttribute('aria-pressed',on?'true':'false');});
@@ -5883,8 +5996,8 @@ function render(){
   exploreCards.hidden=f;
   exploreCards.replaceChildren();
   if(f)return;
-  var exploreReports=filterByFirstTest(topProblems,sort);
-  if(!exploreReports.length)exploreCards.appendChild(el('li','','None of today’s featured problems match this filter.'));
+  var exploreReports=filterByFirstTest(exploreProblems,sort);
+  if(!exploreReports.length)exploreCards.appendChild(el('li','','None of these random picks match this filter.'));
   exploreReports.forEach(function(report){
     var row=el('li','explore-row');
     row.appendChild(problemHeading(report,'explore'));
@@ -5910,11 +6023,22 @@ function dailyFeaturedProblems(reports, date){
   }
   return choices.slice(0,12).map(function(name){return bestByCategory.get(name).report;});
 }
+function renderFeaturedSource(report){
+  var section=el('div','featured-source');
+  var link=el('a','','Verify with '+report.sourceLabel);
+  link.href=report.source;
+  link.target='_blank';
+  link.rel='noopener noreferrer';
+  section.append(el('p','',report.evidence),link);
+  return section;
+}
 function renderTop(){
   var tl=document.getElementById('tl');tl.textContent='';
   topProblems.forEach(function(r){
     var li=el('li');
     li.appendChild(el('h3','',r.t));
+    r.d.split('\n\n').forEach(function(paragraph){li.appendChild(el('p','',paragraph));});
+    li.appendChild(renderFeaturedSource(r));
     tl.appendChild(li);
   });
 }
@@ -5930,7 +6054,19 @@ document.getElementById('rf').addEventListener('submit',function(e){
   setTimeout(function(){m.textContent='';nav('problems');},700);
 });
 var cats=["Agriculture", "Delivery", "Education", "Employment", "Energy", "Finance & Payments", "Fraud and Scams", "Healthcare", "Insurance", "Pollution", "Public Infrastructure", "Small Business", "Tech", "Transport", "Waste", "Housing & Real Estate", "Other"];
-topProblems=dailyFeaturedProblems(db.reports,new Date());
+function pickExploreProblems(){
+  var pool=db.reports.slice();
+  for(var i=0;i<Math.min(10,pool.length);i++){
+    var j=i+Math.floor(Math.random()*(pool.length-i));
+    [pool[i],pool[j]]=[pool[j],pool[i]];
+  }
+  return pool.slice(0,10);
+}
+exploreProblems=pickExploreProblems();
+document.getElementById('exb').addEventListener('click',function(){
+  exploreProblems=pickExploreProblems();
+  render();
+});
 var rc=document.getElementById('rc');
 var chips=document.getElementById('exchips');
 cats.forEach(function(c){rc.appendChild(el('option','',c));});
@@ -5981,7 +6117,7 @@ cats.forEach(function(c){var b=el('button','chip',c);b.type='button';b.setAttrib
     workspace.hidden=true;
     clearFeedback();
     if(!category.value)return;
-    db.reports.filter(function(report){return matchesCategory(report,category.value);}).forEach(function(report){
+    db.reports.concat(topProblems).filter(function(report){return matchesCategory(report,category.value);}).forEach(function(report){
       var key=problemKey(report);
       availableReports.set(key,report);
       problem.add(new Option(report.t,key));
@@ -6073,22 +6209,10 @@ const shuffle=items=>items.map(item=>[Math.random(),item]).sort((a,b)=>a[0]-b[0]
 const random=(a,b)=>a+Math.random()*(b-a);
 const W=210,H=297,PW=62,PH=78;
 function dailyPapers(){
- const categories=new Map();
- db.reports.forEach(report=>{
-  const name=reportCategory(report);
-  if(!categories.has(name))categories.set(name,[]);
-  const detail=problemDetails[report.id];
-  const scores=detail?.[1];
-  categories.get(name).push({id:report.id,title:report.t,description:detail?.[0][0]||report.d||'',why:detail?.[0].slice(1).join(' '),severity:scores?Math.max(1,Math.round(scores[0]/2)):null,score:scores?scores.reduce((a,b)=>a+b,0)/scores.length:null});
- });
- for(const items of categories.values()){
-  const scores=[...new Set(items.map(item=>item.score).filter(score=>score!==null))].sort((a,b)=>b-a);
-  items.forEach(item=>item.rank=item.score===null?null:scores.indexOf(item.score)+1);
- }
- return dailyFeaturedProblems(db.reports.filter(report=>reportCategory(report)!=="Other"),new Date()).map(report=>{
-  const name=reportCategory(report),problems=categories.get(name);
-  return {category:{id:name,name,problems},problem:problems.find(item=>item.id===report.id)};
- });
+ return topProblems.map(report=>({
+  category:{id:report.c,name:report.c},
+  problem:{id:report.id,title:report.t}
+ }));
 }
 function contains(p,x,y){
  const dx=x-p.x,dy=y-p.y;
@@ -6205,12 +6329,14 @@ async function ExpandedPaper(card,paper,{category,problem}){
  if(!reduced.matches)await motion(card,[{opacity:.96},{opacity:1}],220);
  get('stamp').textContent=category.name;
  get('paper-title').textContent=problem.title;
- const report=db.reports.find(entry=>entry.id===problem.id);
+ const report=topProblems.find(entry=>entry.id===problem.id);
  renderProblemContent(report,get('paper-description'),get('paper-metrics'));
  get('paper-workshop').dataset.category=category.name;
  get('paper-workshop').dataset.problem=problemKey(report);
  dialog.querySelector('.paper-score-info').open=false;
  dialog.querySelector('.paper-score-info').hidden=true;
+ const actions=[get('close'),get('return'),get('paper-workshop')];
+ actions.forEach(button=>button.disabled=true);
  read.scrollTop=0;
  read.style.setProperty('--sheet',color);read.style.opacity='0';dialog.showModal();
  get('paper-title').focus({preventScroll:true});
@@ -6228,6 +6354,7 @@ async function ExpandedPaper(card,paper,{category,problem}){
   read.style.opacity='1';content.style.opacity='1';
  }
  busy=false;
+ actions.forEach(button=>button.disabled=false);
 }
 async function closePaper(){
  if(busy||!current)return;
